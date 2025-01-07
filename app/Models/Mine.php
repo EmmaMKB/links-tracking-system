@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Mine extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'mine',
+        'section_id',
+        'latitude',
+        'longitude',
+    ];
 }

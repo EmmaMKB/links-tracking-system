@@ -150,7 +150,7 @@
                         <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bold fs-3 mb-1">KOLWEZI - KSU Routes</span>
+                                <span class="card-label fw-bold fs-3 mb-1">DRC Routes</span>
 
                                 <span class="text-muted mt-1 fw-semibold fs-7">75 trucks in transit</span>
                             </h3>
@@ -270,6 +270,7 @@
                                     <thead>
                                         <tr class="fw-bold text-muted">
                                             <th class="min-w-150px">Horse</th>
+                                            <th class="min-w-150px">Mine</th>
                                             <th class="min-w-140px">Client</th>
                                             <th class="min-w-120px">Transporter</th>
                                             <th class="min-w-120px">Location</th>
@@ -282,41 +283,47 @@
 
                                     <!--begin::Table body-->
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <p class="text-blue-900 fw-bold fs-6">56037-XDER</p>
-                                            </td>
+                                        @foreach ($trucks as $truck)
+                                            <tr>
+                                                <td>
+                                                    <p class="text-blue-900 fw-bold fs-6">{{ $truck->horse }}</p>
+                                                </td>
 
-                                            <td>
-                                                <p class="text-gray-900">POLYTRA</p>
-                                            </td>
+                                                <td>
+                                                    <p class="text-gray-900">{{ $truck->mine->mine }}</p>
+                                                </td>
 
-                                            <td>
-                                                <p class="text-gray-900">AGC</p>
-                                            </td>
+                                                <td>
+                                                    <p class="text-gray-900">{{ $truck->client->client }}</p>
+                                                </td>
 
-                                            <td>
-                                                <p href="#"
-                                                    class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6">
-                                                    Mutaka CP</p>
-                                                <span
-                                                    class="text-muted fw-semibold text-muted d-block fs-7">KLZI-LSHI</span>
-                                            </td>
+                                                <td>
+                                                    <p class="text-gray-900">{{ $truck->transporter }}</p>
+                                                </td>
 
-                                            <td>
-                                                <p>28/10/2024</p>
-                                            </td>
+                                                <td>
+                                                    <p href="#"
+                                                        class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6">
+                                                        {{ $truck->location->location }}</p>
+                                                    <span
+                                                        class="text-muted fw-semibold text-muted d-block fs-7">{{ $truck->location->section->section }}</span>
+                                                </td>
 
-                                            <td>
-                                                <span class="badge badge-light-success">Moving</span>
-                                            </td>
+                                                <td>
+                                                    <p>{{ $truck->dispatch_date }}</p>
+                                                </td>
 
-                                            <td class="text-end">
-                                                <a href="#"
-                                                    class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa fa-edit"></i></a>
-                                            </td>
-                                        </tr>
+                                                <td>
+                                                    <span class="badge badge-light-success">{{ $truck->status }}</span>
+                                                </td>
+
+                                                <td class="text-end">
+                                                    <a href="#"
+                                                        class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                        <i class="fa fa-edit"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                     <!--end::Table body-->
                                 </table>
@@ -464,8 +471,7 @@
                                             <label class="btn btn-outline btn-active-success btn-color-muted"
                                                 data-kt-button="true">
                                                 <!--begin::Input-->
-                                                <input class="btn-check" type="radio" name="status"
-                                                    value="Moving" />
+                                                <input class="btn-check" type="radio" name="status" value="Moving" />
                                                 <!--end::Input-->
                                                 Moving
                                             </label>
@@ -475,8 +481,8 @@
                                             <label class="btn btn-outline btn-active-success btn-color-muted active"
                                                 data-kt-button="true">
                                                 <!--begin::Input-->
-                                                <input class="btn-check" type="radio" name="status"
-                                                    checked="checked" value="Parked" />
+                                                <input class="btn-check" type="radio" name="status" checked="checked"
+                                                    value="Parked" />
                                                 <!--end::Input-->
                                                 Parked
                                             </label>
@@ -497,8 +503,7 @@
                                             <label class="btn btn-outline btn-active-success btn-color-muted"
                                                 data-kt-button="true">
                                                 <!--begin::Input-->
-                                                <input class="btn-check" type="radio" name="status"
-                                                    value="Queued" />
+                                                <input class="btn-check" type="radio" name="status" value="Queued" />
                                                 <!--end::Input-->
                                                 Queued
                                             </label>

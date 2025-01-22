@@ -16,8 +16,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" /> <!--end::Fonts-->
 
     <!--begin::Vendor Stylesheets(used for this page only)-->
-    <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.css') }}" rel="stylesheet"
+        type="text/css" />
     <!--end::Vendor Stylesheets-->
 
 
@@ -25,6 +27,12 @@
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
 
     <script>
         // Frame-busting to prevent site from being loaded within a frame without permission (click-jacking)
@@ -76,13 +84,15 @@
                         id="kt_app_header_wrapper">
 
                         <!--begin::Menu wrapper-->
-                        <div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}"
+                        <div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true"
+                            data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}"
                             data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="end"
                             data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true"
                             data-kt-swapper-mode="{default: 'append', lg: 'prepend'}"
                             data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
                             <!--begin::Menu-->
-                            <div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
+                            <div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0"
+                                id="kt_app_header_menu" data-kt-menu="true">
 
                             </div>
                             <!--end::Menu-->
@@ -107,8 +117,8 @@
                                             class="path5"></span><span class="path6"></span><span
                                             class="path7"></span><span class="path8"></span><span
                                             class="path9"></span><span class="path10"></span></i> <i
-                                        class="ki-duotone ki-moon theme-dark-show fs-1"><span class="path1"></span><span
-                                            class="path2"></span></i></a>
+                                        class="ki-duotone ki-moon theme-dark-show fs-1"><span
+                                            class="path1"></span><span class="path2"></span></i></a>
                                 <!--begin::Menu toggle-->
 
                                 <!--begin::Menu-->
@@ -119,12 +129,12 @@
                                         <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
                                             data-kt-value="light">
                                             <span class="menu-icon" data-kt-element="icon">
-                                                <i class="ki-duotone ki-night-day fs-2"><span class="path1"></span><span
-                                                        class="path2"></span><span class="path3"></span><span
-                                                        class="path4"></span><span class="path5"></span><span
-                                                        class="path6"></span><span class="path7"></span><span
-                                                        class="path8"></span><span class="path9"></span><span
-                                                        class="path10"></span></i> </span>
+                                                <i class="ki-duotone ki-night-day fs-2"><span
+                                                        class="path1"></span><span class="path2"></span><span
+                                                        class="path3"></span><span class="path4"></span><span
+                                                        class="path5"></span><span class="path6"></span><span
+                                                        class="path7"></span><span class="path8"></span><span
+                                                        class="path9"></span><span class="path10"></span></i> </span>
                                             <span class="menu-title">
                                                 Light
                                             </span>
@@ -170,8 +180,8 @@
                             <div class="app-navbar-item ms-1 ms-md-4" id="kt_header_user_menu_toggle">
                                 <!--begin::Menu wrapper-->
                                 <div class="cursor-pointer symbol symbol-35px"
-                                    data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
-                                    data-kt-menu-placement="bottom-end">
+                                    data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+                                    data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
                                     <img src="../assets/media/avatars/300-3.jpg" class="rounded-3" alt="user" />
                                 </div>
 
@@ -264,14 +274,16 @@
                                         <!--begin:Menu link--><span class="menu-link"><span class="menu-icon"><i
                                                     class="ki-duotone ki-element-11 fs-2"><span
                                                         class="path1"></span><span class="path2"></span><span
-                                                        class="path3"></span><span class="path4"></span></i></span><span
+                                                        class="path3"></span><span
+                                                        class="path4"></span></i></span><span
                                                 class="menu-title">Trucks</span><span
                                                 class="menu-arrow"></span></span><!--end:Menu link--><!--begin:Menu sub-->
                                         <div class="menu-sub menu-sub-accordion"><!--begin:Menu item-->
                                             <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
                                                     href="../index.html"><span class="menu-bullet"><span
                                                             class="bullet bullet-dot"></span></span><span
-                                                        class="menu-title">DRC Trucks</span></a><!--end:Menu link--></div>
+                                                        class="menu-title">DRC Trucks</span></a><!--end:Menu link-->
+                                            </div>
                                             <!--end:Menu item--><!--begin:Menu item-->
                                             <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
                                                     href="ecommerce.html"><span class="menu-bullet"><span
@@ -281,7 +293,8 @@
                                             <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
                                                     href="projects.html"><span class="menu-bullet"><span
                                                             class="bullet bullet-dot"></span></span><span
-                                                        class="menu-title">DRC Convoys</span></a><!--end:Menu link--></div>
+                                                        class="menu-title">DRC Convoys</span></a><!--end:Menu link-->
+                                            </div>
                                             <!--end:Menu item--><!--begin:Menu item-->
                                             <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
                                                     href="online-courses.html"><span class="menu-bullet"><span
@@ -307,7 +320,7 @@
                 <!--begin::Main-->
                 <div class="app-main flex-column flex-row-fluid " id="kt_app_main">
                     <!--begin::Content wrapper-->
-                   dfdf
+                    dfdf
                     <!--end::Content wrapper-->
                 </div>
                 <!--end:::Main-->
@@ -336,7 +349,8 @@
 
     <!--begin::Javascript-->
     <script>
-        var hostUrl = "{{ route('dashboard') }}";        </script>
+        var hostUrl = "{{ route('dashboard') }}";
+    </script>
 
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
@@ -359,4 +373,5 @@
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>
+
 </html>

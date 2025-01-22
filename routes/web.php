@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TruckController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +25,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/add_truck', [TruckController::class, 'add_truck'])->name('add_truck');
 });
 
 Route::middleware(['guest'])->group(function () {

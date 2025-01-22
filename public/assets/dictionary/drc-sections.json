@@ -1,0 +1,37 @@
+[
+    {
+        "section": "KOLWEZI",
+        "index": 1,
+        "country": "DRC"
+    },
+    {
+        "section": "KLZI-LKSI",
+        "index": 2,
+        "country": "DRC"
+    },
+    {
+        "section": "LIKASI",
+        "index": 3,
+        "country": "DRC"
+    },
+    {
+        "section": "LKSI-LSHI",
+        "index": 4,
+        "country": "DRC"
+    },
+    {
+        "section": "LUBUMBASHI",
+        "index": 5,
+        "country": "DRC"
+    },
+    {
+        "section": "LSHI-KLSA",
+        "index": 6,
+        "country": "DRC"
+    },
+    {
+        "section": "KASUMBALESA",
+        "index": 7,
+        "country": "DRC"
+    }
+]

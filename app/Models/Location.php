@@ -12,7 +12,7 @@ class Location extends Model
     protected $fillable = [
         'location',
         'index',
-        'section',
+        'section_id',
         'latitude',
         'longitude',
     ];

@@ -1,132 +1,2651 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Laravel</title>
+@section('content')
+    <div class="d-flex flex-column flex-column-fluid">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <!--begin::Toolbar-->
+        <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+            <!--begin::Toolbar container-->
+            <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+
+                <!--begin::Page title-->
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+                    <!--begin::Title-->
+                    <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
+                        Logistics
+                    </h1>
+                    <!--end::Title-->
+
+
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-muted">
+                            <a href="../index.html" class="text-muted text-hover-primary">
+                                Home </a>
+                        </li>
+                        <!--end::Item-->
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item">
+                            <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                        </li>
+                        <!--end::Item-->
+
+                        <!--begin::Item-->
+                        <li class="breadcrumb-item text-muted">
+                            Dashboards </li>
+                        <!--end::Item-->
+
+                    </ul>
+                    <!--end::Breadcrumb-->
                 </div>
-            @endif
+                <!--end::Page title-->
+                <!--begin::Actions-->
+                <div class="d-flex align-items-center gap-2 gap-lg-3">
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
+
+                    <!--begin::Secondary button-->
+                    <a href="../apps/customers/list.html" class="btn btn-sm fw-bold btn-secondary">
+                        Add Customer </a>
+                    <!--end::Secondary button-->
+
+                    <!--begin::Primary button-->
+                    <a href="../apps/ecommerce/sales/add-order.html" class="btn btn-sm fw-bold btn-primary">
+                        New Shipment </a>
+                    <!--end::Primary button-->
                 </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
+                <!--end::Actions-->
             </div>
+            <!--end::Toolbar container-->
         </div>
-    </body>
-</html>
+        <!--end::Toolbar-->
+
+        <!--begin::Content-->
+        <div id="kt_app_content" class="app-content  flex-column-fluid ">
+
+
+            <!--begin::Content container-->
+            <div id="kt_app_content_container" class="app-container  container-xxl ">
+                <!--begin::Row-->
+                <div class="row gy-5 gx-xl-10">
+                    <!--begin::Col-->
+                    <div class="col-xl-4 mb-xl-10">
+
+                        <!--begin::Engage widget 1-->
+                        <div class="card h-md-100" dir="ltr">
+                            <!--begin::Body-->
+                            <div class="card-body d-flex flex-column flex-center">
+                                <!--begin::Heading-->
+                                <div class="mb-2">
+                                    <!--begin::Title-->
+                                    <h1 class="fw-semibold text-gray-800 text-center lh-lg">
+                                        Quick form to <br />
+                                        <span class="fw-bolder"> Bid a New Shipment</span>
+                                    </h1>
+                                    <!--end::Title-->
+
+                                    <!--begin::Illustration-->
+                                    <div class="py-10 text-center">
+                                        <img src="../assets/media/svg/illustrations/easy/3.svg"
+                                            class="theme-light-show w-200px" alt="" />
+                                        <img src="../assets/media/svg/illustrations/easy/3-dark.svg"
+                                            class="theme-dark-show w-200px" alt="" />
+                                    </div>
+                                    <!--end::Illustration-->
+                                </div>
+                                <!--end::Heading-->
+
+                                <!--begin::Links-->
+                                <div class="text-center mb-1">
+                                    <!--begin::Link-->
+                                    <a class="btn btn-sm btn-primary me-2" data-bs-target="#kt_modal_bidding"
+                                        data-bs-toggle="modal">
+                                        Start Now </a>
+                                    <!--end::Link-->
+
+                                    <!--begin::Link-->
+                                    <a class="btn btn-sm btn-light" href="../apps/invoices/view/invoice-2.html">
+                                        Quick Guide </a>
+                                    <!--end::Link-->
+                                </div>
+                                <!--end::Links-->
+                            </div>
+                            <!--end::Body-->
+                        </div>
+                        <!--end::Engage widget 1-->
+
+                    </div>
+                    <!--end::Col-->
+
+                    <!--begin::Col-->
+                    <div class="col-xl-8 mb-5 mb-xl-10">
+                        <!--begin::Row-->
+                        <div class="row g-lg-5 g-xl-10">
+                            <!--begin::Col-->
+                            <div class="col-md-6 col-xl-6 mb-5 mb-xl-10">
+                                <!--begin::Card widget 12-->
+                                <div class="card overflow-hidden h-md-50 mb-5 mb-xl-10">
+                                    <!--begin::Card body-->
+                                    <div class="card-body d-flex justify-content-between flex-column px-0 pb-0">
+                                        <!--begin::Statistics-->
+                                        <div class="mb-4 px-9">
+                                            <!--begin::Info-->
+                                            <div class="d-flex align-items-center mb-2">
+
+
+                                                <!--begin::Value-->
+                                                <span class="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">47,769,700</span>
+                                                <!--end::Value-->
+
+                                                <!--begin::Label-->
+                                                <span class="d-flex align-items-end text-gray-500 fs-6 fw-semibold">
+                                                    Tons </span>
+
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Info-->
+
+                                            <!--begin::Description-->
+                                            <span class="fs-6 fw-semibold text-gray-500">Total Online
+                                                Sales</span>
+                                            <!--end::Description-->
+                                        </div>
+                                        <!--end::Statistics-->
+
+                                        <!--begin::Chart-->
+                                        <div id="kt_card_widget_12_chart" class="min-h-auto" style="height: 125px"></div>
+                                        <!--end::Chart-->
+                                    </div>
+                                    <!--end::Card body-->
+                                </div>
+                                <!--end::Card widget 12-->
+
+
+                                <!--begin::Card widget 10-->
+                                <div class="card card-flush h-md-50 mb-lg-10">
+                                    <!--begin::Header-->
+                                    <div class="card-header pt-5">
+                                        <!--begin::Title-->
+                                        <div class="card-title d-flex flex-column">
+                                            <!--begin::Amount-->
+                                            <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">69,700</span>
+                                            <!--end::Amount-->
+
+                                            <!--begin::Subtitle-->
+                                            <span class="text-gray-500 pt-1 fw-semibold fs-6">Expected
+                                                Earnings This Month</span>
+                                            <!--end::Subtitle-->
+                                        </div>
+                                        <!--end::Title-->
+                                    </div>
+                                    <!--end::Header-->
+
+                                    <!--begin::Card body-->
+                                    <div class="card-body d-flex align-items-end pt-0">
+                                        <!--begin::Wrapper-->
+                                        <div class="d-flex align-items-center flex-wrap">
+                                            <!--begin::Chart-->
+                                            <div class="d-flex me-7 me-xxl-10">
+                                                <div id="kt_card_widget_10_chart" class="min-h-auto"
+                                                    style="height: 78px; width: 78px" data-kt-size="78" data-kt-line="11">
+                                                </div>
+                                            </div>
+                                            <!--end::Chart-->
+
+                                            <!--begin::Labels-->
+                                            <div class="d-flex flex-column content-justify-center flex-grow-1">
+                                                <!--begin::Label-->
+                                                <div class="d-flex fs-6 fw-semibold align-items-center">
+                                                    <!--begin::Bullet-->
+                                                    <div class="bullet w-8px h-6px rounded-2 bg-success me-3">
+                                                    </div>
+                                                    <!--end::Bullet-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="fs-6 fw-semibold text-gray-500 flex-shrink-0">
+                                                        Used Truck freight</div>
+                                                    <!--end::Label-->
+
+                                                    <!--begin::Separator-->
+                                                    <div class="separator separator-dashed min-w-10px flex-grow-1 mx-2">
+                                                    </div>
+                                                    <!--end::Separator-->
+
+                                                    <!--begin::Stats-->
+                                                    <div class="ms-auto fw-bolder text-gray-700 text-end">
+                                                        45%</div>
+                                                    <!--end::Stats-->
+                                                </div>
+                                                <!--end::Label-->
+
+                                                <!--begin::Label-->
+                                                <div class="d-flex fs-6 fw-semibold align-items-center my-1">
+                                                    <!--begin::Bullet-->
+                                                    <div class="bullet w-8px h-6px rounded-2 bg-primary me-3">
+                                                    </div>
+                                                    <!--end::Bullet-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="fs-6 fw-semibold text-gray-500 flex-shrink-0">
+                                                        Used Ship freight</div>
+                                                    <!--end::Label-->
+
+                                                    <!--begin::Separator-->
+                                                    <div class="separator separator-dashed min-w-10px flex-grow-1 mx-2">
+                                                    </div>
+                                                    <!--end::Separator-->
+
+                                                    <!--begin::Stats-->
+                                                    <div class="ms-auto fw-bolder text-gray-700 text-end">
+                                                        21%</div>
+                                                    <!--end::Stats-->
+                                                </div>
+                                                <!--end::Label-->
+
+                                                <!--begin::Label-->
+                                                <div class="d-flex fs-6 fw-semibold align-items-center">
+                                                    <!--begin::Bullet-->
+                                                    <div class="bullet w-8px h-6px rounded-2 me-3"
+                                                        style="background-color: #E4E6EF"></div>
+                                                    <!--end::Bullet-->
+
+                                                    <!--begin::Label-->
+                                                    <div class="fs-6 fw-semibold text-gray-500 flex-shrink-0">
+                                                        Used Plane freight</div>
+                                                    <!--end::Label-->
+
+                                                    <!--begin::Separator-->
+                                                    <div class="separator separator-dashed min-w-10px flex-grow-1 mx-2">
+                                                    </div>
+                                                    <!--end::Separator-->
+
+                                                    <!--begin::Stats-->
+                                                    <div class="ms-auto fw-bolder text-gray-700 text-end">
+                                                        34%</div>
+                                                    <!--end::Stats-->
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Labels-->
+                                        </div>
+                                        <!--end::Wrapper-->
+                                    </div>
+                                    <!--end::Card body-->
+                                </div>
+                                <!--end::Card widget 10-->
+                            </div>
+                            <!--end::Col-->
+
+                            <!--begin::Col-->
+                            <div class="col-md-6 col-xl-6 mb-md-5 mb-xl-10">
+
+                                <!--begin::Card widget 13-->
+                                <div class="card overflow-hidden h-md-50 mb-5 mb-xl-10">
+                                    <!--begin::Card body-->
+                                    <div class="card-body d-flex justify-content-between flex-column px-0 pb-0">
+                                        <!--begin::Statistics-->
+                                        <div class="mb-4 px-9">
+                                            <!--begin::Statistics-->
+                                            <div class="d-flex align-items-center mb-2">
+
+
+                                                <!--begin::Value-->
+                                                <span class="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">259,786</span>
+                                                <!--end::Value-->
+
+                                                <!--begin::Label-->
+
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Statistics-->
+
+                                            <!--begin::Description-->
+                                            <span class="fs-6 fw-semibold text-gray-500">Total
+                                                Shipments</span>
+                                            <!--end::Description-->
+                                        </div>
+                                        <!--end::Statistics-->
+
+                                        <!--begin::Chart-->
+                                        <div id="kt_card_widget_13_chart" class="min-h-auto" style="height: 125px"></div>
+                                        <!--end::Chart-->
+                                    </div>
+                                    <!--end::Card body-->
+                                </div>
+                                <!--end::Card widget 13-->
+
+
+
+
+                                <!--begin::Card widget 7-->
+                                <div class="card card-flush h-md-50 mb-lg-10">
+                                    <!--begin::Header-->
+                                    <div class="card-header pt-5">
+                                        <!--begin::Title-->
+                                        <div class="card-title d-flex flex-column">
+                                            <!--begin::Amount-->
+                                            <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">604</span>
+                                            <!--end::Amount-->
+
+                                            <!--begin::Subtitle-->
+                                            <span class="text-gray-500 pt-1 fw-semibold fs-6">New
+                                                Customers This Month</span>
+                                            <!--end::Subtitle-->
+                                        </div>
+                                        <!--end::Title-->
+                                    </div>
+                                    <!--end::Header-->
+
+                                    <!--begin::Card body-->
+                                    <div class="card-body d-flex flex-column justify-content-end pe-0">
+                                        <!--begin::Title-->
+                                        <span class="fs-6 fw-bolder text-gray-800 d-block mb-2">Today’s
+                                            Heroes</span>
+                                        <!--end::Title-->
+
+                                        <!--begin::Users group-->
+                                        <div class="symbol-group symbol-hover flex-nowrap">
+                                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
+                                                title="Alan Warden">
+                                                <span class="symbol-label bg-warning text-inverse-warning fw-bold">A</span>
+                                            </div>
+                                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
+                                                title="Michael Eberon">
+                                                <img alt="Pic" src="../assets/media/avatars/300-11.jpg" />
+                                            </div>
+                                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
+                                                title="Susan Redwood">
+                                                <span class="symbol-label bg-primary text-inverse-primary fw-bold">S</span>
+                                            </div>
+                                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
+                                                title="Melody Macy">
+                                                <img alt="Pic" src="../assets/media/avatars/300-2.jpg" />
+                                            </div>
+                                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
+                                                title="Perry Matthew">
+                                                <span class="symbol-label bg-danger text-inverse-danger fw-bold">P</span>
+                                            </div>
+                                            <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
+                                                title="Barry Walter">
+                                                <img alt="Pic" src="../assets/media/avatars/300-12.jpg" />
+                                            </div>
+                                            <a href="#" class="symbol symbol-35px symbol-circle"
+                                                data-bs-toggle="modal" data-bs-target="#kt_modal_view_users">
+                                                <span class="symbol-label bg-light text-gray-400 fs-8 fw-bold">+42</span>
+                                            </a>
+                                        </div>
+                                        <!--end::Users group-->
+                                    </div>
+                                    <!--end::Card body-->
+                                </div>
+                                <!--end::Card widget 7-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Row-->
+
+                <!--begin::Row-->
+                <div class="row gy-5 g-xl-10">
+                    <!--begin::Col-->
+                    <div class="col-xl-4 mb-xl-10">
+
+                        <!--begin::List widget 10-->
+                        <div class="card card-flush h-lg-100">
+                            <!--begin::Header-->
+                            <div class="card-header pt-7">
+                                <!--begin::Title-->
+                                <h3 class="card-title align-items-start flex-column">
+                                    <span class="card-label fw-bold text-gray-800">Shipment
+                                        History</span>
+                                    <span class="text-gray-500 mt-1 fw-semibold fs-6">59 Active
+                                        Shipments</span>
+                                </h3>
+                                <!--end::Title-->
+
+                                <!--begin::Toolbar-->
+                                <div class="card-toolbar">
+                                    <a href="#" class="btn btn-sm btn-light" data-bs-toggle='tooltip'
+                                        data-bs-dismiss='click' data-bs-custom-class="tooltip-inverse"
+                                        title="Logistics App is coming soon">View All</a>
+                                </div>
+                                <!--end::Toolbar-->
+                            </div>
+                            <!--end::Header-->
+
+                            <!--begin::Body-->
+                            <div class="card-body">
+                                <!--begin::Nav-->
+                                <ul class="nav nav-pills nav-pills-custom row position-relative mx-0 mb-9">
+                                    <!--begin::Item-->
+                                    <li class="nav-item col-4 mx-0 p-0">
+                                        <!--begin::Link-->
+                                        <a class="nav-link active d-flex justify-content-center w-100 border-0 h-100"
+                                            data-bs-toggle="pill" href="#kt_list_widget_10_tab_1">
+                                            <!--begin::Subtitle-->
+                                            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">
+                                                Notable
+                                            </span>
+                                            <!--end::Subtitle-->
+
+                                            <!--begin::Bullet-->
+                                            <span
+                                                class="bullet-custom position-absolute z-index-2 bottom-0 w-100 h-4px bg-primary rounded"></span>
+                                            <!--end::Bullet-->
+                                        </a>
+                                        <!--end::Link-->
+                                    </li>
+                                    <!--end::Item-->
+
+                                    <!--begin::Item-->
+                                    <li class="nav-item col-4 mx-0 px-0">
+                                        <!--begin::Link-->
+                                        <a class="nav-link d-flex justify-content-center w-100 border-0 h-100"
+                                            data-bs-toggle="pill" href="#kt_list_widget_10_tab_2">
+                                            <!--begin::Subtitle-->
+                                            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">
+                                                Delivered
+                                            </span>
+                                            <!--end::Subtitle-->
+
+                                            <!--begin::Bullet-->
+                                            <span
+                                                class="bullet-custom position-absolute z-index-2 bottom-0 w-100 h-4px bg-primary rounded"></span>
+                                            <!--end::Bullet-->
+                                        </a>
+                                        <!--end::Link-->
+                                    </li>
+                                    <!--end::Item-->
+
+                                    <!--begin::Item-->
+                                    <li class="nav-item col-4 mx-0 px-0">
+                                        <!--begin::Link-->
+                                        <a class="nav-link d-flex justify-content-center w-100 border-0 h-100"
+                                            data-bs-toggle="pill" href="#kt_list_widget_10_tab_3">
+                                            <!--begin::Subtitle-->
+                                            <span class="nav-text text-gray-800 fw-bold fs-6 mb-3">
+                                                Shipping
+                                            </span>
+                                            <!--end::Subtitle-->
+
+                                            <!--begin::Bullet-->
+                                            <span
+                                                class="bullet-custom position-absolute z-index-2 bottom-0 w-100 h-4px bg-primary rounded"></span>
+                                            <!--end::Bullet-->
+                                        </a>
+                                        <!--end::Link-->
+                                    </li>
+                                    <!--end::Item-->
+
+                                    <!--begin::Bullet-->
+                                    <span class="position-absolute z-index-1 bottom-0 w-100 h-4px bg-light rounded"></span>
+                                    <!--end::Bullet-->
+                                </ul>
+                                <!--end::Nav-->
+
+                                <!--begin::Tab Content-->
+                                <div class="tab-content">
+
+                                    <!--begin::Tap pane-->
+                                    <div class="tab-pane fade show active" id="kt_list_widget_10_tab_1">
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-ship text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Ship
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#5635-342808</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-success fw-bold my-2 fs-8">Delivered</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Messina
+                                                            Harbor</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Sicily,
+                                                            Italy</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Hektor
+                                                            Container Hotel</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Tallin,
+                                                            EST</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+                                        <!--begin::Separator-->
+                                        <div class="separator separator-dashed my-6"></div>
+                                        <!--end::Separator-->
+
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-truck text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span><span class="path4"></span><span
+                                                                class="path5"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Truck
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#0066-954784</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-primary fw-bold my-2 fs-8">Shipping</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Haven
+                                                            van Rotterdam</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Rotterdam,
+                                                            Netherlands</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span
+                                                            class="fs-6 text-gray-500 fw-semibold d-block">Forest-Midi</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Brussels,
+                                                            Belgium</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+                                        <!--begin::Separator-->
+                                        <div class="separator separator-dashed my-6"></div>
+                                        <!--end::Separator-->
+
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-delivery text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span><span class="path4"></span><span
+                                                                class="path5"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Delivery
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#5635-342808</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-success fw-bold my-2 fs-8">Delivered</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Mina
+                                                            St - Zayed Port</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Abu
+                                                            Dhabi, UAE</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">27
+                                                            Drydock Boston</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Boston,
+                                                            USA</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+                                        <!--begin::Separator-->
+                                        <div class="separator separator-dashed my-6"></div>
+                                        <!--end::Separator-->
+
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-airplane-square text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Plane
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#5635-342808</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-danger fw-bold my-2 fs-8">Delayed</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">KLM
+                                                            Cargo</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Schipol
+                                                            Airport, Amsterdam</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Singapore
+                                                            Cargo</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Changi
+                                                            Airport, Singapore</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+
+                                    </div>
+                                    <!--end::Tap pane-->
+
+                                    <!--begin::Tap pane-->
+                                    <div class="tab-pane fade " id="kt_list_widget_10_tab_2">
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-airplane-square text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Plane
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#5635-342808</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-success fw-bold my-2 fs-8">Delivered</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">KLM
+                                                            Cargo</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Schipol
+                                                            Airport, Amsterdam</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Singapore
+                                                            Cargo</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Changi
+                                                            Airport, Singapore</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+                                        <!--begin::Separator-->
+                                        <div class="separator separator-dashed my-6"></div>
+                                        <!--end::Separator-->
+
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-truck text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span><span class="path4"></span><span
+                                                                class="path5"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Truck
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#0066-954784</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-success fw-bold my-2 fs-8">Delivered</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Haven
+                                                            van Rotterdam</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Rotterdam,
+                                                            Netherlands</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span
+                                                            class="fs-6 text-gray-500 fw-semibold d-block">Forest-Midi</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Brussels,
+                                                            Belgium</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+                                        <!--begin::Separator-->
+                                        <div class="separator separator-dashed my-6"></div>
+                                        <!--end::Separator-->
+
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-ship text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Ship
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#5635-342808</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-success fw-bold my-2 fs-8">Delivered</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Mina
+                                                            St - Zayed Port</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Abu
+                                                            Dhabi, UAE</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">27
+                                                            Drydock Boston</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Boston,
+                                                            USA</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+                                        <!--begin::Separator-->
+                                        <div class="separator separator-dashed my-6"></div>
+                                        <!--end::Separator-->
+
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-ship text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Ship
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#5635-342808</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-success fw-bold my-2 fs-8">Delivered</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Messina
+                                                            Harbor</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Sicily,
+                                                            Italy</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Hektor
+                                                            Container Hotel</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Tallin,
+                                                            EST</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+
+                                    </div>
+                                    <!--end::Tap pane-->
+
+                                    <!--begin::Tap pane-->
+                                    <div class="tab-pane fade " id="kt_list_widget_10_tab_3">
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-ship text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Ship
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#5635-342808</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-primary fw-bold my-2 fs-8">Shipping</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Mina
+                                                            St - Zayed Port</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Abu
+                                                            Dhabi, UAE</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">27
+                                                            Drydock Boston</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Boston,
+                                                            USA</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+                                        <!--begin::Separator-->
+                                        <div class="separator separator-dashed my-6"></div>
+                                        <!--end::Separator-->
+
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-airplane-square text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Plane
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#5635-342808</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-primary fw-bold my-2 fs-8">Shipping</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">KLM
+                                                            Cargo</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Schipol
+                                                            Airport, Amsterdam</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Singapore
+                                                            Cargo</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Changi
+                                                            Airport, Singapore</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+                                        <!--begin::Separator-->
+                                        <div class="separator separator-dashed my-6"></div>
+                                        <!--end::Separator-->
+
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-ship text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Ship
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#5635-342808</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-primary fw-bold my-2 fs-8">Shipping</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Messina
+                                                            Harbor</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Sicily,
+                                                            Italy</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Hektor
+                                                            Container Hotel</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Tallin,
+                                                            EST</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+                                        <!--begin::Separator-->
+                                        <div class="separator separator-dashed my-6"></div>
+                                        <!--end::Separator-->
+
+
+                                        <!--begin::Item-->
+                                        <div class="m-0">
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex align-items-sm-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-45px me-4">
+                                                    <span class="symbol-label bg-primary">
+                                                        <i class="ki-duotone ki-truck text-inverse-primary fs-1"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span><span class="path4"></span><span
+                                                                class="path5"></span></i>
+                                                    </span>
+                                                </div>
+                                                <!--end::Symbol-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                                                    <div class="flex-grow-1 me-2">
+                                                        <a href="#" class="text-gray-500 fs-6 fw-semibold">Truck
+                                                            Freight</a>
+
+                                                        <span
+                                                            class="text-gray-800 fw-bold d-block fs-4">#0066-954784</span>
+                                                    </div>
+
+                                                    <span
+                                                        class="badge badge-lg badge-light-primary fw-bold my-2 fs-8">Shipping</span>
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Wrapper-->
+
+                                            <!--begin::Timeline-->
+                                            <div class="timeline">
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center mb-7">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line mt-1 mb-n6 mb-sm-n7">
+                                                    </div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-cd fs-2 text-danger"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 text-gray-500 fw-semibold d-block">Haven
+                                                            van Rotterdam</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Rotterdam,
+                                                            Netherlands</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+
+                                                <!--begin::Timeline item-->
+                                                <div class="timeline-item align-items-center">
+                                                    <!--begin::Timeline line-->
+                                                    <div class="timeline-line"></div>
+                                                    <!--end::Timeline line-->
+
+                                                    <!--begin::Timeline icon-->
+                                                    <div class="timeline-icon">
+                                                        <i class="ki-duotone ki-geolocation fs-2 text-info"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Timeline icon-->
+
+                                                    <!--begin::Timeline content-->
+                                                    <div class="timeline-content m-0">
+                                                        <!--begin::Title-->
+                                                        <span
+                                                            class="fs-6 text-gray-500 fw-semibold d-block">Forest-Midi</span>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Title-->
+                                                        <span class="fs-6 fw-bold text-gray-800">Brussels,
+                                                            Belgium</span>
+                                                        <!--end::Title-->
+                                                    </div>
+                                                    <!--end::Timeline content-->
+                                                </div>
+                                                <!--end::Timeline item-->
+                                            </div>
+                                            <!--end::Timeline-->
+                                        </div>
+                                        <!--end::Item-->
+
+
+                                    </div>
+                                    <!--end::Tap pane-->
+
+                                </div>
+                                <!--end::Tab Content-->
+                            </div>
+                            <!--end: Card Body-->
+                        </div>
+                        <!--end::List widget 10-->
+                    </div>
+                    <!--end::Col-->
+
+                    <!--begin::Col-->
+                    <div class="col-xl-8 mb-5 mb-xl-10">
+                        <!--begin::Row-->
+                        <div class="row g-5 g-xl-10 h-xxl-50 mb-0 mb-xl-10">
+                            <!--begin::Col-->
+                            <div class="col-xxl-6">
+                                <!--begin::Chart widget 6-->
+                                <div class="card card-flush h-lg-100">
+                                    <!--begin::Header-->
+                                    <div class="card-header py-7 mb-3">
+                                        <!--begin::Title-->
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold text-gray-800">Top Selling
+                                                Categories</span>
+                                            <span class="text-gray-500 mt-1 fw-semibold fs-6">8k social
+                                                visitors</span>
+                                        </h3>
+                                        <!--end::Title-->
+
+                                        <!--begin::Toolbar-->
+                                        <div class="card-toolbar">
+                                            <a href="../apps/ecommerce/sales/listing.html"
+                                                class="btn btn-sm btn-light">View All</a>
+                                        </div>
+                                        <!--end::Toolbar-->
+                                    </div>
+                                    <!--end::Header-->
+
+                                    <!--begin::Body-->
+                                    <div class="card-body py-0 ps-6 mt-n12">
+                                        <div id="kt_charts_widget_6"></div>
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Chart widget 6-->
+
+
+                            </div>
+                            <!--end::Col-->
+
+                            <!--begin::Col-->
+                            <div class="col-xxl-6 mb-5 mb-xl-0">
+
+                                <!--begin::List widget 8-->
+                                <div class="card card-flush h-lg-100">
+                                    <!--begin::Header-->
+                                    <div class="card-header pt-7 mb-5">
+                                        <!--begin::Title-->
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold text-gray-800">Visits by
+                                                Country</span>
+                                            <span class="text-gray-500 mt-1 fw-semibold fs-6">20
+                                                countries share 97% visits</span>
+                                        </h3>
+                                        <!--end::Title-->
+
+                                        <!--begin::Toolbar-->
+                                        <div class="card-toolbar">
+                                            <a href="../apps/ecommerce/sales/listing.html"
+                                                class="btn btn-sm btn-light">View All</a>
+                                        </div>
+                                        <!--end::Toolbar-->
+                                    </div>
+                                    <!--end::Header-->
+
+                                    <!--begin::Body-->
+                                    <div class="card-body pt-0">
+                                        <!--begin::Items-->
+                                        <div class="m-0">
+
+                                            <!--begin::Item-->
+                                            <div class="d-flex flex-stack">
+                                                <!--begin::Flag-->
+                                                <img src="../assets/media/flags/united-states.svg" class="me-4 w-25px"
+                                                    style="border-radius: 4px" alt="" />
+                                                <!--end::Flag-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex flex-stack flex-row-fluid d-grid gap-2">
+                                                    <!--begin::Content-->
+                                                    <div class="me-5">
+                                                        <!--begin::Title-->
+                                                        <a href="#"
+                                                            class="text-gray-800 fw-bold text-hover-primary fs-6">United
+                                                            States</a>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Desc-->
+                                                        <span
+                                                            class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">Direct
+                                                            link clicks</span>
+                                                        <!--end::Desc-->
+                                                    </div>
+                                                    <!--end::Content-->
+
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex align-items-center">
+                                                        <!--begin::Number-->
+                                                        <span class="text-gray-800 fw-bold fs-6 me-3 d-block">9,763</span>
+                                                        <!--end::Number-->
+
+                                                        <!--begin::Label-->
+                                                        <div class="m-0">
+                                                            <!--begin::Label-->
+                                                            <span class="badge badge-light-success fs-base">
+                                                                <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span></i>
+                                                                2.6%
+                                                            </span>
+                                                            <!--end::Label-->
+
+                                                        </div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Item-->
+
+                                            <!--begin::Separator-->
+                                            <div class="separator separator-dashed my-3"></div>
+                                            <!--end::Separator-->
+
+
+                                            <!--begin::Item-->
+                                            <div class="d-flex flex-stack">
+                                                <!--begin::Flag-->
+                                                <img src="../assets/media/flags/brazil.svg" class="me-4 w-25px"
+                                                    style="border-radius: 4px" alt="" />
+                                                <!--end::Flag-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex flex-stack flex-row-fluid d-grid gap-2">
+                                                    <!--begin::Content-->
+                                                    <div class="me-5">
+                                                        <!--begin::Title-->
+                                                        <a href="#"
+                                                            class="text-gray-800 fw-bold text-hover-primary fs-6">Brasil</a>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Desc-->
+                                                        <span
+                                                            class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">All
+                                                            Social Channels </span>
+                                                        <!--end::Desc-->
+                                                    </div>
+                                                    <!--end::Content-->
+
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex align-items-center">
+                                                        <!--begin::Number-->
+                                                        <span class="text-gray-800 fw-bold fs-6 me-3 d-block">4,062</span>
+                                                        <!--end::Number-->
+
+                                                        <!--begin::Label-->
+                                                        <div class="m-0">
+                                                            <!--begin::Label-->
+                                                            <span class="badge badge-light-danger fs-base">
+                                                                <i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span></i>
+                                                                0.4%
+                                                            </span>
+                                                            <!--end::Label-->
+
+                                                        </div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Item-->
+
+                                            <!--begin::Separator-->
+                                            <div class="separator separator-dashed my-3"></div>
+                                            <!--end::Separator-->
+
+
+                                            <!--begin::Item-->
+                                            <div class="d-flex flex-stack">
+                                                <!--begin::Flag-->
+                                                <img src="../assets/media/flags/turkey.svg" class="me-4 w-25px"
+                                                    style="border-radius: 4px" alt="" />
+                                                <!--end::Flag-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex flex-stack flex-row-fluid d-grid gap-2">
+                                                    <!--begin::Content-->
+                                                    <div class="me-5">
+                                                        <!--begin::Title-->
+                                                        <a href="#"
+                                                            class="text-gray-800 fw-bold text-hover-primary fs-6">Turkey</a>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Desc-->
+                                                        <span
+                                                            class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">Mailchimp
+                                                            Campaigns</span>
+                                                        <!--end::Desc-->
+                                                    </div>
+                                                    <!--end::Content-->
+
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex align-items-center">
+                                                        <!--begin::Number-->
+                                                        <span class="text-gray-800 fw-bold fs-6 me-3 d-block">1,680</span>
+                                                        <!--end::Number-->
+
+                                                        <!--begin::Label-->
+                                                        <div class="m-0">
+                                                            <!--begin::Label-->
+                                                            <span class="badge badge-light-success fs-base">
+                                                                <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span></i>
+                                                                0.2%
+                                                            </span>
+                                                            <!--end::Label-->
+
+                                                        </div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Item-->
+
+                                            <!--begin::Separator-->
+                                            <div class="separator separator-dashed my-3"></div>
+                                            <!--end::Separator-->
+
+
+                                            <!--begin::Item-->
+                                            <div class="d-flex flex-stack">
+                                                <!--begin::Flag-->
+                                                <img src="../assets/media/flags/france.svg" class="me-4 w-25px"
+                                                    style="border-radius: 4px" alt="" />
+                                                <!--end::Flag-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex flex-stack flex-row-fluid d-grid gap-2">
+                                                    <!--begin::Content-->
+                                                    <div class="me-5">
+                                                        <!--begin::Title-->
+                                                        <a href="#"
+                                                            class="text-gray-800 fw-bold text-hover-primary fs-6">France</a>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Desc-->
+                                                        <span
+                                                            class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">Impact
+                                                            Radius visits</span>
+                                                        <!--end::Desc-->
+                                                    </div>
+                                                    <!--end::Content-->
+
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex align-items-center">
+                                                        <!--begin::Number-->
+                                                        <span class="text-gray-800 fw-bold fs-6 me-3 d-block">849</span>
+                                                        <!--end::Number-->
+
+                                                        <!--begin::Label-->
+                                                        <div class="m-0">
+                                                            <!--begin::Label-->
+                                                            <span class="badge badge-light-success fs-base">
+                                                                <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span></i>
+                                                                4.1%
+                                                            </span>
+                                                            <!--end::Label-->
+
+                                                        </div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Item-->
+
+                                            <!--begin::Separator-->
+                                            <div class="separator separator-dashed my-3"></div>
+                                            <!--end::Separator-->
+
+
+                                            <!--begin::Item-->
+                                            <div class="d-flex flex-stack">
+                                                <!--begin::Flag-->
+                                                <img src="../assets/media/flags/india.svg" class="me-4 w-25px"
+                                                    style="border-radius: 4px" alt="" />
+                                                <!--end::Flag-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex flex-stack flex-row-fluid d-grid gap-2">
+                                                    <!--begin::Content-->
+                                                    <div class="me-5">
+                                                        <!--begin::Title-->
+                                                        <a href="#"
+                                                            class="text-gray-800 fw-bold text-hover-primary fs-6">India</a>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Desc-->
+                                                        <span
+                                                            class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">Many
+                                                            Sources</span>
+                                                        <!--end::Desc-->
+                                                    </div>
+                                                    <!--end::Content-->
+
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex align-items-center">
+                                                        <!--begin::Number-->
+                                                        <span class="text-gray-800 fw-bold fs-6 me-3 d-block">604</span>
+                                                        <!--end::Number-->
+
+                                                        <!--begin::Label-->
+                                                        <div class="m-0">
+                                                            <!--begin::Label-->
+                                                            <span class="badge badge-light-danger fs-base">
+                                                                <i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span></i>
+                                                                8.3%
+                                                            </span>
+                                                            <!--end::Label-->
+
+                                                        </div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Item-->
+
+                                            <!--begin::Separator-->
+                                            <div class="separator separator-dashed my-3"></div>
+                                            <!--end::Separator-->
+
+
+                                            <!--begin::Item-->
+                                            <div class="d-flex flex-stack">
+                                                <!--begin::Flag-->
+                                                <img src="../assets/media/flags/sweden.svg" class="me-4 w-25px"
+                                                    style="border-radius: 4px" alt="" />
+                                                <!--end::Flag-->
+
+                                                <!--begin::Section-->
+                                                <div class="d-flex flex-stack flex-row-fluid d-grid gap-2">
+                                                    <!--begin::Content-->
+                                                    <div class="me-5">
+                                                        <!--begin::Title-->
+                                                        <a href="#"
+                                                            class="text-gray-800 fw-bold text-hover-primary fs-6">Sweden</a>
+                                                        <!--end::Title-->
+
+                                                        <!--begin::Desc-->
+                                                        <span
+                                                            class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">Social
+                                                            Network</span>
+                                                        <!--end::Desc-->
+                                                    </div>
+                                                    <!--end::Content-->
+
+                                                    <!--begin::Info-->
+                                                    <div class="d-flex align-items-center">
+                                                        <!--begin::Number-->
+                                                        <span class="text-gray-800 fw-bold fs-6 me-3 d-block">237</span>
+                                                        <!--end::Number-->
+
+                                                        <!--begin::Label-->
+                                                        <div class="m-0">
+                                                            <!--begin::Label-->
+                                                            <span class="badge badge-light-success fs-base">
+                                                                <i class="ki-duotone ki-arrow-up fs-5 text-success ms-n1"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span></i>
+                                                                1.9%
+                                                            </span>
+                                                            <!--end::Label-->
+
+                                                        </div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Info-->
+                                                </div>
+                                                <!--end::Section-->
+                                            </div>
+                                            <!--end::Item-->
+
+
+                                        </div>
+                                        <!--end::Items-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::LIst widget 8-->
+
+
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+
+                        <!--begin::Row-->
+                        <div class="row h-xxl-50">
+                            <!--begin::Col-->
+                            <div class="col">
+
+
+                                <!--begin::Chart widget 10-->
+                                <div class="card card-flush h-xxl-100">
+                                    <!--begin::Header-->
+                                    <div class="card-header pt-7">
+                                        <!--begin::Title-->
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold text-gray-800">Freight
+                                                Tonnage</span>
+                                            <span class="text-gray-500 mt-1 fw-semibold fs-6">3,567,457
+                                                tons</span>
+                                        </h3>
+                                        <!--end::Title-->
+
+                                        <!--begin::Toolbar-->
+                                        <div class="card-toolbar">
+                                            <!--begin::Daterangepicker(defined in src/js/layout/app.js)-->
+                                            <div data-kt-daterangepicker="true" data-kt-daterangepicker-opens="left"
+                                                class="btn btn-sm btn-light d-flex align-items-center px-4">
+                                                <!--begin::Display range-->
+                                                <div class="text-gray-600 fw-bold">
+                                                    Loading date range...
+                                                </div>
+                                                <!--end::Display range-->
+
+                                                <i class="ki-duotone ki-calendar-8 text-gray-500 lh-0 fs-2 ms-2 me-0"><span
+                                                        class="path1"></span><span class="path2"></span><span
+                                                        class="path3"></span><span class="path4"></span><span
+                                                        class="path5"></span><span class="path6"></span></i>
+                                            </div>
+                                            <!--end::Daterangepicker-->
+                                        </div>
+                                        <!--end::Toolbar-->
+                                    </div>
+                                    <!--end::Header-->
+
+                                    <!--begin::Body-->
+                                    <div class="card-body d-flex flex-column justify-content-between pb-5 px-0">
+                                        <!--begin::Nav-->
+                                        <ul class="nav nav-pills nav-pills-custom mb-3 mx-9">
+                                            <!--begin::Item-->
+                                            <li class="nav-item mb-3 me-3 me-lg-6">
+                                                <!--begin::Link-->
+                                                <a class="nav-link btn btn-outline btn-flex btn-active-color-primary flex-column overflow-hidden w-80px h-85px pt-5 pb-2 active"
+                                                    data-bs-toggle="pill" id="kt_charts_widget_10_tab_1"
+                                                    href="#kt_charts_widget_10_tab_content_1">
+                                                    <!--begin::Icon-->
+                                                    <div class="nav-icon mb-3">
+                                                        <i class="ki-duotone ki-ship fs-1 p-0"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span></i>
+                                                    </div>
+                                                    <!--end::Icon-->
+
+                                                    <!--begin::Title-->
+                                                    <span class="nav-text text-gray-800 fw-bold fs-6 lh-1">
+                                                        Ship </span>
+                                                    <!--end::Title-->
+
+                                                    <!--begin::Bullet-->
+                                                    <span
+                                                        class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+                                                    <!--end::Bullet-->
+                                                </a>
+                                                <!--end::Link-->
+                                            </li>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <li class="nav-item mb-3 me-3 me-lg-6">
+                                                <!--begin::Link-->
+                                                <a class="nav-link btn btn-outline btn-flex btn-active-color-primary flex-column overflow-hidden w-80px h-85px pt-5 pb-2
+                        "
+                                                    data-bs-toggle="pill" id="kt_charts_widget_10_tab_2"
+                                                    href="#kt_charts_widget_10_tab_content_2">
+                                                    <!--begin::Icon-->
+                                                    <div class="nav-icon mb-3">
+                                                        <i class="ki-duotone ki-truck fs-1 p-0"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span><span class="path4"></span><span
+                                                                class="path5"></span></i>
+                                                    </div>
+                                                    <!--end::Icon-->
+
+                                                    <!--begin::Title-->
+                                                    <span class="nav-text text-gray-800 fw-bold fs-6 lh-1">
+                                                        Truck </span>
+                                                    <!--end::Title-->
+
+                                                    <!--begin::Bullet-->
+                                                    <span
+                                                        class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+                                                    <!--end::Bullet-->
+                                                </a>
+                                                <!--end::Link-->
+                                            </li>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <li class="nav-item mb-3 me-3 me-lg-6">
+                                                <!--begin::Link-->
+                                                <a class="nav-link btn btn-outline btn-flex btn-active-color-primary flex-column overflow-hidden w-80px h-85px pt-5 pb-2
+                        "
+                                                    data-bs-toggle="pill" id="kt_charts_widget_10_tab_3"
+                                                    href="#kt_charts_widget_10_tab_content_3">
+                                                    <!--begin::Icon-->
+                                                    <div class="nav-icon mb-3">
+                                                        <i class="ki-duotone ki-airplane-square fs-1 p-0"><span
+                                                                class="path1"></span><span class="path2"></span></i>
+                                                    </div>
+                                                    <!--end::Icon-->
+
+                                                    <!--begin::Title-->
+                                                    <span class="nav-text text-gray-800 fw-bold fs-6 lh-1">
+                                                        Plane </span>
+                                                    <!--end::Title-->
+
+                                                    <!--begin::Bullet-->
+                                                    <span
+                                                        class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+                                                    <!--end::Bullet-->
+                                                </a>
+                                                <!--end::Link-->
+                                            </li>
+                                            <!--end::Item-->
+                                            <!--begin::Item-->
+                                            <li class="nav-item mb-3 me-3 me-lg-6">
+                                                <!--begin::Link-->
+                                                <a class="nav-link btn btn-outline btn-flex btn-active-color-primary flex-column overflow-hidden w-80px h-85px pt-5 pb-2
+                        "
+                                                    data-bs-toggle="pill" id="kt_charts_widget_10_tab_4"
+                                                    href="#kt_charts_widget_10_tab_content_4">
+                                                    <!--begin::Icon-->
+                                                    <div class="nav-icon mb-3">
+                                                        <i class="ki-duotone ki-bus fs-1 p-0"><span
+                                                                class="path1"></span><span class="path2"></span><span
+                                                                class="path3"></span><span class="path4"></span><span
+                                                                class="path5"></span></i>
+                                                    </div>
+                                                    <!--end::Icon-->
+
+                                                    <!--begin::Title-->
+                                                    <span class="nav-text text-gray-800 fw-bold fs-6 lh-1">
+                                                        Train </span>
+                                                    <!--end::Title-->
+
+                                                    <!--begin::Bullet-->
+                                                    <span
+                                                        class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+                                                    <!--end::Bullet-->
+                                                </a>
+                                                <!--end::Link-->
+                                            </li>
+                                            <!--end::Item-->
+
+                                        </ul>
+                                        <!--end::Nav-->
+
+                                        <!--begin::Tab Content-->
+                                        <div class="tab-content ps-4 pe-6">
+                                            <!--begin::Tap pane-->
+                                            <div class="tab-pane fade active show" id="kt_charts_widget_10_tab_content_1">
+                                                <!--begin::Chart-->
+                                                <div id="kt_charts_widget_10_chart_1" class="min-h-auto"
+                                                    style="height: 270px"></div>
+                                                <!--end::Chart-->
+                                            </div>
+                                            <!--end::Tap pane-->
+                                            <!--begin::Tap pane-->
+                                            <div class="tab-pane fade " id="kt_charts_widget_10_tab_content_2">
+                                                <!--begin::Chart-->
+                                                <div id="kt_charts_widget_10_chart_2" class="min-h-auto"
+                                                    style="height: 270px"></div>
+                                                <!--end::Chart-->
+                                            </div>
+                                            <!--end::Tap pane-->
+                                            <!--begin::Tap pane-->
+                                            <div class="tab-pane fade " id="kt_charts_widget_10_tab_content_3">
+                                                <!--begin::Chart-->
+                                                <div id="kt_charts_widget_10_chart_3" class="min-h-auto"
+                                                    style="height: 270px"></div>
+                                                <!--end::Chart-->
+                                            </div>
+                                            <!--end::Tap pane-->
+                                            <!--begin::Tap pane-->
+                                            <div class="tab-pane fade " id="kt_charts_widget_10_tab_content_4">
+                                                <!--begin::Chart-->
+                                                <div id="kt_charts_widget_10_chart_4" class="min-h-auto"
+                                                    style="height: 270px"></div>
+                                                <!--end::Chart-->
+                                            </div>
+                                            <!--end::Tap pane-->
+
+                                        </div>
+                                        <!--end::Tab Content-->
+                                    </div>
+                                    <!--end: Card Body-->
+                                </div>
+                                <!--end::Chart widget 10-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Row-->
+
+                <!--begin::Row-->
+                <div class="row gy-5 g-xl-10">
+                    <!--begin::Col-->
+                    <div class="col-xl-4">
+
+                        <!--begin::List widget 11-->
+                        <div class="card card-flush h-xl-100">
+                            <!--begin::Header-->
+                            <div class="card-header pt-7 mb-3">
+                                <!--begin::Title-->
+                                <h3 class="card-title align-items-start flex-column">
+                                    <span class="card-label fw-bold text-gray-800">Our Fleet
+                                        Tonnage</span>
+                                    <span class="text-gray-500 mt-1 fw-semibold fs-6">Total 1,247
+                                        vehicles</span>
+                                </h3>
+                                <!--end::Title-->
+
+                                <!--begin::Toolbar-->
+                                <div class="card-toolbar">
+                                    <a href="#" class="btn btn-sm btn-light" data-bs-toggle='tooltip'
+                                        data-bs-dismiss='click' data-bs-custom-class="tooltip-inverse"
+                                        title="Logistics App is coming soon">Review Fleet</a>
+                                </div>
+                                <!--end::Toolbar-->
+                            </div>
+                            <!--end::Header-->
+
+                            <!--begin::Body-->
+                            <div class="card-body pt-4">
+                                <!--begin::Item-->
+                                <div class="d-flex flex-stack">
+                                    <!--begin::Section-->
+                                    <div class="d-flex align-items-center me-5">
+                                        <!--begin::Symbol-->
+                                        <div class="symbol symbol-40px me-4">
+                                            <span class="symbol-label">
+                                                <i class="ki-duotone ki-ship text-gray-600 fs-1"><span
+                                                        class="path1"></span><span class="path2"></span><span
+                                                        class="path3"></span></i>
+                                            </span>
+                                        </div>
+                                        <!--end::Symbol-->
+
+                                        <!--begin::Content-->
+                                        <div class="me-5">
+                                            <!--begin::Title-->
+                                            <a href="#"
+                                                class="text-gray-800 fw-bold text-hover-primary fs-6">Ships</a>
+                                            <!--end::Title-->
+
+                                            <!--begin::Desc-->
+                                            <span class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">234
+                                                Ships</span>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Section-->
+
+                                    <!--begin::Wrapper-->
+                                    <div class="text-gray-500 fw-bold fs-7 text-end">
+                                        <!--begin::Number-->
+                                        <span class="text-gray-800 fw-bold fs-6 d-block">2,345,500</span>
+                                        <!--end::Number-->
+
+                                        Tons
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Item-->
+
+                                <!--begin::Separator-->
+                                <div class="separator separator-dashed my-5"></div>
+                                <!--end::Separator-->
+
+                                <!--begin::Item-->
+                                <div class="d-flex flex-stack">
+                                    <!--begin::Section-->
+                                    <div class="d-flex align-items-center me-5">
+                                        <!--begin::Symbol-->
+                                        <div class="symbol symbol-40px me-4">
+                                            <span class="symbol-label">
+                                                <i class="ki-duotone ki-truck text-gray-600 fs-1"><span
+                                                        class="path1"></span><span class="path2"></span><span
+                                                        class="path3"></span><span class="path4"></span><span
+                                                        class="path5"></span></i>
+                                            </span>
+                                        </div>
+                                        <!--end::Symbol-->
+
+                                        <!--begin::Content-->
+                                        <div class="me-5">
+                                            <!--begin::Title-->
+                                            <a href="#"
+                                                class="text-gray-800 fw-bold text-hover-primary fs-6">Trucks</a>
+                                            <!--end::Title-->
+
+                                            <!--begin::Desc-->
+                                            <span class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">1,460
+                                                Trucks</span>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Section-->
+
+                                    <!--begin::Wrapper-->
+                                    <div class="text-gray-500 fw-bold fs-7 text-end">
+                                        <!--begin::Number-->
+                                        <span class="text-gray-800 fw-bold fs-6 d-block">457,200</span>
+                                        <!--end::Number-->
+
+                                        Tons
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Item-->
+
+                                <!--begin::Separator-->
+                                <div class="separator separator-dashed my-5"></div>
+                                <!--end::Separator-->
+
+                                <!--begin::Item-->
+                                <div class="d-flex flex-stack">
+                                    <!--begin::Section-->
+                                    <div class="d-flex align-items-center me-5">
+                                        <!--begin::Symbol-->
+                                        <div class="symbol symbol-40px me-4">
+                                            <span class="symbol-label">
+                                                <i class="ki-duotone ki-airplane-square text-gray-600 fs-1"><span
+                                                        class="path1"></span><span class="path2"></span></i>
+                                            </span>
+                                        </div>
+                                        <!--end::Symbol-->
+
+                                        <!--begin::Content-->
+                                        <div class="me-5">
+                                            <!--begin::Title-->
+                                            <a href="#"
+                                                class="text-gray-800 fw-bold text-hover-primary fs-6">Planes</a>
+                                            <!--end::Title-->
+
+                                            <!--begin::Desc-->
+                                            <span class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">8
+                                                Aircrafts</span>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Section-->
+
+                                    <!--begin::Wrapper-->
+                                    <div class="text-gray-500 fw-bold fs-7 text-end">
+                                        <!--begin::Number-->
+                                        <span class="text-gray-800 fw-bold fs-6 d-block">1,240</span>
+                                        <!--end::Number-->
+
+                                        Tons
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Item-->
+
+                                <!--begin::Separator-->
+                                <div class="separator separator-dashed my-5"></div>
+                                <!--end::Separator-->
+
+                                <!--begin::Item-->
+                                <div class="d-flex flex-stack">
+                                    <!--begin::Section-->
+                                    <div class="d-flex align-items-center me-5">
+                                        <!--begin::Symbol-->
+                                        <div class="symbol symbol-40px me-4">
+                                            <span class="symbol-label">
+                                                <i class="ki-duotone ki-bus text-gray-600 fs-1"><span
+                                                        class="path1"></span><span class="path2"></span><span
+                                                        class="path3"></span><span class="path4"></span><span
+                                                        class="path5"></span></i>
+                                            </span>
+                                        </div>
+                                        <!--end::Symbol-->
+
+                                        <!--begin::Content-->
+                                        <div class="me-5">
+                                            <!--begin::Title-->
+                                            <a href="#"
+                                                class="text-gray-800 fw-bold text-hover-primary fs-6">Trains</a>
+                                            <!--end::Title-->
+
+                                            <!--begin::Desc-->
+                                            <span class="text-gray-500 fw-semibold fs-7 d-block text-start ps-0">36
+                                                Trains</span>
+                                            <!--end::Desc-->
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Section-->
+
+                                    <!--begin::Wrapper-->
+                                    <div class="text-gray-500 fw-bold fs-7 text-end">
+                                        <!--begin::Number-->
+                                        <span class="text-gray-800 fw-bold fs-6 d-block">804,300</span>
+                                        <!--end::Number-->
+
+                                        Tons
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Item-->
+
+
+
+
+                                <div class="text-center pt-9">
+                                    <a href="../apps/ecommerce/catalog/add-product.html" class="btn btn-primary">Add
+                                        Vehicle</a>
+                                </div>
+                            </div>
+                            <!--end::Body-->
+                        </div>
+                        <!--end::List widget 11-->
+                    </div>
+                    <!--end::Col-->
+
+                    <!--begin::Col-->
+                    <div class="col-xl-8">
+                        <!--begin::Chart widget 17-->
+                        <div class="card card-flush h-xl-100">
+                            <!--begin::Header-->
+                            <div class="card-header pt-7">
+                                <!--begin::Title-->
+                                <h3 class="card-title align-items-start flex-column">
+                                    <span class="card-label fw-bold text-gray-900">Sales
+                                        Statistics</span>
+
+                                    <span class="text-gray-500 pt-2 fw-semibold fs-6">Top Selling
+                                        Countries</span>
+                                </h3>
+                                <!--end::Title-->
+
+                                <!--begin::Toolbar-->
+                                <div class="card-toolbar">
+                                    <!--begin::Menu-->
+                                    <button
+                                        class="btn btn-icon btn-color-gray-500 btn-active-color-primary justify-content-end"
+                                        data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"
+                                        data-kt-menu-overflow="true">
+                                        <i class="ki-duotone ki-dots-square fs-1 text-gray-500 me-n1"><span
+                                                class="path1"></span><span class="path2"></span><span
+                                                class="path3"></span><span class="path4"></span></i>
+                                    </button>
+
+                                    <!--begin::Menu-->
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-100px py-4"
+                                        data-kt-menu="true">
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">
+                                                Remove
+                                            </a>
+                                        </div>
+                                        <!--end::Menu item-->
+
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">
+                                                Mute
+                                            </a>
+                                        </div>
+                                        <!--end::Menu item-->
+
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3">
+                                                Settings
+                                            </a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                    </div>
+                                    <!--end::Menu-->
+
+                                    <!--end::Menu-->
+                                </div>
+                                <!--end::Toolbar-->
+                            </div>
+                            <!--end::Header-->
+
+                            <!--begin::Body-->
+                            <div class="card-body pt-5">
+                                <!--begin::Chart container-->
+                                <div id="kt_charts_widget_16_chart" class="w-100 h-350px"></div>
+                                <!--end::Chart container-->
+                            </div>
+                            <!--end::Body-->
+                        </div>
+                        <!--end::Chart widget 17-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Row-->
+            </div>
+            <!--end::Content container-->
+        </div>
+        <!--end::Content-->
+
+    </div>
+@endsection

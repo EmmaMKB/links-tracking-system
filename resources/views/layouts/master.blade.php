@@ -29,10 +29,10 @@
     <!--end::Global Stylesheets Bundle-->
 
     <!-- Material Design Icons -->
-    <link type="text/css" href="assets/css/material-icons.css" rel="stylesheet">
+    <link type="text/css" href="{{ asset('assets/css/material-icons.css') }}" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
-    <link type="text/css" href="assets/css/fontawesome.css" rel="stylesheet">
+    <link type="text/css" href="{{ asset('assets/css/fontawesome.css') }}" rel="stylesheet">
 
     <script>
         // Frame-busting to prevent site from being loaded within a frame without permission (click-jacking)
@@ -111,13 +111,13 @@
                                     class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px"
                                     data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent"
                                     data-kt-menu-placement="bottom-end">
-                                    <i class="ki-duotone ki-night-day theme-light-show fs-1"><span
+                                    <i class="fa fa-sun"><span
                                             class="path1"></span><span class="path2"></span><span
                                             class="path3"></span><span class="path4"></span><span
                                             class="path5"></span><span class="path6"></span><span
                                             class="path7"></span><span class="path8"></span><span
                                             class="path9"></span><span class="path10"></span></i> <i
-                                        class="ki-duotone ki-moon theme-dark-show fs-1"><span
+                                        class="fa fa-light fa-moon"><span
                                             class="path1"></span><span class="path2"></span></i></a>
                                 <!--begin::Menu toggle-->
 
@@ -182,19 +182,22 @@
                                 <div class="cursor-pointer symbol symbol-35px"
                                     data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
                                     data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                                    <img src="../assets/media/avatars/300-3.jpg" class="rounded-3" alt="user" />
+                                    <img src="{{ asset('assets/media/avatars/avatar.png') }}" class="rounded-3" alt="user" />
                                 </div>
 
                                 <!--begin::User account menu-->
                                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
                                     data-kt-menu="true">
-
-                                    <div class="menu-item px-5">
-                                        <a href="../authentication/layouts/corporate/sign-in.html"
+                                    <form action="{{ route('logout') }}" method="post">
+                                        @csrf
+                                        <div class="menu-item px-5">
+                                        <a type="button" href="#"
                                             class="menu-link px-5">
                                             Sign Out
                                         </a>
                                     </div>
+                                    </form>
+
                                     <!--end::Menu item-->
                                 </div>
                                 <!--end::User account menu-->
@@ -320,7 +323,7 @@
                 <!--begin::Main-->
                 <div class="app-main flex-column flex-row-fluid " id="kt_app_main">
                     <!--begin::Content wrapper-->
-                    dfdf
+                    @yield('content')
                     <!--end::Content wrapper-->
                 </div>
                 <!--end:::Main-->

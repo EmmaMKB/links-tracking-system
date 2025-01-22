@@ -27,6 +27,7 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/add_truck', [TruckController::class, 'add_truck'])->name('add_truck');
+    Route::get('/trucks', [TruckController::class, 'index'])->name('trucks');
 });
 
 Route::middleware(['guest'])->group(function () {

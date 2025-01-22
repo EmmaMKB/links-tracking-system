@@ -8,6 +8,16 @@ use Illuminate\View\View;
 
 class TruckController extends Controller
 {
+
+    function index() : View {
+
+        $trucks = Truck::where('status', '!=', 'Handover')->get();
+
+        return view('trucks.index', [
+            'trucks' => $trucks
+        ]);
+    }
+
     function add_truck(Request $request)  {
 
 

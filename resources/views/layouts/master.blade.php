@@ -191,10 +191,10 @@
                                     <form action="{{ route('logout') }}" method="post">
                                         @csrf
                                         <div class="menu-item px-5">
-                                        <a type="button" href="#"
+                                        <button type="submit"
                                             class="menu-link px-5">
                                             Sign Out
-                                        </a>
+                                        </button>
                                     </div>
                                     </form>
 
@@ -239,7 +239,7 @@
                     <!--begin::Logo-->
                     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
                         <!--begin::Logo image-->
-                        <a href="#" style="text-align: center">
+                        <a href="{{ route('dashboard') }}" style="text-align: center">
                             <img alt="Logo" src="{{ asset('assets/media/logos/default-dark.svg') }}"
                                 class="app-sidebar-logo-default" />
 
@@ -379,6 +379,8 @@
     <script src="{{ asset('assets/js/custom/utilities/modals/bidding.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
     <!--end::Custom Javascript-->
+
+    @yield('scripts')
     <!--end::Javascript-->
 </body>
 

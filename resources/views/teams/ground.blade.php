@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     @section('content')
-         <div class="d-flex flex-column flex-column-fluid">
+        <div class="d-flex flex-column flex-column-fluid">
 
             <!--begin::Toolbar-->
             <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
@@ -83,6 +83,66 @@
                     @endif
                 </div>
                 <!--end::Content container-->
+                <div class="card mb-5 mb-xl-8">
+                    <!--begin::Body-->
+                    <div class="card-body py-3">
+                        <!--begin::Table container-->
+                        <div class="table-responsive">
+                            <!--begin::Table-->
+                            <table class="table align-middle gs-0 gy-4">
+                                <!--begin::Table head-->
+                                <thead>
+                                    <tr class="fw-bold text-muted bg-light">
+                                        <th class="ps-4 min-w-300px rounded-start">Full Name</th>
+                                        <th class="min-w-125px">ID</th>
+                                        <th class="min-w-125px">Contact</th>
+                                        <th class="min-w-200px">Hire Date</th>
+                                    </tr>
+                                </thead>
+                                <!--end::Table head-->
+
+                                <!--begin::Table body-->
+                                <tbody>
+                                    @foreach ($employees as $employee)
+                                        <tr>
+                                            <td>
+                                                <a href="#"
+                                                    class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6">
+                                                    {{ $employee->full_name }}
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <a href="#"
+                                                    class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6">
+                                                    {{ $employee->employee_id }}
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <a href="#"
+                                                    class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6">
+                                                    {{ $employee->phone }}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="#"
+                                                    class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6">
+                                                    {{ $employee->hire_date }}
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                                <!--end::Table body-->
+                            </table>
+                            <!--end::Table-->
+                        </div>
+                        <!--end::Table container-->
+                    </div>
+                    <!--begin::Body-->
+                </div>
             </div>
             <!--end::Content-->
 
@@ -144,20 +204,17 @@
                                 </div>
                                 <div class="d-flex flex-column mb-10 fv-row">
                                     <label class="required fs-5 fw-semibold mb-2">Email</label>
-                                    <input type="email" class="form-control form-control-solid"
-                                            name="email" />
+                                    <input type="email" class="form-control form-control-solid" name="email" />
                                 </div>
                                 <div class="d-flex flex-column mb-10 fv-row">
                                     <label class="required fs-5 fw-semibold mb-2">Phone</label>
-                                    <input type="tel" class="form-control form-control-solid"
-                                            name="phone" />
+                                    <input type="tel" class="form-control form-control-solid" name="phone" />
                                 </div>
                                 <!--end::Input group-->
-                               <div class="col-xs-3 mb-5 fv-row">
-                                        <label class="required fs-5 fw-semibold mb-2">Hire Date</label>
-                                        <input type="date" class="form-control form-control-solid"
-                                            name="hire_date" />
-                                    </div>
+                                <div class="col-xs-3 mb-5 fv-row">
+                                    <label class="required fs-5 fw-semibold mb-2">Hire Date</label>
+                                    <input type="date" class="form-control form-control-solid" name="hire_date" />
+                                </div>
                             </div>
                             <!--end::Scroll-->
                         </div>

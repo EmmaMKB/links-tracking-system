@@ -11,10 +11,16 @@ class EmployeeController extends Controller
 {
     //
     function ground_team() : View {
-        return view('teams.ground');
+
+        $employees = Employee::where('function', '!=', 'controller')->get();
+
+        return view('teams.ground', [
+            'employees' => $employees
+        ]);
     }
 
     function add_employee(Request $request)  {
+
 
         $validatedData = $request->validate([
             'full_name' => 'required|string',

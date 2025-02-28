@@ -19,7 +19,7 @@ class TruckController extends Controller
     }
 
     function trucks_drc() : View {
-
+        
         $trucks = Truck::where('status', 'Handover')->get();
 
         return view('trucks.drcroutes', [

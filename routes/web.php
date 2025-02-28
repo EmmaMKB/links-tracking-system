@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/trucks/drc-routes', [TruckController::class, 'drc_routes'])->name('drc_routes');
     Route::get('/teams/ground', [EmployeeController::class, 'ground_team'])->name('ground_team');
     Route::post('/add_employee', [EmployeeController::class, 'add_employee'])->name('add_employee');
+    Route::get('/teams/controllers', [EmployeeController::class, 'controllers'])->name('controllers');
 });
 
 Route::middleware(['guest'])->group(function () {

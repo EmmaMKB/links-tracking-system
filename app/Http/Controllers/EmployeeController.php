@@ -19,6 +19,14 @@ class EmployeeController extends Controller
         ]);
     }
 
+    function controllers() : View {
+        $employees = Employee::where('function', 'controller')->get();
+
+        return view('teams.controllers', [
+            'employees' => $employees
+        ]);
+    }
+
     function add_employee(Request $request)  {
 
 

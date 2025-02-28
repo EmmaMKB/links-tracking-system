@@ -335,7 +335,7 @@
                                                         class="menu-title">Ground team</span></a><!--end:Menu link-->
                                             </div>
                                             <div class="menu-item">
-                                                <a class="menu-link" href="../index.html"><span class="menu-bullet">
+                                                <a class="menu-link" href="{{ route('controllers') }}"><span class="menu-bullet">
                                                         <span class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">Controllers</span></a>
                                             </div>

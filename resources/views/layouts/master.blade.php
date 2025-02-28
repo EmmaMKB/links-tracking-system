@@ -40,6 +40,7 @@
             window.top.location.replace(window.self.location.href);
         }
     </script>
+    @yield('assets')
 </head>
 <!--end::Head-->
 
@@ -282,7 +283,7 @@
                                                 class="menu-arrow"></span></span><!--end:Menu link--><!--begin:Menu sub-->
                                         <div class="menu-sub menu-sub-accordion"><!--begin:Menu item-->
                                             <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                                                    href="{{ route('trucks') }}"><span class="menu-bullet"><span
+                                                    href="{{ route('drc_convoys') }}"><span class="menu-bullet"><span
                                                             class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">Kolwezi - KSU</span></a><!--end:Menu link-->
                                             </div>
@@ -388,6 +389,10 @@
     <script>
         var hostUrl = "{{ route('dashboard') }}";
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>

@@ -370,13 +370,13 @@
                                 data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
                                 data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
 
-                                <div class="input-group row">
-                                    <div class="col-xs-3 mb-5 fv-row">
+                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                                    <div class="col">
                                         <label class="required fs-5 fw-semibold mb-2">HORSE</label>
                                         <input type="text" class="form-control form-control-solid"
                                             placeholder="Ex: BCF20..." name="horse" />
                                     </div>
-                                    <div class="col-xs-3 mb-5 fv-row">
+                                    <div class="col">
                                         <label class="required fs-5 fw-semibold mb-2">Trailer</label>
                                         <input type="text" class="form-control form-control-solid"
                                             placeholder="Ex: BCF20..." name="trailer" />
@@ -411,22 +411,6 @@
                                     </div>
                                 </div>
 
-                                <div class="d-flex flex-column mb-10 fv-row">
-                                    <!--begin::Label-->
-                                    <label class="required fs-5 fw-semibold mb-2">Mine</label>
-                                    <!--end::Label-->
-
-                                    <!--begin::Select-->
-                                    <select name="mine_id" data-control="select2" data-hide-search="false"
-                                        data-placeholder="Mine" class="form-select form-select-solid">
-                                        <option value="">Select a Mine...</option>
-                                        @foreach ($mines as $m)
-                                            <option value="{{ $m->id }}">{{ $m->mine }}</option>
-                                        @endforeach
-                                    </select>
-                                    <!--end::Select-->
-                                </div>
-                                <!--end::Input group-->
                                 <div class="d-flex flex-column mb-10 fv-row">
                                     <!--begin::Label-->
                                     <label class="required fs-5 fw-semibold mb-2">Location</label>

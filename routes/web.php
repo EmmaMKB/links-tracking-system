@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ConvoyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TruckController;
 use App\Http\Controllers\EmployeeController;
@@ -32,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/teams/ground', [EmployeeController::class, 'ground_team'])->name('ground_team');
     Route::post('/add_employee', [EmployeeController::class, 'add_employee'])->name('add_employee');
     Route::get('/teams/controllers', [EmployeeController::class, 'controllers'])->name('controllers');
+    Route::get('/convoys/drcroutes', [ConvoyController::class, 'drc_routes'])->name('drc_convoys');
 });
 
 Route::middleware(['guest'])->group(function () {

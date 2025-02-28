@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     @section('content')
-    <div class="d-flex flex-column flex-column-fluid">
+        <div class="d-flex flex-column flex-column-fluid">
 
             <!--begin::Toolbar-->
             <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
@@ -82,7 +82,8 @@
                             <h3 class="card-title align-items-start flex-column">
                                 <span class="card-label fw-bold fs-3 mb-1">All trucks</span>
 
-                                <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks->count() }} trucks in transit</span>
+                                <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks->count() }} trucks in
+                                    transit</span>
                             </h3>
                             <div class="card-toolbar">
                                 <!--begin::Menu-->

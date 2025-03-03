@@ -12,7 +12,8 @@ class Convoy extends Model
     protected $fillable = [
         'uuid',
         'status',
-        'user_id',
+        'controller_id',
+        'escort_id',
         'location_id',
         'state',
     ];

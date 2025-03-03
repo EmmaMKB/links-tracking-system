@@ -4,6 +4,8 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    @section('assets')
+    @endsection
     @section('content')
         <div class="d-flex flex-column flex-column-fluid">
             <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
@@ -47,7 +49,7 @@
                 <!--end::Toolbar container-->
             </div>
             <div id="kt_app_content" class="app-content  flex-column-fluid ">
-                <div id="kt_app_content_container" class="app-container  container-xxl ">
+                <div id="kt_app_content_container" class="app-container container-xxl ">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -575,7 +577,7 @@
                     <!--end::Modal header-->
 
                     <!--begin::Form-->
-                    <form id="kt_modal_create_api_key_form" class="form" action="{{ route('add_truck') }}"
+                    <form id="kt_modal_create_api_key_form" class="form" action="{{ route('add_convoy') }}"
                         method="post">
                         @csrf
                         <!--begin::Modal body-->
@@ -585,72 +587,62 @@
                                 data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
                                 data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
                                 data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
-
-                                <div class="input-group row">
-                                    <div class="col-xs-3 mb-5 fv-row">
-                                        <label class="required fs-5 fw-semibold mb-2">HORSE</label>
-                                        <input type="text" class="form-control form-control-solid"
-                                            placeholder="Ex: BCF20..." name="horse" />
-                                    </div>
-                                    <div class="col-xs-3 mb-5 fv-row">
-                                        <label class="required fs-5 fw-semibold mb-2">Trailer</label>
-                                        <input type="text" class="form-control form-control-solid"
-                                            placeholder="Ex: BCF20..." name="trailer" />
-                                    </div>
-                                </div>
-
                                 <div class="d-flex flex-column mb-10 fv-row">
                                     <!--begin::Label-->
-                                    <label class="required fs-5 fw-semibold mb-2">CLIENT</label>
+                                    <label class="required fs-5 fw-semibold mb-2">Trucks</label>
                                     <!--end::Label-->
 
                                     <!--begin::Select-->
-                                    <select name="client_id" data-control="select2" data-hide-search="true"
-                                        data-placeholder="Client" class="form-select form-select-solid">
-                                        <option value="">Select a Category...</option>
-                                        @foreach ($clients as $client)
-                                            <option value="{{ $client->id }}">{{ $client->client }}</option>
+                                    <select name="trucks[]" multiple="multiple" data-control="select2"
+                                        data-hide-search="false" data-placeholder="Client"
+                                        class="form-select form-select-solid select2-multiple">
+                                        <option value="">Select a truck...</option>
+                                        @foreach ($trucks as $truck)
+                                            <option value="{{ $truck->id }}">{{ $truck->horse }}</option>
                                         @endforeach
                                     </select>
                                     <!--end::Select-->
                                 </div>
-                                <div class="input-group row">
-                                    <div class="col-xs-3 mb-5 fv-row">
-                                        <label class="required fs-5 fw-semibold mb-2">Transporter</label>
-                                        <input type="text" class="form-control form-control-solid"
-                                            placeholder="Transporter" name="transporter" />
-                                    </div>
-                                    <div class="col-xs-3 mb-5 fv-row">
-                                        <label class="required fs-5 fw-semibold mb-2">Dispatch Date</label>
-                                        <input type="date" class="form-control form-control-solid"
-                                            name="dispatch_date" />
-                                    </div>
-                                </div>
 
                                 <div class="d-flex flex-column mb-10 fv-row">
                                     <!--begin::Label-->
-                                    <label class="required fs-5 fw-semibold mb-2">Mine</label>
+                                    <label class="required fs-5 fw-semibold mb-2">Escorter</label>
                                     <!--end::Label-->
 
                                     <!--begin::Select-->
-                                    <select name="mine_id" data-control="select2" data-hide-search="false"
-                                        data-placeholder="Mine" class="form-select form-select-solid">
-                                        <option value="">Select a Mine...</option>
-                                        @foreach ($mines as $m)
-                                            <option value="{{ $m->id }}">{{ $m->mine }}</option>
+                                    <select name="escort_id" data-control="select2" data-hide-search="false"
+                                        data-placeholder="Escort" class="form-select form-select-solid">
+                                        <option value="">Select the Escort</option>
+                                        @foreach ($escorts as $e)
+                                            <option value="{{ $e->id }}">{{ $e->full_name }}</option>
                                         @endforeach
                                     </select>
                                     <!--end::Select-->
                                 </div>
-                                <!--end::Input group-->
+                                <div class="d-flex flex-column mb-10 fv-row">
+                                    <!--begin::Label-->
+                                    <label class="required fs-5 fw-semibold mb-2">Controller</label>
+                                    <!--end::Label-->
+
+                                    <!--begin::Select-->
+                                    <select name="controller_id" data-control="select2" data-hide-search="false"
+                                        data-placeholder="Escort" class="form-select form-select-solid">
+                                        <option value="">Select the Controller</option>
+                                        @foreach ($controllers as $c)
+                                            <option value="{{ $c->id }}">{{ $c->full_name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <!--end::Select-->
+                                </div>
                                 <div class="d-flex flex-column mb-10 fv-row">
                                     <!--begin::Label-->
                                     <label class="required fs-5 fw-semibold mb-2">Location</label>
                                     <!--end::Label-->
 
                                     <!--begin::Select-->
-                                    <select name="location_id" id="location_input" data-control="select2" data-hide-search="false"
-                                        data-placeholder="Location" class="form-select form-select-solid">
+                                    <select name="location_id" id="location_input" data-control="select2"
+                                        data-hide-search="false" data-placeholder="Location"
+                                        class="form-select form-select-solid">
                                         <option value="">Select a Location...</option>
                                         @foreach ($locations as $location)
                                             <option value="{{ $location->id }}">{{ $location->location }}</option>
@@ -665,16 +657,8 @@
                                         <!--begin::Label-->
                                         <label class="d-flex align-items-center fs-5 fw-semibold">
                                             <span class="required">Status</span>
-
-
-                                            <span class="ms-1" data-bs-toggle="tooltip"
-                                                title="Your billing numbers will be calculated based on your API method">
-                                                <i class="ki-duotone ki-information-5 text-gray-500 fs-6"><span
-                                                        class="path1"></span><span class="path2"></span><span
-                                                        class="path3"></span></i></span> </label>
+                                        </label>
                                         <!--end::Label-->
-
-
                                     </div>
                                     <!--end::Heading-->
 
@@ -775,11 +759,6 @@
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     @endsection
     @section('scripts')
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-        <script>
-            $(document).ready(function() {
-                $('#location_input').select2();
-            });
-        </script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     @endsection
 </x-app-layout>

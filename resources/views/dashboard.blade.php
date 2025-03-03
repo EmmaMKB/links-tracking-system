@@ -382,33 +382,54 @@
                                             placeholder="Ex: BCF20..." name="trailer" />
                                     </div>
                                 </div>
+                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                                    <div class="col">
+                                        <div class="d-flex flex-column mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required fs-5 fw-semibold mb-2">CLIENT</label>
+                                            <!--end::Label-->
 
-                                <div class="d-flex flex-column mb-10 fv-row">
-                                    <!--begin::Label-->
-                                    <label class="required fs-5 fw-semibold mb-2">CLIENT</label>
-                                    <!--end::Label-->
-
-                                    <!--begin::Select-->
-                                    <select name="client_id" data-control="select2" data-hide-search="true"
-                                        data-placeholder="Client" class="form-select form-select-solid">
-                                        <option value="">Select a Category...</option>
-                                        @foreach ($clients as $client)
-                                            <option value="{{ $client->id }}">{{ $client->client }}</option>
-                                        @endforeach
-                                    </select>
-                                    <!--end::Select-->
-                                </div>
-                                <div class="input-group row">
-                                    <div class="col-xs-3 mb-5 fv-row">
+                                            <!--begin::Select-->
+                                            <select name="client_id" data-control="select2" data-hide-search="true"
+                                                data-placeholder="Client" class="form-select form-select-solid">
+                                                <option value="">Select a Category...</option>
+                                                @foreach ($clients as $client)
+                                                    <option value="{{ $client->id }}">{{ $client->client }}</option>
+                                                @endforeach
+                                            </select>
+                                            <!--end::Select-->
+                                        </div>
+                                    </div>
+                                    <div class="col">
                                         <label class="required fs-5 fw-semibold mb-2">Transporter</label>
                                         <input type="text" class="form-control form-control-solid"
                                             placeholder="Transporter" name="transporter" />
                                     </div>
+                                </div>
+
+                                <div class="input-group row">
+                                    
                                     <div class="col-xs-3 mb-5 fv-row">
                                         <label class="required fs-5 fw-semibold mb-2">Dispatch Date</label>
                                         <input type="date" class="form-control form-control-solid"
                                             name="dispatch_date" />
                                     </div>
+                                </div>
+
+                                <div class="d-flex flex-column mb-10 fv-row">
+                                    <!--begin::Label-->
+                                    <label class="required fs-5 fw-semibold mb-2">Mines</label>
+                                    <!--end::Label-->
+
+                                    <!--begin::Select-->
+                                    <select name="mine_id" data-control="select2" data-hide-search="false"
+                                        data-placeholder="Mine" class="form-select form-select-solid">
+                                        <option value="">Select a Mine...</option>
+                                        @foreach ($mines as $mine)
+                                            <option value="{{ $mine->id }}">{{ $mine->mine }}</option>
+                                        @endforeach
+                                    </select>
+                                    <!--end::Select-->
                                 </div>
 
                                 <div class="d-flex flex-column mb-10 fv-row">

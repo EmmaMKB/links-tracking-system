@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/teams/controllers', [EmployeeController::class, 'controllers'])->name('controllers');
     Route::get('/convoys/drcroutes', [ConvoyController::class, 'drc_routes'])->name('drc_convoys');
     Route::post('/add_convoy', [ConvoyController::class, 'add_convoy'])->name('add_convoy');
+    Route::post('/update_convoy', [ConvoyController::class, 'update'])->name('update_convoy');
 });
 
 Route::middleware(['guest'])->group(function () {

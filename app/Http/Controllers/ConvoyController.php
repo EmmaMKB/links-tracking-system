@@ -74,4 +74,21 @@ class ConvoyController extends Controller
 
         return redirect()->back()->with('success', 'Convoy created successfully');
     }
+
+    function update(Request $request) {
+        $validatedData = $request->validate([
+            'trucks' => 'required',
+            'convoy_id' => 'required|exists:convoys,id',
+            'escort_id' => 'required|exists:employees,id',
+            'controller_id' => 'required|exists:employees,id',
+            'location_id' => 'required|exists:locations,id',
+            'status' => 'required|string',
+        ]);
+
+        $convoy = Convoy::find($validatedData['convoy_id']);
+        $convoy->update($validatedData);
+        $convoy->save();
+
+        return redirect()->back()->with('success', 'Convoy updated successfully');
+    }
 }

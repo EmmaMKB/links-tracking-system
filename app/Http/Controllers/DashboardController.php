@@ -20,7 +20,10 @@ class DashboardController extends Controller
         $transit = Truck::where('status', '!=', 'Handover')->get()->count();
         $convoys = Convoy::where('state', 'active')->get()->count();
         $breakdowns = Truck::where('status', 'Breakdown')->get()->count();
-        $trucks = Truck::with('location')->where('status', '!=', 'Handover')->take(10)->get();
+        $trucks = Truck::with('location')
+        ->where('status', '!=', 'Handover')
+        ->orderBy('location_id')
+        ->take(20)->get();
 
         return view('dashboard', [
             'clients' => $clients,

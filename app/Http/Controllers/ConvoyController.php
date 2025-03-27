@@ -24,21 +24,29 @@ class ConvoyController extends Controller
         $mines = Mine::orderBy('mine', 'asc')->get();
         $trucks = Truck::with('location')->where('status', '!=', 'Handover')->take(10)->get();
 
-        $klzi_to_likasi = Convoy::with('location')->where('status', '!=', 'Handover')->with('Trucks')->get();
+        // $klzi_to_likasi = Convoy::with('location')
+        // ->where('status', '!=', 'Handover')
+        // ->where('location_id', 1)
+        // ->with('Trucks')->get();
 
-        // foreach ($klzi_to_likasi as $key => $convoy) {
-        //     dd($convoy->trucks);
-        // }
+
+        $klzi_to_likasi = Convoy::whereHas('location', function ($query) {
+            $query->where('section_id', 2);
+        })->get();
+
+        $likasi_to_lushi = Convoy::whereHas('location', function ($query)  {
+            $query->whereIn('section_id', [3,4]);
+        })->get();
 
         return view('convoys.drcroutes', [
-            'convoys' => $convoys,
             'clients' => $clients,
             'locations' => $locations,
             'mines' => $mines,
             'trucks' => $trucks,
             'escorts' => $escorters,
             'controllers' => $controllers,
-            'klzi_to_likasi' => $klzi_to_likasi
+            'klzi_to_likasi' => $klzi_to_likasi,
+            'likasi_to_lushi' => $likasi_to_lushi,
         ]);
     }
 
@@ -55,7 +63,6 @@ class ConvoyController extends Controller
         $validatedData['uuid'] = (string) Str::uuid();
 
         $convoy = Convoy::create($validatedData);
-        dd($convoy);
 
         foreach ($validatedData['trucks'] as $key => $t) {
             $truck = Truck::find($t);

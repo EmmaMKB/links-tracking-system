@@ -18,10 +18,10 @@ class DashboardController extends Controller
         $locations = Location::all();
         $mines = Mine::orderBy('mine', 'asc')->get();
         $transit = Truck::where('status', '!=', 'Handover')->get()->count();
-        $convoys = Convoy::where('status', 'active')->get()->count();
+        $convoys = Convoy::where('state', 'active')->get()->count();
         $breakdowns = Truck::where('status', 'Breakdown')->get()->count();
         $trucks = Truck::with('location')->where('status', '!=', 'Handover')->take(10)->get();
-        
+
         return view('dashboard', [
             'clients' => $clients,
             'locations' => $locations,

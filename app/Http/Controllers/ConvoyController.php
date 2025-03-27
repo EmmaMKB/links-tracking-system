@@ -24,7 +24,11 @@ class ConvoyController extends Controller
         $mines = Mine::orderBy('mine', 'asc')->get();
         $trucks = Truck::with('location')->where('status', '!=', 'Handover')->take(10)->get();
 
-        $klzi_to_likasi = Convoy::with('location')->where('status', '!=', 'Handover')->get();
+        $klzi_to_likasi = Convoy::with('location')->where('status', '!=', 'Handover')->with('Trucks')->get();
+
+        // foreach ($klzi_to_likasi as $key => $convoy) {
+        //     dd($convoy->trucks);
+        // }
 
         return view('convoys.drcroutes', [
             'convoys' => $convoys,

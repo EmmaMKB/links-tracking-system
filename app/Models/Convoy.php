@@ -33,8 +33,8 @@ class Convoy extends Model
         return $this->belongsTo(Employee::class);
     }
 
-    public function convoy_trucks() {
-        return $this->hasMany(ConvoyTruck::class, );
+    public function trucks() {
+        return $this->hasMany(Truck::class, );
     }
 
 

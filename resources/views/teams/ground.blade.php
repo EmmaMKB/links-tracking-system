@@ -91,8 +91,9 @@
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bold text-muted bg-light">
-                                            <th class="ps-4 min-w-300px rounded-start">Full Name</th>
                                             <th class="min-w-125px">ID</th>
+                                            <th class="ps-4 min-w-200px rounded-start">Full Name</th>
+                                            <th class="min-w-125px">Function</th>
                                             <th class="min-w-125px">Contact</th>
                                             <th class="min-w-200px">Hire Date</th>
                                         </tr>
@@ -106,6 +107,12 @@
                                                 <td>
                                                     <a href="#"
                                                         class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6">
+                                                        {{ $employee->employee_id }}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6">
                                                         {{ $employee->full_name }}
                                                     </a>
                                                 </td>
@@ -113,7 +120,7 @@
                                                 <td>
                                                     <a href="#"
                                                         class="text-gray-900 fw-bold text-hover-primary d-block mb-1 fs-6">
-                                                        {{ $employee->employee_id }}
+                                                        {{ $employee->function }}
                                                     </a>
                                                 </td>
 

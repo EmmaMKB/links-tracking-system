@@ -10,7 +10,6 @@ use App\Models\Employee;
 use App\Models\Location;
 use App\Models\Mine;
 use App\Models\Truck;
-use App\Models\ConvoyTruck;
 use Illuminate\Support\Str;
 
 class ConvoyController extends Controller
@@ -25,6 +24,8 @@ class ConvoyController extends Controller
         $mines = Mine::orderBy('mine', 'asc')->get();
         $trucks = Truck::with('location')->where('status', '!=', 'Handover')->take(10)->get();
 
+        $klzi_to_likasi = Convoy::with('location')->where('status', '!=', 'Handover')->get();
+
         return view('convoys.drcroutes', [
             'convoys' => $convoys,
             'clients' => $clients,
@@ -32,13 +33,12 @@ class ConvoyController extends Controller
             'mines' => $mines,
             'trucks' => $trucks,
             'escorts' => $escorters,
-            'controllers' => $controllers
+            'controllers' => $controllers,
+            'klzi_to_likasi' => $klzi_to_likasi
         ]);
     }
 
     function add_convoy(Request $request)  {
-
-        // dd($request->post());die;
 
         $validatedData = $request->validate([
             'trucks' => 'required',
@@ -47,15 +47,18 @@ class ConvoyController extends Controller
             'location_id' => 'required|exists:locations,id',
             'status' => 'required|string',
         ]);
+
         $validatedData['uuid'] = (string) Str::uuid();
 
         $convoy = Convoy::create($validatedData);
+        dd($convoy);
 
-        foreach ($validatedData['trucks'] as $key => $truck) {
-            ConvoyTruck::create([
-                'convoy_id' => $convoy->id,
-                'truck_id' => $truck
-            ]);
+        foreach ($validatedData['trucks'] as $key => $t) {
+            $truck = Truck::find($t);
+            $truck->location_id = $validatedData['location_id'];
+            $truck->status = $validatedData['status'];
+            $truck->convoy_id = $convoy->id;
+            $truck->save();
         }
 
         return redirect()->back()->with('success', 'Convoy created successfully');

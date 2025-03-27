@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             SectionSeeder::class,
             LocationsSeeder::class,
             MineSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

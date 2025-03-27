@@ -15,6 +15,6 @@ class UserSeeder extends Seeder
     public function run()
     {
         //
-        User::create(['name' => 'Operations', 'email' => 'operations@linkslogistics.co.za', 'password' => bcrypt('linkslog_12#')]);
+        User::create(['name' => 'Operations', 'email' => 'operations@linkslogistics.co.za', 'password' => bcrypt('links_log12#')]);
     }
 }

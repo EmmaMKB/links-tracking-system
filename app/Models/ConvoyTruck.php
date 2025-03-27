@@ -13,4 +13,14 @@ class ConvoyTruck extends Model
         'convoy_id',
         'truck_id',
     ];
+
+    public function convoy()
+    {
+        return $this->belongsTo(Convoy::class);
+    }
+
+    public function truck()
+    {
+        return $this->belongsTo(Truck::class);
+    }
 }

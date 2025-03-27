@@ -96,7 +96,7 @@
                                 <div class="card-body">
                                     <i class="fa fa-truck text-primary fs-2x ms-n1"></i>
                                     <div class="text-gray-900 fw-bold fs-2 mb-2 mt-5">
-                                        53
+                                        {{ $transit }}
                                     </div>
                                     <div class="fw-semibold text-gray-400">
                                         Trucks in transit </div>
@@ -114,7 +114,7 @@
                                     <i class="fa fa-map-signs text-gray-100 fs-2x ms-n1"></i>
 
                                     <div class="text-gray-100 fw-bold fs-2 mb-2 mt-5">
-                                        23
+                                        {{ $convoys }}
                                     </div>
 
                                     <div class="fw-semibold text-gray-100">
@@ -135,7 +135,7 @@
                                             class="path2"></span></i>
 
                                     <div class="text-white fw-bold fs-2 mb-2 mt-5">
-                                        2
+                                        {{ $breakdowns }}
                                     </div>
 
                                     <div class="fw-semibold text-white">
@@ -408,7 +408,7 @@
                                 </div>
 
                                 <div class="input-group row">
-                                    
+
                                     <div class="col-xs-3 mb-5 fv-row">
                                         <label class="required fs-5 fw-semibold mb-2">Dispatch Date</label>
                                         <input type="date" class="form-control form-control-solid"

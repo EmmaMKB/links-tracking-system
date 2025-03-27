@@ -40,6 +40,7 @@
             window.top.location.replace(window.self.location.href);
         }
     </script>
+    @yield('assets')
 </head>
 <!--end::Head-->
 
@@ -74,7 +75,7 @@
                     <!--end::Sidebar mobile toggle-->
                     <!--begin::Mobile logo-->
                     <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                        <a href="../index.html" class="d-lg-none">
+                        <a href="{{ route('dashboard') }}" class="d-lg-none">
                             <img alt="Logo" src="../assets/media/logos/default-small.svg" class="h-30px" />
                         </a>
                     </div>
@@ -111,14 +112,13 @@
                                     class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px"
                                     data-kt-menu-trigger="{default:'click', lg: 'hover'}" data-kt-menu-attach="parent"
                                     data-kt-menu-placement="bottom-end">
-                                    <i class="fa fa-sun"><span
-                                            class="path1"></span><span class="path2"></span><span
+                                    <i class="fa fa-sun"><span class="path1"></span><span class="path2"></span><span
                                             class="path3"></span><span class="path4"></span><span
                                             class="path5"></span><span class="path6"></span><span
                                             class="path7"></span><span class="path8"></span><span
                                             class="path9"></span><span class="path10"></span></i> <i
-                                        class="fa fa-light fa-moon"><span
-                                            class="path1"></span><span class="path2"></span></i></a>
+                                        class="fa fa-light fa-moon"><span class="path1"></span><span
+                                            class="path2"></span></i></a>
                                 <!--begin::Menu toggle-->
 
                                 <!--begin::Menu-->
@@ -182,7 +182,8 @@
                                 <div class="cursor-pointer symbol symbol-35px"
                                     data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
                                     data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                                    <img src="{{ asset('assets/media/avatars/avatar.png') }}" class="rounded-3" alt="user" />
+                                    <img src="{{ asset('assets/media/avatars/avatar.png') }}" class="rounded-3"
+                                        alt="user" />
                                 </div>
 
                                 <!--begin::User account menu-->
@@ -191,11 +192,10 @@
                                     <form action="{{ route('logout') }}" method="post">
                                         @csrf
                                         <div class="menu-item px-5">
-                                        <a type="button" href="#"
-                                            class="menu-link px-5">
-                                            Sign Out
-                                        </a>
-                                    </div>
+                                            <button type="submit" class="menu-link px-5">
+                                                Sign Out
+                                            </button>
+                                        </div>
                                     </form>
 
                                     <!--end::Menu item-->
@@ -239,7 +239,7 @@
                     <!--begin::Logo-->
                     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
                         <!--begin::Logo image-->
-                        <a href="#" style="text-align: center">
+                        <a href="{{ route('dashboard') }}" style="text-align: center">
                             <img alt="Logo" src="{{ asset('assets/media/logos/default-dark.svg') }}"
                                 class="app-sidebar-logo-default" />
 
@@ -279,6 +279,27 @@
                                                         class="path1"></span><span class="path2"></span><span
                                                         class="path3"></span><span
                                                         class="path4"></span></i></span><span
+                                                class="menu-title">Routes</span><span
+                                                class="menu-arrow"></span></span><!--end:Menu link--><!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion"><!--begin:Menu item-->
+                                            <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
+                                                    href="{{ route('drc_convoys') }}"><span class="menu-bullet"><span
+                                                            class="bullet bullet-dot"></span></span><span
+                                                        class="menu-title">Kolwezi - KSU</span></a><!--end:Menu link-->
+                                            </div>
+                                            <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
+                                                    href="../index.html"><span class="menu-bullet"><span
+                                                            class="bullet bullet-dot"></span></span><span
+                                                        class="menu-title">Zambia</span></a><!--end:Menu link-->
+                                            </div>
+                                        </div><!--end:Menu sub-->
+                                    </div>
+                                    <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                        <!--begin:Menu link--><span class="menu-link"><span class="menu-icon"><i
+                                                    class="ki-duotone ki-element-11 fs-2"><span
+                                                        class="path1"></span><span class="path2"></span><span
+                                                        class="path3"></span><span
+                                                        class="path4"></span></i></span><span
                                                 class="menu-title">Trucks</span><span
                                                 class="menu-arrow"></span></span><!--end:Menu link--><!--begin:Menu sub-->
                                         <div class="menu-sub menu-sub-accordion"><!--begin:Menu item-->
@@ -298,20 +319,29 @@
                                                             class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">ZM Trucks</span></a><!--end:Menu link-->
                                             </div><!--end:Menu item--><!--begin:Menu item-->
-                                            <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                                                    href="projects.html"><span class="menu-bullet"><span
-                                                            class="bullet bullet-dot"></span></span><span
-                                                        class="menu-title">DRC Convoys</span></a><!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item--><!--begin:Menu item-->
-                                            <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                                                    href="online-courses.html"><span class="menu-bullet"><span
-                                                            class="bullet bullet-dot"></span></span><span
-                                                        class="menu-title">ZM Convoys</span></a><!--end:Menu link-->
-                                            </div><!--end:Menu item--><!--begin:Menu item-->
                                         </div><!--end:Menu sub-->
-                                    </div><!--end:Menu item--><!--begin:Menu item-->
-
+                                    </div>
+                                    <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                        <!--begin:Menu link--><span class="menu-link"><span class="menu-icon"><i
+                                                    class="ki-duotone ki-element-11 fs-2"><span
+                                                        class="path1"></span><span class="path2"></span><span
+                                                        class="path3"></span><span
+                                                        class="path4"></span></i></span><span
+                                                class="menu-title">Team</span><span
+                                                class="menu-arrow"></span></span><!--end:Menu link--><!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion"><!--begin:Menu item-->
+                                            <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
+                                                    href="{{ route('ground_team') }}"><span class="menu-bullet"><span
+                                                            class="bullet bullet-dot"></span></span><span
+                                                        class="menu-title">Ground team</span></a><!--end:Menu link-->
+                                            </div>
+                                            <div class="menu-item">
+                                                <a class="menu-link" href="{{ route('controllers') }}"><span class="menu-bullet">
+                                                        <span class="bullet bullet-dot"></span></span><span
+                                                        class="menu-title">Controllers</span></a>
+                                            </div>
+                                        </div><!--end:Menu sub-->
+                                    </div>
                                 </div>
                                 <!--end::Menu-->
                             </div>
@@ -360,6 +390,10 @@
         var hostUrl = "{{ route('dashboard') }}";
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
     <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
@@ -379,6 +413,8 @@
     <script src="{{ asset('assets/js/custom/utilities/modals/bidding.js') }}"></script>
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
     <!--end::Custom Javascript-->
+
+    @yield('scripts')
     <!--end::Javascript-->
 </body>
 

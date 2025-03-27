@@ -12,8 +12,30 @@ class Convoy extends Model
     protected $fillable = [
         'uuid',
         'status',
-        'user_id',
+        'controller_id',
+        'escort_id',
         'location_id',
         'state',
     ];
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
+
+    public function controller()
+    {
+        return $this->belongsTo(Employee::class);
+    }
+
+    public function escort()
+    {
+        return $this->belongsTo(Employee::class);
+    }
+
+    public function trucks() {
+        return $this->hasMany(Truck::class, );
+    }
+
+
 }

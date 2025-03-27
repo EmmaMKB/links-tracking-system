@@ -96,7 +96,7 @@
                                 <div class="card-body">
                                     <i class="fa fa-truck text-primary fs-2x ms-n1"></i>
                                     <div class="text-gray-900 fw-bold fs-2 mb-2 mt-5">
-                                        53
+                                        {{ $transit }}
                                     </div>
                                     <div class="fw-semibold text-gray-400">
                                         Trucks in transit </div>
@@ -114,7 +114,7 @@
                                     <i class="fa fa-map-signs text-gray-100 fs-2x ms-n1"></i>
 
                                     <div class="text-gray-100 fw-bold fs-2 mb-2 mt-5">
-                                        23
+                                        {{ $convoys }}
                                     </div>
 
                                     <div class="fw-semibold text-gray-100">
@@ -135,7 +135,7 @@
                                             class="path2"></span></i>
 
                                     <div class="text-white fw-bold fs-2 mb-2 mt-5">
-                                        2
+                                        {{ $breakdowns }}
                                     </div>
 
                                     <div class="fw-semibold text-white">
@@ -370,40 +370,45 @@
                                 data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
                                 data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
 
-                                <div class="input-group row">
-                                    <div class="col-xs-3 mb-5 fv-row">
+                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                                    <div class="col">
                                         <label class="required fs-5 fw-semibold mb-2">HORSE</label>
                                         <input type="text" class="form-control form-control-solid"
                                             placeholder="Ex: BCF20..." name="horse" />
                                     </div>
-                                    <div class="col-xs-3 mb-5 fv-row">
+                                    <div class="col">
                                         <label class="required fs-5 fw-semibold mb-2">Trailer</label>
                                         <input type="text" class="form-control form-control-solid"
                                             placeholder="Ex: BCF20..." name="trailer" />
                                     </div>
                                 </div>
+                                <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
+                                    <div class="col">
+                                        <div class="d-flex flex-column mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required fs-5 fw-semibold mb-2">CLIENT</label>
+                                            <!--end::Label-->
 
-                                <div class="d-flex flex-column mb-10 fv-row">
-                                    <!--begin::Label-->
-                                    <label class="required fs-5 fw-semibold mb-2">CLIENT</label>
-                                    <!--end::Label-->
-
-                                    <!--begin::Select-->
-                                    <select name="client_id" data-control="select2" data-hide-search="true"
-                                        data-placeholder="Client" class="form-select form-select-solid">
-                                        <option value="">Select a Category...</option>
-                                        @foreach ($clients as $client)
-                                            <option value="{{ $client->id }}">{{ $client->client }}</option>
-                                        @endforeach
-                                    </select>
-                                    <!--end::Select-->
-                                </div>
-                                <div class="input-group row">
-                                    <div class="col-xs-3 mb-5 fv-row">
+                                            <!--begin::Select-->
+                                            <select name="client_id" data-control="select2" data-hide-search="true"
+                                                data-placeholder="Client" class="form-select form-select-solid">
+                                                <option value="">Select a Category...</option>
+                                                @foreach ($clients as $client)
+                                                    <option value="{{ $client->id }}">{{ $client->client }}</option>
+                                                @endforeach
+                                            </select>
+                                            <!--end::Select-->
+                                        </div>
+                                    </div>
+                                    <div class="col">
                                         <label class="required fs-5 fw-semibold mb-2">Transporter</label>
                                         <input type="text" class="form-control form-control-solid"
                                             placeholder="Transporter" name="transporter" />
                                     </div>
+                                </div>
+
+                                <div class="input-group row">
+
                                     <div class="col-xs-3 mb-5 fv-row">
                                         <label class="required fs-5 fw-semibold mb-2">Dispatch Date</label>
                                         <input type="date" class="form-control form-control-solid"
@@ -413,20 +418,20 @@
 
                                 <div class="d-flex flex-column mb-10 fv-row">
                                     <!--begin::Label-->
-                                    <label class="required fs-5 fw-semibold mb-2">Mine</label>
+                                    <label class="required fs-5 fw-semibold mb-2">Mines</label>
                                     <!--end::Label-->
 
                                     <!--begin::Select-->
                                     <select name="mine_id" data-control="select2" data-hide-search="false"
                                         data-placeholder="Mine" class="form-select form-select-solid">
                                         <option value="">Select a Mine...</option>
-                                        @foreach ($mines as $m)
-                                            <option value="{{ $m->id }}">{{ $m->mine }}</option>
+                                        @foreach ($mines as $mine)
+                                            <option value="{{ $mine->id }}">{{ $mine->mine }}</option>
                                         @endforeach
                                     </select>
                                     <!--end::Select-->
                                 </div>
-                                <!--end::Input group-->
+
                                 <div class="d-flex flex-column mb-10 fv-row">
                                     <!--begin::Label-->
                                     <label class="required fs-5 fw-semibold mb-2">Location</label>

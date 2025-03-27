@@ -21,6 +21,7 @@ class CreateTrucksTable extends Migration
             $table->string('transporter');
             $table->date('dispatch_date');
             $table->foreignId('mine_id');
+            $table->foreignId('convoy_id')->nullable();
             $table->string('driver')->nullable();
             $table->foreignId('client_id');
             $table->foreignId('location_id');

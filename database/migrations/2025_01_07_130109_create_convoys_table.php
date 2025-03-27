@@ -17,7 +17,8 @@ class CreateConvoysTable extends Migration
             $table->id();
             $table->uuid('uuid')->unique();
             $table->string('status')->default('parked');
-            $table->foreignId('user_id');
+            $table->foreignId('controller_id');
+            $table->foreignId('escort_id');
             $table->foreignId('location_id');
             $table->string('state')->default('active');
             $table->timestamps();

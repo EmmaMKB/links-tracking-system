@@ -456,7 +456,7 @@
         "index": 57
     },
     {
-        "location": "K'lsa Bypass Rd.",
+        "location": "Park. Ogefrem",
         "latitude": null,
         "longitude": null,
         "section_id": 7,
@@ -464,7 +464,7 @@
         "index": 58
     },
     {
-        "location": "Park - Dryport",
+        "location": "K'lsa Bypass Rd.",
         "latitude": null,
         "longitude": null,
         "section_id": 7,
@@ -472,11 +472,19 @@
         "index": 59
     },
     {
-        "location": "Klsa Dryport (DRC Side)",
+        "location": "Park. - Dryport",
         "latitude": null,
         "longitude": null,
         "section_id": 7,
         "description": "",
         "index": 60
+    },
+    {
+        "location": "Klsa Dryport (DRC Side)",
+        "latitude": null,
+        "longitude": null,
+        "section_id": 7,
+        "description": "",
+        "index": 61
     }
 ]

@@ -245,7 +245,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <span class="badge badge-light-success">{{ $truck->status }}</span>
+                                                    <span class="badge badge-light-{{ $truck->status_colour() }}">{{ $truck->status }}</span>
                                                 </td>
 
                                                 <td class="text-end">

@@ -34,8 +34,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/add_employee', [EmployeeController::class, 'add_employee'])->name('add_employee');
     Route::get('/teams/controllers', [EmployeeController::class, 'controllers'])->name('controllers');
     Route::get('/convoys/drcroutes', [ConvoyController::class, 'drc_routes'])->name('drc_convoys');
-    Route::post('/add_convoy', [ConvoyController::class, 'add_convoy'])->name('add_convoy');
+    Route::post('/add_convoy', [ConvoyController::class, 'create'])->name('add_convoy');
     Route::post('/update_convoy', [ConvoyController::class, 'update'])->name('update_convoy');
+    Route::post('/delete_convoy', [ConvoyController::class, 'delete'])->name('delete_convoy');
 });
 
 Route::middleware(['guest'])->group(function () {

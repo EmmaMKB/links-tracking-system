@@ -98,7 +98,7 @@
                                                     <td class="min-w-175px">
                                                         <div class="position-relative ps-6 pe-3 py-2">
                                                             <div
-                                                                class="position-absolute start-0 top-0 w-4px h-100 rounded-2 bg-success animation-blink">
+                                                                class="position-absolute start-0 top-0 w-4px h-100 rounded-2 bg-{{ $t->status_colour() }} animation-blink">
                                                             </div>
                                                             <a href="#"
                                                                 class="mb-1 text-gray-900 text-hover-primary fw-bold">{{ $t->location->location }}
@@ -183,7 +183,182 @@
                                                     <td class="min-w-175px">
                                                         <div class="position-relative ps-6 pe-3 py-2">
                                                             <div
-                                                                class="position-absolute start-0 top-0 w-4px h-100 rounded-2 bg-success animation-blink">
+                                                                class="position-absolute start-0 top-0 w-4px h-100 rounded-2 bg-{{ $t->status_colour() }} animation-blink">
+                                                            </div>
+                                                            <a href="#"
+                                                                class="mb-1 text-gray-900 text-hover-primary fw-bold">{{ $t->location->location }}
+                                                            </a>
+                                                            <div class="fs-7 text-muted fw-bold">Updated on
+                                                                {{ $t->updated_at }}</div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="min-w-125px">
+                                                        {{-- <input class="form-control form-control-solid"
+                                                            value="
+                                                            @foreach ($t->trucks as $truck)
+                                                            {{ $truck->horse }},
+                                                        @endforeach
+                                                        "
+                                                            readonly id="kt_tagify_8" /> --}}
+                                                        @foreach ($t->trucks as $truck)
+                                                            {{ $truck->horse }},
+                                                        @endforeach
+                                                    </td>
+                                                    <td class="min-w-125px">
+                                                        <!--begin::Team members-->
+                                                        <div class="symbol-group symbol-hover mb-1">
+                                                            >
+                                                            <div class="symbol symbol-circle symbol-25px">
+                                                                <div class="symbol-label bg-danger">
+                                                                    <span class="fs-7 text-inverse-danger">E</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Team members-->
+                                                        <div class="fs-7 fw-bold text-muted">
+                                                            {{ $t->controller->full_name }}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-light-success">{{ $t->status }}</span>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <button type="button" data-bs-toggle="modal"
+                                                            data-bs-target="#edit_convoy_{{ $t->id }}"
+                                                            class="btn btn-icon btn-sm btn-light btn-active-primary w-25px h-25px">
+                                                            <i class="ki-duotone ki-black-right fs-2 text-muted"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                        <!--end::Table-->
+                                    </table>
+
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::List Widget 1-->
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card card-xl-stretch mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold text-gray-900">Lubumbashi</span>
+                                        <span class="text-muted mt-1 fw-semibold fs-7">{{ count($lubumbashi) }}
+                                            convoy(s)</span>
+                                    </h3>
+                                </div>
+                                <!--end::Header-->
+
+                                <!--begin::Body-->
+                                <div class="card-body pt-5">
+                                    <table id="kt_widget_table_3"
+                                        class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
+                                        data-kt-table-widget-3="all">
+                                        <thead class="d-none">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Trucks</th>
+                                                <th>Escort</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach ($lubumbashi as $t)
+                                                <tr>
+                                                    <td class="min-w-175px">
+                                                        <div class="position-relative ps-6 pe-3 py-2">
+                                                            <div
+                                                                class="position-absolute start-0 top-0 w-4px h-100 rounded-2 bg-{{ $t->status_colour() }} animation-blink">
+                                                            </div>
+                                                            <a href="#"
+                                                                class="mb-1 text-gray-900 text-hover-primary fw-bold">{{ $t->location->location }}
+                                                            </a>
+                                                            <div class="fs-7 text-muted fw-bold">Updated on
+                                                                {{ $t->updated_at }}</div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="min-w-125px">
+                                                        <input class="form-control form-control-solid"
+                                                            value="
+                                                            @foreach ($t->trucks as $truck)
+                                                            {{ $truck->horse }}, @endforeach
+                                                        "
+                                                            readonly id="kt_tagify_8" />
+                                                    </td>
+                                                    <td class="min-w-125px">
+                                                        <!--begin::Team members-->
+                                                        <div class="symbol-group symbol-hover mb-1">
+                                                            >
+                                                            <div class="symbol symbol-circle symbol-25px">
+                                                                <div class="symbol-label bg-danger">
+                                                                    <span class="fs-7 text-inverse-danger">E</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Team members-->
+                                                        <div class="fs-7 fw-bold text-muted">{{ $t->controller->full_name }}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-light-success">{{ $t->status }}</span>
+                                                    </td>
+                                                    <td class="text-end">
+                                                        <button type="button" data-bs-toggle="modal"
+                                                            data-bs-target="#edit_convoy_{{ $t->id }}"
+                                                            class="btn btn-icon btn-sm btn-light btn-active-primary w-25px h-25px">
+                                                            <i class="ki-duotone ki-black-right fs-2 text-muted"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                        <!--end::Table-->
+                                    </table>
+
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::List Widget 1-->
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card card-xl-stretch mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold text-gray-900">Lushi to Klsa</span>
+                                        <span class="text-muted mt-1 fw-semibold fs-7">{{ count($lubumbashi) }}
+                                            Convoy(s)</span>
+                                    </h3>
+                                </div>
+                                <!--end::Header-->
+
+                                <!--begin::Body-->
+                                <div class="card-body pt-5">
+                                    <table id="kt_widget_table_3"
+                                        class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
+                                        data-kt-table-widget-3="all">
+                                        <thead class="d-none">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Trucks</th>
+                                                <th>Escort</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach ($lshi_to_klsa as $t)
+                                                <tr>
+                                                    <td class="min-w-175px">
+                                                        <div class="position-relative ps-6 pe-3 py-2">
+                                                            <div
+                                                                class="position-absolute start-0 top-0 w-4px h-100 rounded-2 bg-{{ $t->status_colour() }} animation-blink">
                                                             </div>
                                                             <a href="#"
                                                                 class="mb-1 text-gray-900 text-hover-primary fw-bold">{{ $t->location->location }}
@@ -281,7 +456,7 @@
 
                                     <!--begin::Select-->
                                     <select name="trucks[]" multiple="multiple" data-control="select2"
-                                        data-hide-search="false" data-placeholder="Client"
+                                        data-hide-search="false" data-placeholder="Truck"
                                         class="form-select form-select-solid select2-multiple">
                                         <option value="">Select a truck...</option>
                                         @foreach ($trucks as $truck)
@@ -417,9 +592,9 @@
                         <!--begin::Modal footer-->
                         <div class="modal-footer flex-center">
                             <!--begin::Button-->
-                            <button type="reset" id="kt_modal_create_api_key_cancel" class="btn btn-light me-3">
+                            <a type="reset" id="kt_modal_create_api_key_cancel" class="btn btn-light me-3">
                                 Discard
-                            </button>
+                            </a>
                             <!--end::Button-->
 
                             <!--begin::Button-->
@@ -580,7 +755,7 @@
                                             <div class="btn-group w-100" data-kt-buttons="true"
                                                 data-kt-buttons-target="[data-kt-button]">
                                                 <!--begin::Radio-->
-                                                <label class="btn btn-outline btn-active-success btn-color-muted"
+                                                <label class="btn btn-outline btn-active-success btn-color-muted active"
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
@@ -591,7 +766,7 @@
                                                 <!--end::Radio-->
 
                                                 <!--begin::Radio-->
-                                                <label class="btn btn-outline btn-active-success btn-color-muted active"
+                                                <label class="btn btn-outline btn-active-success btn-color-muted"
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
@@ -643,12 +818,6 @@
 
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
-                                <!--begin::Button-->
-                                <button type="reset" id="kt_modal_create_api_key_cancel" class="btn btn-light me-3">
-                                    Discard
-                                </button>
-                                <!--end::Button-->
-
                                 <!--begin::Button-->
                                 <button type="submit" id="kt_modal_create_api_key_submit" class="btn btn-primary">
                                     <span class="indicator-label">

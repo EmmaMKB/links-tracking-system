@@ -31,11 +31,19 @@ class ConvoyController extends Controller
 
 
         $klzi_to_likasi = Convoy::whereHas('location', function ($query) {
-            $query->where('section_id', 2);
+            $query->whereIn('section_id', [1,2]);
         })->get();
 
         $likasi_to_lushi = Convoy::whereHas('location', function ($query)  {
             $query->whereIn('section_id', [3,4]);
+        })->get();
+
+        $lubumbashi = Convoy::whereHas('location', function ($query) {
+            $query->where('section_id', 5);
+        })->get();
+
+        $lshi_to_klsa = Convoy::whereHas('location', function ($query)  {
+            $query->whereIn('section_id', [6,7]);
         })->get();
 
         return view('convoys.drcroutes', [
@@ -47,10 +55,12 @@ class ConvoyController extends Controller
             'controllers' => $controllers,
             'klzi_to_likasi' => $klzi_to_likasi,
             'likasi_to_lushi' => $likasi_to_lushi,
+            'lubumbashi' => $lubumbashi,
+            'lshi_to_klsa' => $lshi_to_klsa,
         ]);
     }
 
-    function add_convoy(Request $request)  {
+    function create(Request $request)  {
 
         $validatedData = $request->validate([
             'trucks' => 'required',
@@ -89,6 +99,22 @@ class ConvoyController extends Controller
         $convoy->update($validatedData);
         $convoy->save();
 
+        // Update the convoy status for each truck
+        foreach ($validatedData['trucks'] as $key => $t) {
+            $truck = Truck::find($t);
+            $truck->location_id = $validatedData['location_id'];
+            $truck->status = $validatedData['status'];
+            $truck->convoy_id = $validatedData['convoy_id'];
+            $truck->save();
+        }
+
         return redirect()->back()->with('success', 'Convoy updated successfully');
+    }
+
+    function delete(string $uuid) {
+        $convoy = Convoy::where('uuid', $uuid)->first();
+        $convoy->delete();
+
+        return redirect()->back()->with('success', 'Convoy deleted successfully');
     }
 }

@@ -368,13 +368,6 @@
                                                         </div>
                                                     </td>
                                                     <td class="min-w-125px">
-                                                        {{-- <input class="form-control form-control-solid"
-                                                            value="
-                                                            @foreach ($t->trucks as $truck)
-                                                            {{ $truck->horse }},
-                                                        @endforeach
-                                                        "
-                                                            readonly id="kt_tagify_8" /> --}}
                                                         @foreach ($t->trucks as $truck)
                                                             {{ $truck->horse }},
                                                         @endforeach

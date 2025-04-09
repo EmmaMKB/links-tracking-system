@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Truck;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\Client;
+use App\Models\Location;
+use App\Models\Mine;
 
 class TruckController extends Controller
 {
@@ -13,13 +16,20 @@ class TruckController extends Controller
 
         $trucks = Truck::where('status', '!=', 'Handover')->get();
 
+        $clients = Client::all();
+        $locations = Location::all();
+        $mines = Mine::orderBy('mine', 'asc')->get();
+
         return view('trucks.index', [
-            'trucks' => $trucks
+            'trucks' => $trucks,
+            'clients' => $clients,
+            'locations' => $locations,
+            'mines' => $mines,
         ]);
     }
 
     function trucks_drc() : View {
-        
+
         $trucks = Truck::where('status', 'Handover')->get();
 
         return view('trucks.drcroutes', [
@@ -47,5 +57,27 @@ class TruckController extends Controller
         Truck::create($validatedData);
 
         return redirect()->back()->with('success', 'Truck added successfully');
+    }
+
+    function edit_truck(Request $request) {
+
+        $validatedData = $request->validate([
+            'id' => 'required|exists:trucks,id',
+            'horse' => 'required|string',
+            'trailer' => 'nullable|string',
+            'transporter' => 'required|string',
+            'dispatch_date' => 'required|date',
+            'mine_id' => 'required|exists:mines,id',
+            'driver' => 'nullable|string',
+            'client_id' => 'required|exists:clients,id',
+            'location_id' => 'required|exists:locations,id',
+            'status' => 'required|string',
+            'comment' => 'nullable|string',
+            'destination' => 'nullable|string',
+        ]);
+        $truck = Truck::find($validatedData['id']);
+        $truck->update($validatedData);
+        $truck->save();
+        return redirect()->back()->with('success', 'Truck updated successfully');
     }
 }

@@ -502,19 +502,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="reset" id="kt_modal_create_api_key_cancel" class="btn btn-light me-3">
-                                    Discard
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                    Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
-                                    </span>
-                                    <span class="indicator-progress">
-                                        Please wait... <span
-                                            class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                     </span>
                                 </button>
                                 <!--end::Button-->

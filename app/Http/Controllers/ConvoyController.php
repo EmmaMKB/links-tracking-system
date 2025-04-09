@@ -117,13 +117,6 @@ class ConvoyController extends Controller
             $convoy->delete();
             return redirect()->back()->with('success', 'Convoy deleted successfully');
         }
-
     }
 
-    function delete(string $uuid) {
-        $convoy = Convoy::where('uuid', $uuid)->first();
-        $convoy->delete();
-
-        return redirect()->back()->with('success', 'Convoy deleted successfully');
-    }
 }

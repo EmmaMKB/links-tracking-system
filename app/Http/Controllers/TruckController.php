@@ -61,23 +61,33 @@ class TruckController extends Controller
 
     function edit_truck(Request $request) {
 
-        $validatedData = $request->validate([
-            'id' => 'required|exists:trucks,id',
-            'horse' => 'required|string',
-            'trailer' => 'nullable|string',
-            'transporter' => 'required|string',
-            'dispatch_date' => 'required|date',
-            'mine_id' => 'required|exists:mines,id',
-            'driver' => 'nullable|string',
-            'client_id' => 'required|exists:clients,id',
-            'location_id' => 'required|exists:locations,id',
-            'status' => 'required|string',
-            'comment' => 'nullable|string',
-            'destination' => 'nullable|string',
-        ]);
-        $truck = Truck::find($validatedData['id']);
-        $truck->update($validatedData);
-        $truck->save();
-        return redirect()->back()->with('success', 'Truck updated successfully');
+        if ($request->action == "update") {
+            $validatedData = $request->validate([
+                'id' => 'required|exists:trucks,id',
+                'horse' => 'required|string',
+                'trailer' => 'nullable|string',
+                'transporter' => 'required|string',
+                'dispatch_date' => 'required|date',
+                'mine_id' => 'required|exists:mines,id',
+                'driver' => 'nullable|string',
+                'client_id' => 'required|exists:clients,id',
+                'location_id' => 'required|exists:locations,id',
+                'status' => 'required|string',
+                'comment' => 'nullable|string',
+                'destination' => 'nullable|string',
+            ]);
+            $truck = Truck::find($validatedData['id']);
+            $truck->update($validatedData);
+            $truck->save();
+            return redirect()->back()->with('success', 'Truck updated successfully');
+        }
+        if ($request->action == "delete") {
+            $validatedData = $request->validate([
+                'id' => 'required|exists:trucks,id',
+            ]);
+            $truck = Truck::find($validatedData['id']);
+            $truck->delete();
+            return redirect()->back()->with('success', 'Truck deleted successfully');
+        }
     }
 }

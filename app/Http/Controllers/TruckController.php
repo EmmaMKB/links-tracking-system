@@ -30,10 +30,20 @@ class TruckController extends Controller
 
     function trucks_drc() : View {
 
-        $trucks = Truck::where('status', 'Handover')->get();
+        $trucks = Truck::where('status', '!=', 'Handover')
+            ->whereHas('location.section', function ($query) {
+                $query->where('country', 'DRC');
+            })
+            ->get();
+        $clients = Client::all();
+        $locations = Location::all();
+        $mines = Mine::orderBy('mine', 'asc')->get();
 
         return view('trucks.drcroutes', [
-            'trucks' => $trucks
+            'trucks' => $trucks,
+            'clients' => $clients,
+            'locations' => $locations,
+            'mines' => $mines,
         ]);
     }
 

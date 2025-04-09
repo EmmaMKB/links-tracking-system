@@ -309,7 +309,7 @@
                                                         class="menu-title">All trucks</span></a><!--end:Menu link-->
                                             </div>
                                             <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                                                    href="../index.html"><span class="menu-bullet"><span
+                                                    href="{{ route('trucks:drc_routes') }}"><span class="menu-bullet"><span
                                                             class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">DRC Trucks</span></a><!--end:Menu link-->
                                             </div>

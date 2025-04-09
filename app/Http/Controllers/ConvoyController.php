@@ -86,29 +86,38 @@ class ConvoyController extends Controller
     }
 
     function update(Request $request) {
-        $validatedData = $request->validate([
-            'trucks' => 'required',
-            'convoy_id' => 'required|exists:convoys,id',
-            'escort_id' => 'required|exists:employees,id',
-            'controller_id' => 'required|exists:employees,id',
-            'location_id' => 'required|exists:locations,id',
-            'status' => 'required|string',
-        ]);
 
-        $convoy = Convoy::find($validatedData['convoy_id']);
-        $convoy->update($validatedData);
-        $convoy->save();
+        if ($request->action == 'update') {
+            $validatedData = $request->validate([
+                'trucks' => 'required',
+                'convoy_id' => 'required|exists:convoys,id',
+                'escort_id' => 'required|exists:employees,id',
+                'controller_id' => 'required|exists:employees,id',
+                'location_id' => 'required|exists:locations,id',
+                'status' => 'required|string',
+            ]);
 
-        // Update the convoy status for each truck
-        foreach ($validatedData['trucks'] as $key => $t) {
-            $truck = Truck::find($t);
-            $truck->location_id = $validatedData['location_id'];
-            $truck->status = $validatedData['status'];
-            $truck->convoy_id = $validatedData['convoy_id'];
-            $truck->save();
+            $convoy = Convoy::find($validatedData['convoy_id']);
+            $convoy->update($validatedData);
+            $convoy->save();
+
+            // Update the convoy status for each truck
+            foreach ($validatedData['trucks'] as $key => $t) {
+                $truck = Truck::find($t);
+                $truck->location_id = $validatedData['location_id'];
+                $truck->status = $validatedData['status'];
+                $truck->convoy_id = $validatedData['convoy_id'];
+                $truck->save();
+            }
+
+            return redirect()->back()->with('success', 'Convoy updated successfully');
+        }
+        if ($request->action == 'delete') {
+            $convoy = Convoy::find($request->convoy_id);
+            $convoy->delete();
+            return redirect()->back()->with('success', 'Convoy deleted successfully');
         }
 
-        return redirect()->back()->with('success', 'Convoy updated successfully');
     }
 
     function delete(string $uuid) {

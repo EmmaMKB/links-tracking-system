@@ -301,7 +301,8 @@
                                                             </div>
                                                         </div>
                                                         <!--end::Team members-->
-                                                        <div class="fs-7 fw-bold text-muted">{{ $t->controller->full_name }}
+                                                        <div class="fs-7 fw-bold text-muted">
+                                                            {{ $t->controller->full_name }}
                                                         </div>
                                                     </td>
                                                     <td>
@@ -584,23 +585,20 @@
 
                         <!--begin::Modal footer-->
                         <div class="modal-footer flex-center">
-                            <!--begin::Button-->
-                            <a type="reset" id="kt_modal_create_api_key_cancel" class="btn btn-light me-3">
-                                Discard
-                            </a>
-                            <!--end::Button-->
+                                <!--begin::Button-->
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                    Delete
+                                </button>
+                                <!--end::Button-->
 
-                            <!--begin::Button-->
-                            <button type="submit" id="kt_modal_create_api_key_submit" class="btn btn-primary">
-                                <span class="indicator-label">
-                                    Submit
-                                </span>
-                                <span class="indicator-progress">
-                                    Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                </span>
-                            </button>
-                            <!--end::Button-->
-                        </div>
+                                <!--begin::Button-->
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                    <span class="indicator-label">
+                                        Submit
+                                    </span>
+                                </button>
+                                <!--end::Button-->
+                            </div>
                         <!--end::Modal footer-->
                     </form>
                     <!--end::Form-->
@@ -763,7 +761,7 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                         value="Parked" />
+                                                        value="Parked" />
                                                     <!--end::Input-->
                                                     Parked
                                                 </label>
@@ -812,13 +810,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                    Delete
+                                </button>
+                                <!--end::Button-->
+
+                                <!--begin::Button-->
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
-                                    </span>
-                                    <span class="indicator-progress">
-                                        Please wait... <span
-                                            class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                     </span>
                                 </button>
                                 <!--end::Button-->
@@ -854,7 +854,7 @@
 
                         <!--begin::Form-->
                         <form id="kt_modal_create_api_key_form" class="form" action="{{ route('update_convoy') }}"
-                            method="post">
+                            method="post" enctype="multipart/form-data">
                             @csrf
                             <!--begin::Modal body-->
                             <div class="modal-body py-10 px-lg-17">
@@ -974,7 +974,7 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                       checked="checked" value="Moving" />
+                                                        checked="checked" value="Moving" />
                                                     <!--end::Input-->
                                                     Moving
                                                 </label>
@@ -985,7 +985,7 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                         value="Parked" />
+                                                        value="Parked" />
                                                     <!--end::Input-->
                                                     Parked
                                                 </label>
@@ -1034,19 +1034,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="reset" id="kt_modal_create_api_key_cancel" class="btn btn-light me-3">
-                                    Discard
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                    Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
-                                    </span>
-                                    <span class="indicator-progress">
-                                        Please wait... <span
-                                            class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                     </span>
                                 </button>
                                 <!--end::Button-->

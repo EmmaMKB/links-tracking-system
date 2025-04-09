@@ -282,7 +282,6 @@
                             <!--begin::Modal title-->
                             <h2>Edit truck</h2>
                             <!--end::Modal title-->
-
                             <!--begin::Close-->
                             <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
                                 <i class="fa fa-times"></i>
@@ -290,7 +289,6 @@
                             <!--end::Close-->
                         </div>
                         <!--end::Modal header-->
-
                         <!--begin::Form-->
                         <form id="truck_edit_" class="form" action="{{ route('truck:edit') }}" method="post">
                             @csrf

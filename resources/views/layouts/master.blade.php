@@ -309,7 +309,8 @@
                                                         class="menu-title">All trucks</span></a><!--end:Menu link-->
                                             </div>
                                             <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
-                                                    href="{{ route('trucks:drc_routes') }}"><span class="menu-bullet"><span
+                                                    href="{{ route('trucks:drc_routes') }}"><span
+                                                        class="menu-bullet"><span
                                                             class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">DRC Trucks</span></a><!--end:Menu link-->
                                             </div>
@@ -336,10 +337,28 @@
                                                         class="menu-title">Ground team</span></a><!--end:Menu link-->
                                             </div>
                                             <div class="menu-item">
-                                                <a class="menu-link" href="{{ route('controllers') }}"><span class="menu-bullet">
+                                                <a class="menu-link" href="{{ route('controllers') }}"><span
+                                                        class="menu-bullet">
                                                         <span class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">Controllers</span></a>
                                             </div>
+                                        </div><!--end:Menu sub-->
+                                    </div>
+                                    <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                        <!--begin:Menu link--><span class="menu-link"><span class="menu-icon"><i
+                                                    class="ki-duotone ki-element-11 fs-2"><span
+                                                        class="path1"></span><span class="path2"></span><span
+                                                        class="path3"></span><span
+                                                        class="path4"></span></i></span><span
+                                                class="menu-title">Reports</span><span
+                                                class="menu-arrow"></span></span><!--end:Menu link--><!--begin:Menu sub-->
+                                        <div class="menu-sub menu-sub-accordion"><!--begin:Menu item-->
+                                            <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
+                                                    href="{{ route('statistics') }}"><span class="menu-bullet"><span
+                                                            class="bullet bullet-dot"></span></span><span
+                                                        class="menu-title">Statistics</span></a><!--end:Menu link-->
+                                            </div>
+
                                         </div><!--end:Menu sub-->
                                     </div>
                                 </div>
@@ -390,8 +409,11 @@
         var hostUrl = "{{ route('dashboard') }}";
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
 
 
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->

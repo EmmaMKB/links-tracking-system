@@ -9,6 +9,7 @@ use App\Models\Location;
 use App\Models\Mine;
 use App\Models\Truck;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
@@ -33,6 +34,18 @@ class DashboardController extends Controller
             'transit' => $transit,
             'convoys' => $convoys,
             'breakdowns' => $breakdowns,
+        ]);
+    }
+
+    function statistics() : View {
+        $clients = Client::all();
+        $locations = Location::all();
+        $mines = Mine::orderBy('mine', 'asc')->get();
+
+        return view('dashboard.statistics', [
+            'clients' => $clients,
+            'locations' => $locations,
+            'mines' => $mines,
         ]);
     }
 

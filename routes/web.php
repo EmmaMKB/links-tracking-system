@@ -6,6 +6,7 @@ use App\Http\Controllers\ConvoyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TruckController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ReportsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +39,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/add_convoy', [ConvoyController::class, 'create'])->name('add_convoy');
     Route::post('/update_convoy', [ConvoyController::class, 'update'])->name('update_convoy');
     Route::post('/delete_convoy', [ConvoyController::class, 'delete'])->name('delete_convoy');
+    Route::get('/reports', [DashboardController::class, 'statistics'])->name('statistics');
+    Route::post('reports/tracking', [ReportsController::class, 'tracking'])->name('tracking');
 });
 
 Route::middleware(['guest'])->group(function () {

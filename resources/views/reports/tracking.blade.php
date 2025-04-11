@@ -109,7 +109,7 @@
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-3">
                                         <div class="menu-content px-3 py-3">
-                                            <a class="btn btn-primary  btn-sm px-4" href="#">
+                                            <a href="{{ route('download', ['client_id' => $client->client->id]) }}" class="btn btn-primary  btn-sm px-4">
                                                 Download Report
                                             </a>
                                         </div>

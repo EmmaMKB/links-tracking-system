@@ -1,490 +1,570 @@
 [
     {
-        "location": "Mines.Kolwezi",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 1,
-        "description": "",
-        "index": 1
+        "location": "Mine.Kolwezi",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "1",
+        "description": "null",
+        "index": "1"
     },
     {
-        "location": "Mines to Connex",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 1,
-        "description": "",
-        "index": 2
+        "location": "Mine to Connex",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "1",
+        "description": "null",
+        "index": "2"
     },
     {
         "location": "Connex Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 1,
-        "description": "",
-        "index": 3
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "1",
+        "description": "null",
+        "index": "3"
     },
     {
         "location": "Somalian Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 1,
-        "description": "",
-        "index": 4
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "1",
+        "description": "null",
+        "index": "4"
     },
     {
-        "location": "Parking to Lualaba",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 5
+        "location": "Dangelo K'lzi",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "1",
+        "description": "null",
+        "index": "5"
+    },
+    {
+        "location": "Park. - Lualaba",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "6"
     },
     {
         "location": "Lualaba TG",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 6
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "7"
     },
     {
-        "location": "Lualaba - Mpumpi",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 7
+        "location": "Lualaba-Mpumpi",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "8"
     },
     {
         "location": "Mpumpi CP",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 8
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "9"
     },
     {
-        "location": "Mpumpi-Tenke",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 9
+        "location": "Mpumpi to Tenke",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "10"
     },
     {
-        "location": "Tenke gate",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 10
+        "location": "Barriere Tenke",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "11"
     },
     {
         "location": "Tenke to FGM",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 11
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "12"
     },
     {
         "location": "Fungurume CP",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 12
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "13"
     },
     {
         "location": "Somalian Parking FGM",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 13
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "14"
     },
     {
-        "location": "FGM - Mutaka",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 14
+        "location": "FGM to Mutaka",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "15"
     },
     {
         "location": "Mutaka CP",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 15
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "16"
     },
     {
-        "location": "Mutala - Lwambo",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 16
+        "location": "Mutaka to Lwambo",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "17"
     },
     {
         "location": "Lwambo TG",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 17
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "18"
     },
     {
         "location": "Lwambo to Likasi",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 2,
-        "description": "",
-        "index": 18
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "2",
+        "description": "null",
+        "index": "19"
     },
     {
-        "location": "Likasi bypass Rd.",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 19
+        "location": "Likasi Bypass Rd",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "20"
+    },
+    {
+        "location": "Mukoneka TG",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "21"
     },
     {
         "location": "Nguya TG",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 20
-    },
-    {
-        "location": "Mbalaka TG",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 21
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "22"
     },
     {
         "location": "Likasi (Around)",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 22
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "23"
     },
     {
-        "location": "Mines.Likasi",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 23
+        "location": "Mine to Likasi",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "24"
     },
     {
-        "location": "Mines-to-Likasi",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 24
+        "location": "Mines in Likasi",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "25"
+    },
+    {
+        "location": "Nguya Parking",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "26"
     },
     {
         "location": "Josephine Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 25
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "27"
     },
     {
         "location": "Parking Kitoko",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 26
-    },
-    {
-        "location": "City Energy Bungu",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 27
-    },
-    {
-        "location": "Buluo TG",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3,
-        "description": "",
-        "index": 28
-    },
-    {
-        "location": "Buluo-Kapolowe",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 4,
-        "description": "",
-        "index": 29
-    },
-    {
-        "location": "Kapolowe - Bungu Bungu",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 4,
-        "description": "",
-        "index": 30
-    },
-    {
-        "location": "Bungu Bungu - Baba Cosma",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 4,
-        "description": "",
-        "index": 31
-    },
-    {
-        "location": "Baba Cosma - Tumbwe",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 4,
-        "description": "",
-        "index": 32
-    },
-    {
-        "location": "Tumbwe - Kimbembe",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 4,
-        "description": "",
-        "index": 33
-    },
-    {
-        "location": "Lubumbashi TG",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 34
-    },
-    {
-        "location": "Lubumbashi TG - Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 35
-    },
-    {
-        "location": "Parking - Kyungu",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 36
-    },
-    {
-        "location": "Kyungu - Kanyaka",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 37
-    },
-    {
-        "location": "Mines.Lushi",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 38
-    },
-    {
-        "location": "Mines - Lushi",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 39
-    },
-    {
-        "location": "Dangelo 01 Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 40
-    },
-    {
-        "location": "Dangelo 02 Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 41
-    },
-    {
-        "location": "Savanna Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 42
-    },
-    {
-        "location": "Katanga Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 43
-    },
-    {
-        "location": "Nehema Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 44
-    },
-    {
-        "location": "Parking Kyungu",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 45
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "28"
     },
     {
         "location": "Parking Bazano",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 46
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "29"
+    },
+    {
+        "location": "Mbalaka TG",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "3",
+        "description": "null",
+        "index": "30"
+    },
+    {
+        "location": "Mbalaka to Kapolowe",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "4",
+        "description": "null",
+        "index": "31"
+    },
+    {
+        "location": "Kapolowe Village",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "4",
+        "description": "null",
+        "index": "32"
+    },
+    {
+        "location": "Kapolowe - Bungu Bungu",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "4",
+        "description": "null",
+        "index": "33"
+    },
+    {
+        "location": "Bungu Bunugu CP",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "4",
+        "description": "null",
+        "index": "34"
+    },
+    {
+        "location": "City Energy Bungu",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "4",
+        "description": "null",
+        "index": "35"
+    },
+    {
+        "location": "Bungu Bungu to Baba Cosma",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "4",
+        "description": "null",
+        "index": "36"
+    },
+    {
+        "location": "Baba Cosma - Tumbwe",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "4",
+        "description": "null",
+        "index": "37"
+    },
+    {
+        "location": "Tumbwe - Kawama",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "4",
+        "description": "null",
+        "index": "38"
+    },
+    {
+        "location": "Kawama - Kimbembe",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "4",
+        "description": "null",
+        "index": "39"
+    },
+    {
+        "location": "Mine.Lushi",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "40"
+    },
+    {
+        "location": "Mine to Lushi",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "41"
+    },
+    {
+        "location": "Kimbembe TG",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "42"
+    },
+    {
+        "location": "Park. Dangelo 01",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "43"
+    },
+    {
+        "location": "Park. Dangelo 02",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "44"
+    },
+    {
+        "location": "Park. Savanna",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "45"
+    },
+    {
+        "location": "Park. Katanga",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "46"
+    },
+    {
+        "location": "Park.Nehema",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "47"
+    },
+    {
+        "location": "Park.Bazano",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "48"
+    },
+    {
+        "location": "Eco Energy",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "49"
+    },
+    {
+        "location": "Kimbembe - Kamatete",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "50"
+    },
+    {
+        "location": "Kamatete - Karavia",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "51"
+    },
+    {
+        "location": "Karavia - Kipushi Rd",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "52"
+    },
+    {
+        "location": "Kipushi - Kyungu",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "53"
+    },
+    {
+        "location": "Park.Kyungu",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "54"
+    },
+    {
+        "location": "Kyungu - Kanyaka",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "55"
     },
     {
         "location": "Group Deal Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 47
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "56"
     },
     {
-        "location": "Kanyaka.Queue",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 48
+        "location": "Kanyaka. Queue",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "57"
     },
     {
-        "location": "Kanyaka Parking",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 49
+        "location": "Park.Kanyaka",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "58"
     },
     {
         "location": "Kanyaka TG",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 5,
-        "description": "",
-        "index": 50
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "5",
+        "description": "null",
+        "index": "59"
     },
     {
         "location": "Kanyaka - Lumata",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 6,
-        "description": "",
-        "index": 51
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "6",
+        "description": "null",
+        "index": "60"
     },
     {
         "location": "Lumata CP",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 6,
-        "description": "",
-        "index": 52
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "6",
+        "description": "null",
+        "index": "61"
     },
     {
-        "location": "Lumata - 7\/7",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 6,
-        "description": "",
-        "index": 53
+        "location": "Lumata - K'lsa",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "6",
+        "description": "null",
+        "index": "62"
     },
     {
-        "location": "7\/7 to Klsa TG",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 6,
-        "description": "",
-        "index": 54
+        "location": "7/7 queue to TG",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "6",
+        "description": "null",
+        "index": "63"
     },
     {
         "location": "K'lsa TG",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 7,
-        "description": "",
-        "index": 55
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "7",
+        "description": "null",
+        "index": "64"
     },
     {
-        "location": "Park. Whiskey",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 7,
-        "description": "",
-        "index": 56
+        "location": "Park Whiskey",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "7",
+        "description": "null",
+        "index": "65"
     },
     {
-        "location": "Park. St-Paul",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 7,
-        "description": "",
-        "index": 57
+        "location": "Outside Whiskey",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "7",
+        "description": "null",
+        "index": "66"
     },
     {
-        "location": "Park. Ogefrem",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 7,
-        "description": "",
-        "index": 58
+        "location": "OCC Kasumbalesa",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "7",
+        "description": "null",
+        "index": "67"
     },
     {
-        "location": "K'lsa Bypass Rd.",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 7,
-        "description": "",
-        "index": 59
+        "location": "Ogefrem Parking",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "7",
+        "description": "null",
+        "index": "68"
     },
     {
-        "location": "Park. - Dryport",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 7,
-        "description": "",
-        "index": 60
+        "location": "Park. St Paul",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "7",
+        "description": "null",
+        "index": "69"
     },
     {
-        "location": "Klsa Dryport (DRC Side)",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 7,
-        "description": "",
-        "index": 61
+        "location": "Parking to Dryport",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "7",
+        "description": "null",
+        "index": "70"
+    },
+    {
+        "location": "K'lsa Dryport (DRC Side)",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "7",
+        "description": "null",
+        "index": "71"
     }
 ]

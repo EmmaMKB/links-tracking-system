@@ -33,5 +33,15 @@
         "section": "KASUMBALESA",
         "index": 7,
         "country": "DRC"
+    },
+    {
+        "section": "KLSA-SAKANIA",
+        "index": 8,
+        "country": "DRC"
+    },
+    {
+        "section": "SAKANIA",
+        "index": 9,
+        "country": "DRC"
     }
 ]

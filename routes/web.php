@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/add_truck', [TruckController::class, 'add_truck'])->name('add_truck');
     Route::post('/edit_truck', [TruckController::class, 'edit_truck'])->name('truck:edit');
+    Route::post('/import_trucks', [TruckController::class, 'import'])->name('truck:import');
     Route::get('/trucks', [TruckController::class, 'index'])->name('trucks');
     Route::get('/trucks/drc-routes', [TruckController::class, 'trucks_drc'])->name('trucks:drc_routes');
     Route::get('/teams/ground', [EmployeeController::class, 'ground_team'])->name('ground_team');

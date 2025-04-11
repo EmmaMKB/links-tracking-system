@@ -18,5 +18,13 @@
     {
         "client": "WORLDCO",
         "comment": ""
+    },
+    {
+        "client": "INARA",
+        "comment": ""
+    },
+    {
+        "client": "KGM",
+        "comment": ""
     }
 ]

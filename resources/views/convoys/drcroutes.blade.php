@@ -785,13 +785,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel"
+                                    class="btn btn-danger me-3">
                                     Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit"
+                                    class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
                                     </span>
@@ -1009,13 +1011,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel"
+                                    class="btn btn-danger me-3">
                                     Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit"
+                                    class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
                                     </span>
@@ -1233,13 +1237,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel"
+                                    class="btn btn-danger me-3">
                                     Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit"
+                                    class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
                                     </span>
@@ -1301,10 +1307,12 @@
                                             @foreach ($trucks as $truck)
                                                 @foreach ($convoy->trucks as $t)
                                                     @if ($t->id == $truck->id)
-                                                        <option value="{{ $truck->id }}" selected>{{ $truck->horse }}
+                                                        <option value="{{ $truck->id }}" selected>
+                                                            {{ $truck->horse }}
                                                         </option>
                                                     @else
-                                                        <option value="{{ $truck->id }}">{{ $truck->horse }}</option>
+                                                        <option value="{{ $truck->id }}">{{ $truck->horse }}
+                                                        </option>
                                                     @endif
                                                 @endforeach
                                             @endforeach
@@ -1457,13 +1465,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel"
+                                    class="btn btn-danger me-3">
                                     Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit"
+                                    class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
                                     </span>
@@ -1525,10 +1535,12 @@
                                             @foreach ($trucks as $truck)
                                                 @foreach ($convoy->trucks as $t)
                                                     @if ($t->id == $truck->id)
-                                                        <option value="{{ $truck->id }}" selected>{{ $truck->horse }}
+                                                        <option value="{{ $truck->id }}" selected>
+                                                            {{ $truck->horse }}
                                                         </option>
                                                     @else
-                                                        <option value="{{ $truck->id }}">{{ $truck->horse }}</option>
+                                                        <option value="{{ $truck->id }}">{{ $truck->horse }}
+                                                        </option>
                                                     @endif
                                                 @endforeach
                                             @endforeach
@@ -1681,13 +1693,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel"
+                                    class="btn btn-danger me-3">
                                     Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit"
+                                    class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
                                     </span>
@@ -1749,10 +1763,12 @@
                                             @foreach ($trucks as $truck)
                                                 @foreach ($convoy->trucks as $t)
                                                     @if ($t->id == $truck->id)
-                                                        <option value="{{ $truck->id }}" selected>{{ $truck->horse }}
+                                                        <option value="{{ $truck->id }}" selected>
+                                                            {{ $truck->horse }}
                                                         </option>
                                                     @else
-                                                        <option value="{{ $truck->id }}">{{ $truck->horse }}</option>
+                                                        <option value="{{ $truck->id }}">{{ $truck->horse }}
+                                                        </option>
                                                     @endif
                                                 @endforeach
                                             @endforeach
@@ -1905,13 +1921,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel"
+                                    class="btn btn-danger me-3">
                                     Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit"
+                                    class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
                                     </span>
@@ -1938,6 +1956,11 @@
 
             // Initialize Tagify components on the above inputs
             new Tagify(input1);
+        </script>
+        <script>
+            window.setTimeout(function() {
+                window.location.reload();
+            }, 300000);
         </script>
     @endsection
 </x-app-layout>

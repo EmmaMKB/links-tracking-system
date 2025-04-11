@@ -46,6 +46,14 @@
                         </ul>
                         <!--end::Breadcrumb-->
                     </div>
+                    <div class="d-flex align-items-center gap-2 gap-lg-3">
+
+                        <!--begin::Primary button-->
+                        <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#truck_import">
+                            Import trucks </a>
+                        <!--end::Primary button-->
+                    </div>
                     <!--end::Page title-->
                     <!--begin::Actions-->
 
@@ -523,5 +531,75 @@
                 </div>
             </div>
         @endforeach
+        <div class="modal fade" id="truck_import" tabindex="-1" aria-hidden="true">
+            <!--begin::Modal dialog-->
+            <div class="modal-dialog modal-dialog-centered mw-650px">
+                <!--begin::Modal content-->
+                <div class="modal-content">
+                    <!--begin::Modal header-->
+                    <div class="modal-header" id="kt_modal_create_api_key_header">
+                        <!--begin::Modal title-->
+                        <h2>Import trucks</h2>
+                        <!--end::Modal title-->
+
+                        <!--begin::Close-->
+                        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        <!--end::Close-->
+                    </div>
+                    <!--end::Modal header-->
+
+                    <!--begin::Form-->
+                    <form id="kt_modal_create_api_key_form" class="form" action="{{ route('truck:import') }}"
+                        method="post" enctype="multipart/form-data">
+                        @csrf
+                        <!--begin::Modal body-->
+                        <div class="modal-body py-10 px-lg-17">
+                            <!--begin::Scroll-->
+                            <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true"
+                                data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
+                                data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
+                                data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
+
+                                <div class="input-group row">
+                                    <div class="col-xs-3 mb-5 fv-row">
+                                        <label class="required fs-5 fw-semibold mb-2">Upload a file</label>
+                                        <input type="file" class="form-control form-control-solid"
+                                            name="file" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Scroll-->
+                        </div>
+                        <!--end::Modal body-->
+
+                        <!--begin::Modal footer-->
+                        <div class="modal-footer flex-center">
+                            <!--begin::Button-->
+                            <button type="reset" id="kt_modal_create_api_key_cancel" class="btn btn-light me-3">
+                                Discard
+                            </button>
+                            <!--end::Button-->
+
+                            <!--begin::Button-->
+                            <button type="submit" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <span class="indicator-label">
+                                    Submit
+                                </span>
+                                <span class="indicator-progress">
+                                    Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                </span>
+                            </button>
+                            <!--end::Button-->
+                        </div>
+                        <!--end::Modal footer-->
+                    </form>
+                    <!--end::Form-->
+                </div>
+                <!--end::Modal content-->
+            </div>
+            <!--end::Modal dialog-->
+        </div>
     @endsection
 </x-app-layout>

@@ -16,18 +16,12 @@ class ConvoyController extends Controller
 {
     function drc_routes() : View {
 
-        $convoys = Convoy::where('status', '!=', 'handover')->get();
         $clients = Client::all();
         $locations = Location::all();
         $escorters = Employee::where('function', '!=', 'controller')->get();
         $controllers = Employee::where('function', 'controller')->get();
         $mines = Mine::orderBy('mine', 'asc')->get();
         $trucks = Truck::with('location')->where('status', '!=', 'Handover')->take(10)->get();
-
-        // $klzi_to_likasi = Convoy::with('location')
-        // ->where('status', '!=', 'Handover')
-        // ->where('location_id', 1)
-        // ->with('Trucks')->get();
 
 
         $klzi_to_likasi = Convoy::whereHas('location', function ($query) {
@@ -43,7 +37,15 @@ class ConvoyController extends Controller
         })->get();
 
         $lshi_to_klsa = Convoy::whereHas('location', function ($query)  {
-            $query->whereIn('section_id', [6,7]);
+            $query->whereIn('section_id', [6]);
+        })->get();
+
+        $kasumbalesa = Convoy::whereHas('location', function ($query) {
+            $query->whereIn('section_id', [7]);
+        })->get();
+
+        $klsa_to_sakania = Convoy::whereHas('location', function ($query) {
+            $query->whereIn('section_id', [8, 9]);
         })->get();
 
         return view('convoys.drcroutes', [
@@ -57,6 +59,8 @@ class ConvoyController extends Controller
             'likasi_to_lushi' => $likasi_to_lushi,
             'lubumbashi' => $lubumbashi,
             'lshi_to_klsa' => $lshi_to_klsa,
+            'kasumbalesa' => $kasumbalesa,
+            'klsa_to_sakania' => $klsa_to_sakania,
         ]);
     }
 

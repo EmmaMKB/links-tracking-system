@@ -8,11 +8,14 @@ use Illuminate\View\View;
 use App\Models\Client;
 use App\Models\Location;
 use App\Models\Mine;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Shared\Date;
 
 class TruckController extends Controller
 {
 
-    function index() : View {
+    function index(): View
+    {
 
         $trucks = Truck::where('status', '!=', 'Handover')->get();
 
@@ -28,7 +31,8 @@ class TruckController extends Controller
         ]);
     }
 
-    function trucks_drc() : View {
+    function trucks_drc(): View
+    {
 
         $trucks = Truck::where('status', '!=', 'Handover')
             ->whereHas('location.section', function ($query) {
@@ -47,7 +51,8 @@ class TruckController extends Controller
         ]);
     }
 
-    function add_truck(Request $request)  {
+    function add_truck(Request $request)
+    {
 
 
         $validatedData = $request->validate([
@@ -69,7 +74,8 @@ class TruckController extends Controller
         return redirect()->back()->with('success', 'Truck added successfully');
     }
 
-    function edit_truck(Request $request) {
+    function edit_truck(Request $request)
+    {
 
         if ($request->action == "update") {
             $validatedData = $request->validate([
@@ -99,5 +105,57 @@ class TruckController extends Controller
             $truck->delete();
             return redirect()->back()->with('success', 'Truck deleted successfully');
         }
+    }
+
+    function import(Request $request)
+    {
+
+        $validatedData = $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+
+        $file = $request->file('file')->getRealPath();
+
+        // Load the spreadsheet
+        $spreadsheet = IOFactory::load($file);
+
+        // Get the first worksheet
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $spreadsheet = IOFactory::load($file);
+
+        // Get the first worksheet
+        $sheet = $spreadsheet->getActiveSheet();
+        $highestRow = $sheet->getHighestDataRow();
+
+        for ($row = 2; $row <= $highestRow; $row++) {
+            $rowData = [];
+
+            // Loop through columns in the current row
+            foreach ($sheet->getRowIterator($row, $row) as $rowIterator) {
+                $cellIterator = $rowIterator->getCellIterator();
+                $cellIterator->setIterateOnlyExistingCells(false);
+
+                foreach ($cellIterator as $cell) {
+                    $rowData[] = $cell->getValue();
+                }
+            }
+            $location = Location::where('location', $rowData[5])->first();
+            $mine = Mine::where('mine', $rowData[4])->first();
+            $client_id = Client::where('client', $rowData[3])->first();
+
+            Truck::create([
+                'horse' => $rowData[0],
+                'trailer' => $rowData[1],
+                'transporter' => $rowData[2],
+                'dispatch_date' => Date::excelToDateTimeObject($rowData[6])->format('Y-m-d'),
+                'mine_id' => $mine->id,
+                'client_id' => $client_id->id,
+                'location_id' => $location->id,
+                'comment' => $rowData[7],
+            ]);
+
+        }
+        return redirect()->back()->with('success', 'Trucks imported successfully');
     }
 }

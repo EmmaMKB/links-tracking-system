@@ -1,86 +1,146 @@
 [
     {
-        "mine": "CDM Lukuni",
+        "mine": "SICOmine",
         "latitude": null,
         "longitude": null,
-        "section_id": 5
+        "section_id": "1"
     },
     {
-        "mine": "CMOC/KSF",
+        "mine": "Thomas mine",
         "latitude": null,
         "longitude": null,
-        "section_id": 2
+        "section_id": "1"
     },
     {
-        "mine": "Comika",
+        "mine": "World mine",
         "latitude": null,
         "longitude": null,
-        "section_id": 3
+        "section_id": "1"
     },
     {
-        "mine": "Golden Mine",
+        "mine": "Jinxun ",
         "latitude": null,
         "longitude": null,
-        "section_id": 5
+        "section_id": "1"
     },
     {
-        "mine": "KMS Mine",
+        "mine": "Hanrui",
         "latitude": null,
         "longitude": null,
-        "section_id": 3
-    },
-    {
-        "mine": "Lamikal",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 3
-    },
-    {
-        "mine": "Kamoa",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 1
-    },
-    {
-        "mine": "Kalongwe",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 1
-    },
-    {
-        "mine": "Thomas",
-        "latitude": null,
-        "longitude": null,
-        "section_id": 1
+        "section_id": "1"
     },
     {
         "mine": "TCC",
         "latitude": null,
         "longitude": null,
-        "section_id": 1
+        "section_id": "1"
     },
     {
-        "mine": "Deziwa",
+        "mine": "Kamoa",
         "latitude": null,
         "longitude": null,
-        "section_id": 2
+        "section_id": "1"
+    },
+    {
+        "mine": "Luilu",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "1"
+    },
+    {
+        "mine": "LCS",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "2"
+    },
+    {
+        "mine": "Zhanfei",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "1"
+    },
+    {
+        "mine": "Lamikal",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "2"
+    },
+    {
+        "mine": "TFM",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "2"
+    },
+    {
+        "mine": "Kambove",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "3"
     },
     {
         "mine": "KPM",
         "latitude": null,
         "longitude": null,
-        "section_id": 3
+        "section_id": "3"
+    },
+    {
+        "mine": "NMI",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "3"
+    },
+    {
+        "mine": "Excellent",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "3"
     },
     {
         "mine": "SMCO",
         "latitude": null,
         "longitude": null,
-        "section_id": 3
+        "section_id": "3"
+    },
+    {
+        "mine": "CJCMC",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "3"
+    },
+    {
+        "mine": "Metalmine",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "3"
+    },
+    {
+        "mine": "MJM",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "3"
     },
     {
         "mine": "Rubamin",
         "latitude": null,
         "longitude": null,
-        "section_id": 3
+        "section_id": "3"
+    },
+    {
+        "mine": "Mabende",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "3"
+    },
+    {
+        "mine": "CDM",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "5"
+    },
+    {
+        "mine": "Crown",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "5"
     }
 ]

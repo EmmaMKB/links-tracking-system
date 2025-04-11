@@ -275,7 +275,7 @@
                                     <!--begin:Menu item-->
                                     <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
                                         <!--begin:Menu link--><span class="menu-link"><span class="menu-icon"><i
-                                                    class="ki-duotone ki-element-11 fs-2"><span
+                                                    class="ki-duotone ki-right-left fs-2"><span
                                                         class="path1"></span><span class="path2"></span><span
                                                         class="path3"></span><span
                                                         class="path4"></span></i></span><span
@@ -287,16 +287,16 @@
                                                             class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">Kolwezi - KSU</span></a><!--end:Menu link-->
                                             </div>
-                                            <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
+                                            {{-- <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
                                                     href="../index.html"><span class="menu-bullet"><span
                                                             class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">Zambia</span></a><!--end:Menu link-->
-                                            </div>
+                                            </div> --}}
                                         </div><!--end:Menu sub-->
                                     </div>
                                     <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
                                         <!--begin:Menu link--><span class="menu-link"><span class="menu-icon"><i
-                                                    class="ki-duotone ki-element-11 fs-2"><span
+                                                    class="ki-duotone ki-truck fs-2"><span
                                                         class="path1"></span><span class="path2"></span><span
                                                         class="path3"></span><span
                                                         class="path4"></span></i></span><span
@@ -315,16 +315,16 @@
                                                         class="menu-title">DRC Trucks</span></a><!--end:Menu link-->
                                             </div>
                                             <!--end:Menu item--><!--begin:Menu item-->
-                                            <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
+                                            {{-- <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
                                                     href="ecommerce.html"><span class="menu-bullet"><span
                                                             class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">ZM Trucks</span></a><!--end:Menu link-->
-                                            </div><!--end:Menu item--><!--begin:Menu item-->
+                                            </div> --}}
                                         </div><!--end:Menu sub-->
                                     </div>
                                     <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
                                         <!--begin:Menu link--><span class="menu-link"><span class="menu-icon"><i
-                                                    class="ki-duotone ki-element-11 fs-2"><span
+                                                    class="ki-duotone ki-people fs-2"><span
                                                         class="path1"></span><span class="path2"></span><span
                                                         class="path3"></span><span
                                                         class="path4"></span></i></span><span
@@ -346,7 +346,7 @@
                                     </div>
                                     <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
                                         <!--begin:Menu link--><span class="menu-link"><span class="menu-icon"><i
-                                                    class="ki-duotone ki-element-11 fs-2"><span
+                                                    class="ki-duotone ki-graph-up fs-2"><span
                                                         class="path1"></span><span class="path2"></span><span
                                                         class="path3"></span><span
                                                         class="path4"></span></i></span><span

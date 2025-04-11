@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/delete_convoy', [ConvoyController::class, 'delete'])->name('delete_convoy');
     Route::get('/reports', [DashboardController::class, 'statistics'])->name('statistics');
     Route::post('reports/tracking', [ReportsController::class, 'tracking'])->name('tracking');
+    Route::get('reports/download/{client_id}', [ReportsController::class, 'download'])->name('download');
 });
 
 Route::middleware(['guest'])->group(function () {

@@ -560,11 +560,19 @@
         "index": "70"
     },
     {
-        "location": "K'lsa Dryport (DRC Side)",
+        "location": "KSU Bypass Rd.",
         "latitude": null,
         "longitude": null,
         "section_id": "7",
         "description": null,
         "index": "71"
+    },
+    {
+        "location": "K'lsa Dryport (DRC Side)",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "7",
+        "description": null,
+        "index": "72"
     }
 ]

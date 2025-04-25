@@ -31,6 +31,25 @@ class TruckController extends Controller
         ]);
     }
 
+    function breakdowns() : View
+    {
+        $trucks = Truck::where('status', '!=', 'Handover')
+            ->where('status', 'BreakDown')
+            ->get();
+
+        $clients = Client::all();
+        $locations = Location::all();
+        $mines = Mine::orderBy('mine', 'asc')->get();
+
+        return view('trucks.breakdowns', [
+            'trucks' => $trucks,
+            'clients' => $clients,
+            'locations' => $locations,
+            'mines' => $mines,
+        ]);
+
+    }
+
     function trucks_drc(): View
     {
 

@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/import_trucks', [TruckController::class, 'import'])->name('truck:import');
     Route::get('/trucks', [TruckController::class, 'index'])->name('trucks');
     Route::get('/trucks/drc-routes', [TruckController::class, 'trucks_drc'])->name('trucks:drc_routes');
+    Route::get('/trucks/breakdowns', [TruckController::class, 'breakdowns'])->name('trucks:breakdowns');
     Route::get('/teams/ground', [EmployeeController::class, 'ground_team'])->name('ground_team');
     Route::post('/add_employee', [EmployeeController::class, 'add_employee'])->name('add_employee');
     Route::get('/teams/controllers', [EmployeeController::class, 'controllers'])->name('controllers');

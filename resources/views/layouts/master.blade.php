@@ -314,6 +314,12 @@
                                                             class="bullet bullet-dot"></span></span><span
                                                         class="menu-title">DRC Trucks</span></a><!--end:Menu link-->
                                             </div>
+                                            <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
+                                                    href="{{ route('trucks:breakdowns') }}"><span
+                                                        class="menu-bullet"><span
+                                                            class="bullet bullet-dot"></span></span><span
+                                                        class="menu-title">Breakdown</span></a><!--end:Menu link-->
+                                            </div>
                                             <!--end:Menu item--><!--begin:Menu item-->
                                             {{-- <div class="menu-item"><!--begin:Menu link--><a class="menu-link"
                                                     href="ecommerce.html"><span class="menu-bullet"><span

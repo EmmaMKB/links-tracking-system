@@ -363,16 +363,14 @@
                                                 </label>
                                                 <!--end::Radio-->
 
-                                                <!--begin::Radio-->
-                                                <label class="btn btn-outline btn-active-success btn-color-muted active"
+                                                <label class="btn btn-outline btn-active-success btn-color-muted"
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="BreakDown" checked />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Breakdown
+                                                    Handover
                                                 </label>
-                                                <!--end::Radio-->
 
                                                 <!--begin::Radio-->
                                                 <label class="btn btn-outline btn-active-success btn-color-muted"

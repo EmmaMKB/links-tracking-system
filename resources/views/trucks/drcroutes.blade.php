@@ -92,6 +92,9 @@
 
                                 <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks_in_transit }} trucks in
                                     transit</span>
+
+                                <span style="color: red;" class="text-muted mt-1 fw-semibold fs-7">{{ $not_updated }} trucks not updated
+                                    </span>
                             </h3>
                             <div class="card-toolbar">
                                 <!--begin::Menu-->
@@ -204,7 +207,8 @@
                             <!--begin::Table container-->
                             <div class="table-responsive">
                                 <!--begin::Table-->
-                                <table id="trucksTable" class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                                <table id="trucksTable"
+                                    class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bold text-muted">
@@ -477,14 +481,13 @@
                                                     <!--end::Input-->
                                                     Queued
                                                 </label>
-                                                <!--end::Radio-->
                                                 <label class="btn btn-outline btn-active-success btn-color-muted"
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->

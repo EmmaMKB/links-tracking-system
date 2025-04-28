@@ -71,6 +71,10 @@ class TruckController extends Controller
             })
             ->count();
 
+        $not_updated = $trucks->filter(function ($truck) {
+            return $truck->status_colour() === 'danger';
+        })->count();
+
         $clients = Client::all();
         $locations = Location::all();
         $mines = Mine::orderBy('mine', 'asc')->get();
@@ -81,6 +85,7 @@ class TruckController extends Controller
             'locations' => $locations,
             'mines' => $mines,
             'trucks_in_transit' => $totalTrucks,
+            'not_updated' => $not_updated,
         ]);
     }
 

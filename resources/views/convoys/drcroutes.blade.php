@@ -79,9 +79,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -164,9 +164,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -254,9 +254,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -340,9 +340,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -423,9 +423,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -509,9 +509,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -767,9 +767,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -993,9 +993,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -1219,9 +1219,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -1447,9 +1447,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -1675,9 +1675,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -1903,9 +1903,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->

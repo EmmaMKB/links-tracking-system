@@ -196,7 +196,7 @@
                             <!--begin::Table container-->
                             <div class="table-responsive">
                                 <!--begin::Table-->
-                                <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                                <table id="trucksTable" class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bold text-muted">
@@ -265,9 +265,6 @@
                             <!--end::Table container-->
                         </div>
                         <!--begin::Body-->
-                        <div class="card-footer py-3">
-                            {{ $trucks->links() }}
-                        </div>
                     </div>
                 </div>
                 <!--end::Content container-->
@@ -526,5 +523,10 @@
                 </div>
             </div>
         @endforeach
+    @endsection
+    @section('scripts')
+        <script>
+            let table = new DataTable('#trucksTable');
+        </script>
     @endsection
 </x-app-layout>

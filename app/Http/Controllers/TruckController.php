@@ -19,7 +19,7 @@ class TruckController extends Controller
 
         $trucks = Truck::where('status', '!=', 'Handover')
             ->orderBy('horse', 'asc')
-            ->paginate(20);
+            ->get();
         $totalTrucks = Truck::where('status', '!=', 'Handover')
             ->count();
 
@@ -63,7 +63,7 @@ class TruckController extends Controller
                 $query->where('country', 'DRC');
             })
             ->orderBy('horse', 'asc')
-            ->paginate(20);
+            ->get();
 
         $totalTrucks = Truck::where('status', '!=', 'Handover')
             ->whereHas('location.section', function ($query) {

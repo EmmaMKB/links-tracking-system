@@ -34,6 +34,8 @@
     <!-- Font Awesome Icons -->
     <link type="text/css" href="{{ asset('assets/css/fontawesome.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
+
     <script>
         // Frame-busting to prevent site from being loaded within a frame without permission (click-jacking)
         if (window.top != window.self) {
@@ -442,6 +444,7 @@
     <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
     <!--end::Custom Javascript-->
 
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
     @yield('scripts')
     <!--end::Javascript-->
 </body>

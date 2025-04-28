@@ -204,7 +204,7 @@
                             <!--begin::Table container-->
                             <div class="table-responsive">
                                 <!--begin::Table-->
-                                <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                                <table id="trucksTable" class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bold text-muted">
@@ -273,9 +273,6 @@
                             <!--end::Table container-->
                         </div>
                         <!--begin::Body-->
-                        <div class="card-footer py-3">
-                            {{ $trucks->links() }}
-                        </div>
                     </div>
                 </div>
                 <!--end::Content container-->
@@ -454,7 +451,7 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                         value="Parked" />
+                                                        value="Parked" />
                                                     <!--end::Input-->
                                                     Parked
                                                 </label>
@@ -513,13 +510,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel"
+                                    class="btn btn-danger me-3">
                                     Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit"
+                                    class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
                                     </span>
@@ -568,8 +567,7 @@
                                 <div class="input-group row">
                                     <div class="col-xs-3 mb-5 fv-row">
                                         <label class="required fs-5 fw-semibold mb-2">Upload a file</label>
-                                        <input type="file" class="form-control form-control-solid"
-                                            name="file" />
+                                        <input type="file" class="form-control form-control-solid" name="file" />
                                     </div>
                                 </div>
                             </div>
@@ -604,5 +602,11 @@
             </div>
             <!--end::Modal dialog-->
         </div>
+    @endsection
+
+    @section('scripts')
+        <script>
+            let table = new DataTable('#trucksTable');
+        </script>
     @endsection
 </x-app-layout>

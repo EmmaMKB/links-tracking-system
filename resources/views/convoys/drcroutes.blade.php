@@ -113,7 +113,7 @@
                                                             @foreach ($t->trucks as $truck)
                                                             {{ $truck->horse }}, @endforeach
                                                         "
-                                                            readonly id="kt_tagify_8" />
+                                                            readonly />
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
@@ -193,13 +193,6 @@
                                                         </div>
                                                     </td>
                                                     <td class="min-w-125px">
-                                                        {{-- <input class="form-control form-control-solid"
-                                                            value="
-                                                            @foreach ($t->trucks as $truck)
-                                                            {{ $truck->horse }},
-                                                        @endforeach
-                                                        "
-                                                            readonly id="kt_tagify_8" /> --}}
                                                         @foreach ($t->trucks as $truck)
                                                             {{ $truck->horse }},
                                                         @endforeach
@@ -288,7 +281,7 @@
                                                             @foreach ($t->trucks as $truck)
                                                             {{ $truck->horse }}, @endforeach
                                                         "
-                                                            readonly id="kt_tagify_8" />
+                                                            readonly/>
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
@@ -457,7 +450,7 @@
                                                             @foreach ($t->trucks as $truck)
                                                             {{ $truck->horse }}, @endforeach
                                                         "
-                                                            readonly id="kt_tagify_8" />
+                                                            readonly />
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
@@ -2147,12 +2140,7 @@
     @endsection
     @section('scripts')
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-        <script>
-            var input1 = document.querySelector("#kt_tagify_8");
 
-            // Initialize Tagify components on the above inputs
-            new Tagify(input1);
-        </script>
         <script>
             window.setTimeout(function() {
                 window.location.reload();

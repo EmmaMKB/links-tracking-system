@@ -152,7 +152,7 @@
                             <h3 class="card-title align-items-start flex-column">
                                 <span class="card-label fw-bold fs-3 mb-1">DRC Routes</span>
 
-                                <span class="text-muted mt-1 fw-semibold fs-7">75 trucks in transit</span>
+                                <span class="text-muted mt-1 fw-semibold fs-7">{{ $transit }} trucks in transit</span>
                             </h3>
                             <div class="card-toolbar">
                                 <!--begin::Menu-->

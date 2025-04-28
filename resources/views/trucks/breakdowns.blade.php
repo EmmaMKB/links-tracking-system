@@ -40,7 +40,7 @@
 
                             <!--begin::Item-->
                             <li class="breadcrumb-item text-muted">
-                                All trucks </li>
+                                Breakdowns </li>
                             <!--end::Item-->
 
                         </ul>
@@ -48,11 +48,6 @@
                     </div>
                     <div class="d-flex align-items-center gap-2 gap-lg-3">
 
-                        <!--begin::Primary button-->
-                        <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#truck_import">
-                            Import trucks </a>
-                        <!--end::Primary button-->
                     </div>
                     <!--end::Page title-->
                     <!--begin::Actions-->
@@ -88,13 +83,10 @@
                         <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bold fs-3 mb-1">All trucks</span>
+                                <span class="card-label fw-bold fs-3 mb-1">Trucks on Breakdown</span>
 
-                                <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks_in_transit }} trucks in
+                                <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks->count() }} trucks in
                                     transit</span>
-
-                                <span style="color: red;" class="text-muted mt-1 fw-semibold fs-7">{{ $not_updated }} trucks not updated
-                                    </span>
                             </h3>
                             <div class="card-toolbar">
                                 <!--begin::Menu-->
@@ -106,96 +98,7 @@
                                             class="path4"></span></i> </button>
 
                                 <!--begin::Menu 2-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px"
-                                    data-kt-menu="true">
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <div class="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick Actions</div>
-                                    </div>
-                                    <!--end::Menu item-->
 
-                                    <!--begin::Menu separator-->
-                                    <div class="separator mb-3 opacity-75"></div>
-                                    <!--end::Menu separator-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">
-                                            New Ticket
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">
-                                            New Customer
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                        data-kt-menu-placement="right-start">
-                                        <!--begin::Menu item-->
-                                        <a href="#" class="menu-link px-3">
-                                            <span class="menu-title">New Group</span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <!--end::Menu item-->
-
-                                        <!--begin::Menu sub-->
-                                        <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">
-                                                    Admin Group
-                                                </a>
-                                            </div>
-                                            <!--end::Menu item-->
-
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">
-                                                    Staff Group
-                                                </a>
-                                            </div>
-                                            <!--end::Menu item-->
-
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">
-                                                    Member Group
-                                                </a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu sub-->
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">
-                                            New Contact
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu separator-->
-                                    <div class="separator mt-3 opacity-75"></div>
-                                    <!--end::Menu separator-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <div class="menu-content px-3 py-3">
-                                            <a class="btn btn-primary  btn-sm px-4" href="#">
-                                                Generate Reports
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!--end::Menu item-->
-                                </div>
                                 <!--end::Menu 2-->
                                 <!--end::Menu-->
                             </div>
@@ -207,8 +110,7 @@
                             <!--begin::Table container-->
                             <div class="table-responsive">
                                 <!--begin::Table-->
-                                <table id="trucksTable"
-                                    class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                                <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bold text-muted">
@@ -440,11 +342,11 @@
                                             <div class="btn-group w-100" data-kt-buttons="true"
                                                 data-kt-buttons-target="[data-kt-button]">
                                                 <!--begin::Radio-->
-                                                <label class="btn btn-outline btn-active-success btn-color-muted active"
+                                                <label class="btn btn-outline btn-active-success btn-color-muted"
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Moving" checked />
+                                                        value="Moving" />
                                                     <!--end::Input-->
                                                     Moving
                                                 </label>
@@ -455,22 +357,20 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Parked" />
+                                                         value="Parked" />
                                                     <!--end::Input-->
                                                     Parked
                                                 </label>
                                                 <!--end::Radio-->
 
-                                                <!--begin::Radio-->
                                                 <label class="btn btn-outline btn-active-success btn-color-muted"
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="BreakDown" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Breakdown
+                                                    Handover
                                                 </label>
-                                                <!--end::Radio-->
 
                                                 <!--begin::Radio-->
                                                 <label class="btn btn-outline btn-active-success btn-color-muted"
@@ -481,13 +381,14 @@
                                                     <!--end::Input-->
                                                     Queued
                                                 </label>
+                                                <!--end::Radio-->
                                                 <label class="btn btn-outline btn-active-success btn-color-muted"
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Handover" />
+                                                        value="Questionned" />
                                                     <!--end::Input-->
-                                                    Handover
+                                                    Questionned
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -513,15 +414,13 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel"
-                                    class="btn btn-danger me-3">
+                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
                                     Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit"
-                                    class="btn btn-primary">
+                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit" class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
                                     </span>
@@ -536,80 +435,5 @@
                 </div>
             </div>
         @endforeach
-        <div class="modal fade" id="truck_import" tabindex="-1" aria-hidden="true">
-            <!--begin::Modal dialog-->
-            <div class="modal-dialog modal-dialog-centered mw-650px">
-                <!--begin::Modal content-->
-                <div class="modal-content">
-                    <!--begin::Modal header-->
-                    <div class="modal-header" id="kt_modal_create_api_key_header">
-                        <!--begin::Modal title-->
-                        <h2>Import trucks</h2>
-                        <!--end::Modal title-->
-
-                        <!--begin::Close-->
-                        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                            <i class="fa fa-times"></i>
-                        </div>
-                        <!--end::Close-->
-                    </div>
-                    <!--end::Modal header-->
-
-                    <!--begin::Form-->
-                    <form id="kt_modal_create_api_key_form" class="form" action="{{ route('truck:import') }}"
-                        method="post" enctype="multipart/form-data">
-                        @csrf
-                        <!--begin::Modal body-->
-                        <div class="modal-body py-10 px-lg-17">
-                            <!--begin::Scroll-->
-                            <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true"
-                                data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
-                                data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
-                                data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
-
-                                <div class="input-group row">
-                                    <div class="col-xs-3 mb-5 fv-row">
-                                        <label class="required fs-5 fw-semibold mb-2">Upload a file</label>
-                                        <input type="file" class="form-control form-control-solid" name="file" />
-                                    </div>
-                                </div>
-                            </div>
-                            <!--end::Scroll-->
-                        </div>
-                        <!--end::Modal body-->
-
-                        <!--begin::Modal footer-->
-                        <div class="modal-footer flex-center">
-                            <!--begin::Button-->
-                            <button type="reset" id="kt_modal_create_api_key_cancel" class="btn btn-light me-3">
-                                Discard
-                            </button>
-                            <!--end::Button-->
-
-                            <!--begin::Button-->
-                            <button type="submit" id="kt_modal_create_api_key_submit" class="btn btn-primary">
-                                <span class="indicator-label">
-                                    Submit
-                                </span>
-                                <span class="indicator-progress">
-                                    Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                </span>
-                            </button>
-                            <!--end::Button-->
-                        </div>
-                        <!--end::Modal footer-->
-                    </form>
-                    <!--end::Form-->
-                </div>
-                <!--end::Modal content-->
-            </div>
-            <!--end::Modal dialog-->
-        </div>
-    @endsection
-
-    @section('scripts')
-        <script>
-            let table = new DataTable('#trucksTable');
-        </script>
     @endsection
 </x-app-layout>

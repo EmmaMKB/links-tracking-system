@@ -19,11 +19,11 @@ class DashboardController extends Controller
         $locations = Location::all();
         $mines = Mine::orderBy('mine', 'asc')->get();
         $transit = Truck::where('status', '!=', 'Handover')->get()->count();
-        $convoys = Convoy::where('state', 'active')->get()->count();
+        $convoys = Convoy::where('status', '!=', 'Handover')->get()->count();
         $breakdowns = Truck::where('status', 'Breakdown')->get()->count();
         $trucks = Truck::with('location')
         ->where('status', '!=', 'Handover')
-        ->orderBy('location_id')
+        ->orderBy('dispatch_date', 'desc')
         ->take(20)->get();
 
         return view('dashboard', [
@@ -40,12 +40,29 @@ class DashboardController extends Controller
     function statistics() : View {
         $clients = Client::all();
         $locations = Location::all();
+        $convoys = Convoy::where('state', 'active')->get()->count();
+        $breakdowns = Truck::where('status', 'Breakdown')->get()->count();
         $mines = Mine::orderBy('mine', 'asc')->get();
+        $trucks_drc = Truck::where('status', '!=', 'Handover')
+            ->whereHas('location.section', function ($query) {
+                $query->where('country', 'DRC');
+            })
+            ->count();
+
+        $trucks_zm = Truck::where('status', '!=', 'Handover')
+            ->whereHas('location.section', function ($query) {
+                $query->where('country', 'ZM');
+            })
+            ->count();
 
         return view('dashboard.statistics', [
             'clients' => $clients,
             'locations' => $locations,
             'mines' => $mines,
+            'convoys' => $convoys,
+            'breakdowns' => $breakdowns,
+            'trucks_drc' => $trucks_drc,
+            'trucks_zm' => $trucks_zm,
         ]);
     }
 

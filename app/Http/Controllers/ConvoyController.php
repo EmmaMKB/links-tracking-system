@@ -24,27 +24,33 @@ class ConvoyController extends Controller
         $trucks = Truck::with('location')->where('status', '!=', 'Handover')->get();
 
 
-        $klzi_to_likasi = Convoy::whereHas('location', function ($query) {
+        $klzi_to_likasi = Convoy::where('status', '!=', 'Handover')
+        ->whereHas('location', function ($query) {
             $query->whereIn('section_id', [1,2]);
         })->get();
 
-        $likasi_to_lushi = Convoy::whereHas('location', function ($query)  {
+        $likasi_to_lushi = Convoy::where('status', '!=', 'Handover')
+        ->whereHas('location', function ($query)  {
             $query->whereIn('section_id', [3,4]);
         })->get();
 
-        $lubumbashi = Convoy::whereHas('location', function ($query) {
+        $lubumbashi = Convoy::where('status', '!=', 'Handover')
+        ->whereHas('location', function ($query) {
             $query->where('section_id', 5);
         })->get();
 
-        $lshi_to_klsa = Convoy::whereHas('location', function ($query)  {
+        $lshi_to_klsa = Convoy::where('status', '!=', 'Handover')
+        ->whereHas('location', function ($query)  {
             $query->whereIn('section_id', [6]);
         })->get();
 
-        $kasumbalesa = Convoy::whereHas('location', function ($query) {
+        $kasumbalesa = Convoy::where('status', '!=', 'Handover')
+        ->whereHas('location', function ($query) {
             $query->whereIn('section_id', [7]);
         })->get();
 
-        $klsa_to_sakania = Convoy::whereHas('location', function ($query) {
+        $klsa_to_sakania = Convoy::where('status', '!=', 'Handover')
+        ->whereHas('location', function ($query) {
             $query->whereIn('section_id', [8, 9]);
         })->get();
 

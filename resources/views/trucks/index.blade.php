@@ -82,7 +82,7 @@
                             <h3 class="card-title align-items-start flex-column">
                                 <span class="card-label fw-bold fs-3 mb-1">All trucks</span>
 
-                                <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks->count() }} trucks in
+                                <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks_in_transit }} trucks in
                                     transit</span>
                             </h3>
                             <div class="card-toolbar">
@@ -196,7 +196,7 @@
                             <!--begin::Table container-->
                             <div class="table-responsive">
                                 <!--begin::Table-->
-                                <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+                                <table id="trucksTable" class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bold text-muted">
@@ -474,9 +474,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -523,5 +523,10 @@
                 </div>
             </div>
         @endforeach
+    @endsection
+    @section('scripts')
+        <script>
+            let table = new DataTable('#trucksTable');
+        </script>
     @endsection
 </x-app-layout>

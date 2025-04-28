@@ -25,7 +25,7 @@ class CreateTrucksTable extends Migration
             $table->string('driver')->nullable();
             $table->foreignId('client_id');
             $table->foreignId('location_id');
-            $table->string('status')->default('parked');
+            $table->string('status')->default('Parked');
             $table->text('comment')->nullable();
             $table->string('destination')->nullable();
             $table->string('cargo')->nullable();

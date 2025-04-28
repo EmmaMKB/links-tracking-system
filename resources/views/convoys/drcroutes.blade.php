@@ -79,9 +79,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -113,7 +113,7 @@
                                                             @foreach ($t->trucks as $truck)
                                                             {{ $truck->horse }}, @endforeach
                                                         "
-                                                            readonly id="kt_tagify_8" />
+                                                            readonly />
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
@@ -164,9 +164,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -193,13 +193,6 @@
                                                         </div>
                                                     </td>
                                                     <td class="min-w-125px">
-                                                        {{-- <input class="form-control form-control-solid"
-                                                            value="
-                                                            @foreach ($t->trucks as $truck)
-                                                            {{ $truck->horse }},
-                                                        @endforeach
-                                                        "
-                                                            readonly id="kt_tagify_8" /> --}}
                                                         @foreach ($t->trucks as $truck)
                                                             {{ $truck->horse }},
                                                         @endforeach
@@ -254,9 +247,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -288,7 +281,7 @@
                                                             @foreach ($t->trucks as $truck)
                                                             {{ $truck->horse }}, @endforeach
                                                         "
-                                                            readonly id="kt_tagify_8" />
+                                                            readonly/>
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
@@ -340,9 +333,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -423,9 +416,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                        >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -457,7 +450,7 @@
                                                             @foreach ($t->trucks as $truck)
                                                             {{ $truck->horse }}, @endforeach
                                                         "
-                                                            readonly id="kt_tagify_8" />
+                                                            readonly />
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
@@ -509,9 +502,9 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table id="kt_widget_table_3"
+                                    <table
                                         class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        data-kt-table-widget-3="all">
+                                >
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -963,9 +956,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -1189,9 +1182,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -1415,9 +1408,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -1643,9 +1636,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -1871,9 +1864,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -2099,9 +2092,9 @@
                                                     data-kt-button="true">
                                                     <!--begin::Input-->
                                                     <input class="btn-check" type="radio" name="status"
-                                                        value="Questionned" />
+                                                        value="Handover" />
                                                     <!--end::Input-->
-                                                    Questionned
+                                                    Handover
                                                 </label>
                                             </div>
                                             <!--end::Radio group-->
@@ -2147,12 +2140,7 @@
     @endsection
     @section('scripts')
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-        <script>
-            var input1 = document.querySelector("#kt_tagify_8");
 
-            // Initialize Tagify components on the above inputs
-            new Tagify(input1);
-        </script>
         <script>
             window.setTimeout(function() {
                 window.location.reload();

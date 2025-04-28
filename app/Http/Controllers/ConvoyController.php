@@ -21,7 +21,7 @@ class ConvoyController extends Controller
         $escorters = Employee::where('function', '!=', 'controller')->get();
         $controllers = Employee::where('function', 'controller')->get();
         $mines = Mine::orderBy('mine', 'asc')->get();
-        $trucks = Truck::with('location')->where('status', '!=', 'Handover')->take(10)->get();
+        $trucks = Truck::with('location')->where('status', '!=', 'Handover')->get();
 
 
         $klzi_to_likasi = Convoy::whereHas('location', function ($query) {

@@ -17,7 +17,11 @@ class TruckController extends Controller
     function index(): View
     {
 
-        $trucks = Truck::where('status', '!=', 'Handover')->get();
+        $trucks = Truck::where('status', '!=', 'Handover')
+            ->orderBy('horse', 'asc')
+            ->paginate(20);
+        $totalTrucks = Truck::where('status', '!=', 'Handover')
+            ->count();
 
         $clients = Client::all();
         $locations = Location::all();
@@ -28,6 +32,7 @@ class TruckController extends Controller
             'clients' => $clients,
             'locations' => $locations,
             'mines' => $mines,
+            'trucks_in_transit' => $totalTrucks,
         ]);
     }
 
@@ -57,7 +62,15 @@ class TruckController extends Controller
             ->whereHas('location.section', function ($query) {
                 $query->where('country', 'DRC');
             })
-            ->get();
+            ->orderBy('horse', 'asc')
+            ->paginate(20);
+
+        $totalTrucks = Truck::where('status', '!=', 'Handover')
+            ->whereHas('location.section', function ($query) {
+                $query->where('country', 'DRC');
+            })
+            ->count();
+
         $clients = Client::all();
         $locations = Location::all();
         $mines = Mine::orderBy('mine', 'asc')->get();
@@ -67,6 +80,7 @@ class TruckController extends Controller
             'clients' => $clients,
             'locations' => $locations,
             'mines' => $mines,
+            'trucks_in_transit' => $totalTrucks,
         ]);
     }
 

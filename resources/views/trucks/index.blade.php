@@ -82,7 +82,7 @@
                             <h3 class="card-title align-items-start flex-column">
                                 <span class="card-label fw-bold fs-3 mb-1">All trucks</span>
 
-                                <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks->count() }} trucks in
+                                <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks_in_transit }} trucks in
                                     transit</span>
                             </h3>
                             <div class="card-toolbar">
@@ -265,6 +265,9 @@
                             <!--end::Table container-->
                         </div>
                         <!--begin::Body-->
+                        <div class="card-footer py-3">
+                            {{ $trucks->links() }}
+                        </div>
                     </div>
                 </div>
                 <!--end::Content container-->

@@ -40,12 +40,29 @@ class DashboardController extends Controller
     function statistics() : View {
         $clients = Client::all();
         $locations = Location::all();
+        $convoys = Convoy::where('state', 'active')->get()->count();
+        $breakdowns = Truck::where('status', 'Breakdown')->get()->count();
         $mines = Mine::orderBy('mine', 'asc')->get();
+        $trucks_drc = Truck::where('status', '!=', 'Handover')
+            ->whereHas('location.section', function ($query) {
+                $query->where('country', 'DRC');
+            })
+            ->count();
+
+        $trucks_zm = Truck::where('status', '!=', 'Handover')
+            ->whereHas('location.section', function ($query) {
+                $query->where('country', 'ZM');
+            })
+            ->count();
 
         return view('dashboard.statistics', [
             'clients' => $clients,
             'locations' => $locations,
             'mines' => $mines,
+            'convoys' => $convoys,
+            'breakdowns' => $breakdowns,
+            'trucks_drc' => $trucks_drc,
+            'trucks_zm' => $trucks_zm,
         ]);
     }
 

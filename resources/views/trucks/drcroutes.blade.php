@@ -93,111 +93,13 @@
                                 <span class="text-muted mt-1 fw-semibold fs-7">{{ $trucks_in_transit }} trucks in
                                     transit</span>
 
-                                <span style="color: red;" class="text-muted mt-1 fw-semibold fs-7">{{ $not_updated }} trucks not updated
-                                    </span>
+                                <span style="color: red;" class="text-muted mt-1 fw-semibold fs-7">{{ $not_updated }}
+                                    trucks not updated
+                                </span>
                             </h3>
                             <div class="card-toolbar">
                                 <!--begin::Menu-->
-                                <button type="button"
-                                    class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-                                    data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                    <i class="ki-duotone ki-category fs-6"><span class="path1"></span><span
-                                            class="path2"></span><span class="path3"></span><span
-                                            class="path4"></span></i> </button>
 
-                                <!--begin::Menu 2-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px"
-                                    data-kt-menu="true">
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <div class="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick Actions</div>
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu separator-->
-                                    <div class="separator mb-3 opacity-75"></div>
-                                    <!--end::Menu separator-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">
-                                            New Ticket
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">
-                                            New Customer
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                        data-kt-menu-placement="right-start">
-                                        <!--begin::Menu item-->
-                                        <a href="#" class="menu-link px-3">
-                                            <span class="menu-title">New Group</span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <!--end::Menu item-->
-
-                                        <!--begin::Menu sub-->
-                                        <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">
-                                                    Admin Group
-                                                </a>
-                                            </div>
-                                            <!--end::Menu item-->
-
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">
-                                                    Staff Group
-                                                </a>
-                                            </div>
-                                            <!--end::Menu item-->
-
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">
-                                                    Member Group
-                                                </a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu sub-->
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">
-                                            New Contact
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu separator-->
-                                    <div class="separator mt-3 opacity-75"></div>
-                                    <!--end::Menu separator-->
-
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <div class="menu-content px-3 py-3">
-                                            <a class="btn btn-primary  btn-sm px-4" href="#">
-                                                Generate Reports
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!--end::Menu item-->
-                                </div>
-                                <!--end::Menu 2-->
-                                <!--end::Menu-->
                             </div>
                         </div>
                         <!--end::Header-->
@@ -218,7 +120,8 @@
                                             <th class="min-w-120px">Transporter</th>
                                             <th class="min-w-120px">Location</th>
                                             <th class="min-w-120px">Dispatch Date</th>
-                                            <th class="min-w-120px">Status</th>
+                                            <th class="min-w-120px">Staus</th>
+                                            <th class="min-w-120px">Situation</th>
                                             <th class="min-w-100px text-end">Actions</th>
                                         </tr>
                                     </thead>
@@ -254,6 +157,16 @@
 
                                                 <td>
                                                     <p>{{ $truck->dispatch_date }}</p>
+                                                </td>
+
+                                                <td>
+                                                    <p>
+                                                        @if ($truck->status_colour() == 'danger')
+                                                            <span class="badge badge-light-danger">Overdue</span>
+                                                        @else
+                                                            <span class="badge badge-light-success">Updated</span>
+                                                        @endif
+                                                    </p>
                                                 </td>
 
                                                 <td>
@@ -307,12 +220,10 @@
                             <!--begin::Modal body-->
                             <div class="modal-body py-10 px-lg-17">
                                 <!--begin::Scroll-->
-                                <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll"
-                                    data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
-                                    data-kt-scroll-max-height="auto"
+                                <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll" data-kt-scroll="true"
+                                    data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto"
                                     data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
-                                    data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll"
-                                    data-kt-scroll-offset="300px">
+                                    data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll" data-kt-scroll-offset="300px">
 
                                     <div class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2">
                                         <div class="col">
@@ -570,7 +481,8 @@
                                 <div class="input-group row">
                                     <div class="col-xs-3 mb-5 fv-row">
                                         <label class="required fs-5 fw-semibold mb-2">Upload a file</label>
-                                        <input type="file" accept=".xls,.xlsx" class="form-control form-control-solid" name="file" />
+                                        <input type="file" accept=".xls,.xlsx" class="form-control form-control-solid"
+                                            name="file" />
                                     </div>
                                 </div>
                             </div>

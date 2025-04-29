@@ -86,11 +86,14 @@
                                     <h3 class="card-title">
                                         _{{ $sectionTrucks->count() }} truck(s), {{ $location }}_
                                     </h3>
-                                    <div>
-                                        @foreach ($sectionTrucks as $truck)
-                                        <p>{{ $truck->horse }} - {{ $truck->transporter }}</p>
-                                        @endforeach
-                                    </div>
+                                    @foreach ($sectionTrucks as $mine => $minesTrucks)
+                                        <h5>*{{ $mine }}*</h5>
+                                        <div>
+                                            @foreach ($minesTrucks as $truck)
+                                            <p>{{ $truck->horse }} - {{ $truck->transporter }}</p>
+                                            @endforeach
+                                        </div>
+                                    @endforeach
                                 @endforeach
                             </div>
                         </div>
@@ -114,7 +117,8 @@
                     content = content
                     .replace(/(\r?\n\s*\n)+/g, '\n') // Remove extra blank lines
                     .replace(/^\s+/gm, '') // Remove leading spaces from each line
-                    .replace(/(_\d+ truck\(s\), .+?_)/g, '\n$1\n') // Add a blank line before and after locations
+                    .replace(/(_\d+ truck\(s\), .+?_)/g, '\n$1') // Add a blank line only before locations
+                    .replace(/(\*.+\*)/g, '\n$1\n') // Add a blank line before and after mine names
                     .trim();
 
                     navigator.clipboard.writeText(content).then(function() {

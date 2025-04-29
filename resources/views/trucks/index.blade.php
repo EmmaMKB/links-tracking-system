@@ -207,6 +207,7 @@
                                             <th class="min-w-120px">Location</th>
                                             <th class="min-w-120px">Dispatch Date</th>
                                             <th class="min-w-120px">Status</th>
+                                            <th class="min-w-120px">Situation</th>
                                             <th class="min-w-100px text-end">Actions</th>
                                         </tr>
                                     </thead>
@@ -242,6 +243,16 @@
 
                                                 <td>
                                                     <p>{{ $truck->dispatch_date }}</p>
+                                                </td>
+
+                                                <td>
+                                                    <p>
+                                                        @if ($truck->status_colour() == 'danger')
+                                                            <span class="badge badge-light-danger">Overdue</span>
+                                                        @else
+                                                            <span class="badge badge-light-success">Updated</span>
+                                                        @endif
+                                                    </p>
                                                 </td>
 
                                                 <td>

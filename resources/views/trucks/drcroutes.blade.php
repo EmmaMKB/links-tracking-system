@@ -570,7 +570,7 @@
                                 <div class="input-group row">
                                     <div class="col-xs-3 mb-5 fv-row">
                                         <label class="required fs-5 fw-semibold mb-2">Upload a file</label>
-                                        <input type="file" class="form-control form-control-solid" name="file" />
+                                        <input type="file" accept=".xls,.xlsx" class="form-control form-control-solid" name="file" />
                                     </div>
                                 </div>
                             </div>

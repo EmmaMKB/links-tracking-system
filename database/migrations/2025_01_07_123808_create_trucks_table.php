@@ -17,7 +17,7 @@ class CreateTrucksTable extends Migration
             $table->id();
             $table->uuid('uuid')->unique();
             $table->string('horse')->unique();
-            $table->string('trailer')->unique()->nullable();
+            $table->string('trailer')->default('N/A')->nullable();
             $table->string('transporter');
             $table->date('dispatch_date');
             $table->foreignId('mine_id');

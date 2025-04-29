@@ -108,23 +108,13 @@
                                                         </div>
                                                     </td>
                                                     <td class="min-w-125px">
-                                                        <input class="form-control form-control-solid"
-                                                            value="
-                                                            @foreach ($t->trucks as $truck)
-                                                            {{ $truck->horse }}, @endforeach
-                                                        "
-                                                            readonly />
+                                                        @foreach ($t->trucks as $truck)
+                                                            {{ $truck->horse }},
+                                                        @endforeach
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
-                                                        <div class="symbol-group symbol-hover mb-1">
-                                                            >
-                                                            <div class="symbol symbol-circle symbol-25px">
-                                                                <div class="symbol-label bg-danger">
-                                                                    <span class="fs-7 text-inverse-danger">E</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <span class="badge badge-primary">{{ explode(' ', $t->escort->full_name)[count(explode(' ', $t->escort->full_name)) - 1] }}</span>
                                                         <!--end::Team members-->
                                                         <div class="fs-7 fw-bold text-muted">{{ $t->controller->full_name }}
                                                         </div>

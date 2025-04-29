@@ -72,4 +72,32 @@ class ReportsController extends Controller
         $date = Carbon::now()->format('d-m-Y');
         return $pdf->download($client->client->client.' Tracking Report '.$date.'.pdf');
     }
+
+    function global_update(Request $request) {
+        $request->validate([
+            'client_id' => 'required|exists:clients,id',
+        ]);
+
+        $trucks = Truck::with('location.section')
+            ->where('status', '!=', 'Handover')
+            ->where('client_id', $request->client_id)
+            ->get()
+            ->sortByDesc(function ($truck) {
+                return $truck->location->index ?? 'Unknown Location'; // Sort by location
+            });;
+
+        $client = Truck::where('client_id', $request->client_id)->first();
+
+        $totalTrucks = $trucks->count();
+
+        $groupedTrucks = $trucks->groupBy(function ($truck) {
+            return $truck->location->location ?? 'Unknown Location';
+        });
+
+        return view('reports.global-update', [
+            'trucks' => $groupedTrucks,
+            'transit' => $totalTrucks,
+            'client' => $client,
+        ]);
+    }
 }

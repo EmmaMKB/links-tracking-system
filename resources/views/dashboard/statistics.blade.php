@@ -154,49 +154,104 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <form action="{{ route('tracking') }}" method="post">
-                                @csrf
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h1 class="card-title">
-                                            Tracking Report
-                                        </h1>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll"
-                                            data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
-                                            data-kt-scroll-max-height="auto"
-                                            data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
-                                            data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll"
-                                            data-kt-scroll-offset="300px">
-                                            <div class="row">
-                                                <div class="d-flex flex-column mb-10 fv-row">
-                                                    <!--begin::Label-->
-                                                    <label class="required fs-5 fw-semibold mb-2">CLIENT</label>
-                                                    <!--end::Label-->
+                            <div class="row">
+                                <div class="col">
+                                    <form action="{{ route('tracking') }}" method="post">
+                                        @csrf
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h1 class="card-title">
+                                                    Tracking Report
+                                                </h1>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll"
+                                                    data-kt-scroll="true"
+                                                    data-kt-scroll-activate="{default: false, lg: true}"
+                                                    data-kt-scroll-max-height="auto"
+                                                    data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
+                                                    data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll"
+                                                    data-kt-scroll-offset="300px">
+                                                    <div class="row">
+                                                        <div class="d-flex flex-column mb-10 fv-row">
+                                                            <!--begin::Label-->
+                                                            <label class="required fs-5 fw-semibold mb-2">CLIENT</label>
+                                                            <!--end::Label-->
 
-                                                    <!--begin::Select-->
-                                                    <select name="client_id" data-control="select2" data-hide-search="true"
-                                                        data-placeholder="Client" class="form-select form-select-solid">
-                                                        <option value="">Select a Client...</option>
-                                                        @foreach ($clients as $client)
-                                                            <option value="{{ $client->id }}">{{ $client->client }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
+                                                            <!--begin::Select-->
+                                                            <select name="client_id" data-control="select2"
+                                                                data-hide-search="true" data-placeholder="Client"
+                                                                class="form-select form-select-solid">
+                                                                <option value="">Select a Client...</option>
+                                                                @foreach ($clients as $client)
+                                                                    <option value="{{ $client->id }}">
+                                                                        {{ $client->client }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="card-footer justify-center">
+                                                <button class="btn btn-block btn-success">
+                                                    <i class="fa fa-chart">
+                                                    </i>
+                                                    Generate Report
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-footer justify-center">
-                                        <button class="btn btn-block btn-success">
-                                            <i class="fa fa-chart">
-                                            </i>
-                                            Generate Report
-                                        </button>
-                                    </div>
+                                    </form>
                                 </div>
-                            </form>
+                                <div class="col">
+                                    <form action="{{ route('global_update') }}" method="post">
+                                        @csrf
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h1 class="card-title">
+                                                    Global update
+                                                </h1>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="scroll-y me-n7 pe-7" id="kt_modal_create_api_key_scroll"
+                                                    data-kt-scroll="true"
+                                                    data-kt-scroll-activate="{default: false, lg: true}"
+                                                    data-kt-scroll-max-height="auto"
+                                                    data-kt-scroll-dependencies="#kt_modal_create_api_key_header"
+                                                    data-kt-scroll-wrappers="#kt_modal_create_api_key_scroll"
+                                                    data-kt-scroll-offset="300px">
+                                                    <div class="row">
+                                                        <div class="d-flex flex-column mb-10 fv-row">
+                                                            <!--begin::Label-->
+                                                            <label class="required fs-5 fw-semibold mb-2">CLIENT</label>
+                                                            <!--end::Label-->
+
+                                                            <!--begin::Select-->
+                                                            <select name="client_id" data-control="select2"
+                                                                data-hide-search="true" data-placeholder="Client"
+                                                                class="form-select form-select-solid">
+                                                                <option value="">Select a Client...</option>
+                                                                @foreach ($clients as $client)
+                                                                    <option value="{{ $client->id }}">
+                                                                        {{ $client->client }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer justify-center">
+                                                <button class="btn btn-block btn-success">
+                                                    <i class="fa fa-chart">
+                                                    </i>
+                                                    Generate Update
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

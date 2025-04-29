@@ -574,5 +574,101 @@
         "section_id": "7",
         "description": null,
         "index": "72"
+    },
+    {
+        "location": "K'lsa - Village TG",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "73"
+    },
+    {
+        "location": "Village TG - Kinsenda",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "74"
+    },
+    {
+        "location": "Kinsenda Gare",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "75"
+    },
+    {
+        "location": "Kinsenda - Lubembe",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "76"
+    },
+    {
+        "location": "Lubembe - Mkmbo TG1",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "77"
+    },
+    {
+        "location": "Mokambo",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "78"
+    },
+    {
+        "location": "Mokambo - Mkmbo TG2",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "79"
+    },
+    {
+        "location": "Mokambo TG2",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "80"
+    },
+    {
+        "location": "Mokambo TG2 - Sakania",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "81"
+    },
+    {
+        "location": "Sakania (Around)",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "8",
+        "description": "null",
+        "index": "82"
+    },
+    {
+        "location": "Sakania - Lukangaba",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "9",
+        "description": "null",
+        "index": "83"
+    },
+    {
+        "location": "Lukangaba (DRC Side)",
+        "latitude": "null",
+        "longitude": "null",
+        "section_id": "9",
+        "description": "null",
+        "index": "84"
     }
 ]

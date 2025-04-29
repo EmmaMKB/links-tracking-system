@@ -1,6 +1,6 @@
 [
     {
-        "mine": "SICOmine",
+        "mine": "Sicomine",
         "latitude": null,
         "longitude": null,
         "section_id": "1"
@@ -139,6 +139,30 @@
     },
     {
         "mine": "Crown",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "5"
+    },
+    {
+        "mine": "CNMC",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "3"
+    },
+    {
+        "mine": "MMT",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "1"
+    },
+    {
+        "mine": "MMG",
+        "latitude": null,
+        "longitude": null,
+        "section_id": "5"
+    },
+    {
+        "mine": "STL",
         "latitude": null,
         "longitude": null,
         "section_id": "5"

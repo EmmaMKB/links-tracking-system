@@ -92,6 +92,10 @@ class ReportsController extends Controller
 
         $groupedTrucks = $trucks->groupBy(function ($truck) {
             return $truck->location->location ?? 'Unknown Location';
+        })->map(function ($locationGroup) {
+            return $locationGroup->groupBy(function ($truck) {
+                return $truck->mine->mine ?? 'Unknown Mine';
+            });
         });
 
         return view('reports.global-update', [

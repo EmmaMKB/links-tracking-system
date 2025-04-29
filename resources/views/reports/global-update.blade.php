@@ -83,8 +83,16 @@
                             <div id="global_update" class="rounded-lg border p-4 scrollable lg:w-[600px]">
                                 <h3>*GLOBAL UPDATE {{ \Carbon\Carbon::now()->format('d-F-Y') }}*</h3>
                                 @foreach ($trucks as $location => $sectionTrucks)
+                                @php
+                                    $totalTrucks = 0;
+                                @endphp
+                                @foreach ($sectionTrucks as $mine => $minesTrucks)
+                                @php
+                                    $totalTrucks += $minesTrucks->count();
+                                @endphp
+                                @endforeach
                                     <h3 class="card-title">
-                                        _{{ $sectionTrucks->count() }} truck(s), {{ $location }}_
+                                        _{{ $totalTrucks }} truck(s), {{ $location }}_
                                     </h3>
                                     @foreach ($sectionTrucks as $mine => $minesTrucks)
                                         <h5>*{{ $mine }}*</h5>

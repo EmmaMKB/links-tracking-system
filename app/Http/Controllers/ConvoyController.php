@@ -113,9 +113,14 @@ class ConvoyController extends Controller
 
             // Update the convoy status for each truck
             foreach ($validatedData['trucks'] as $key => $t) {
+
                 $truck = Truck::find($t);
                 $truck->location_id = $validatedData['location_id'];
-                $truck->status = $validatedData['status'];
+                if ($validatedData['status'] = 'Handover') {
+                    $truck->status = 'Parked';
+                } else {
+                    $truck->status = $validatedData['status'];
+                }
                 $truck->convoy_id = $validatedData['convoy_id'];
                 $truck->save();
             }

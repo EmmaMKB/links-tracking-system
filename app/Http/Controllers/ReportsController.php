@@ -18,7 +18,8 @@ class ReportsController extends Controller
         $trucks = Truck::with('location.section')
             ->where('status', '!=', 'Handover')
             ->where('client_id', $request->client_id)
-            ->get();
+            ->get()
+            ->sortBy('location.index');
 
         $client = Truck::where('client_id', $request->client_id)->first();
 

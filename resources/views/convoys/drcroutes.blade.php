@@ -79,9 +79,7 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table
-                                        class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        >
+                                    <table class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3">
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -113,10 +111,10 @@
                                                         @endforeach
                                                     </td>
                                                     <td class="min-w-125px">
-                                                        <!--begin::Team members-->
-                                                        <span class="badge badge-primary">{{ explode(' ', $t->escort->full_name)[count(explode(' ', $t->escort->full_name)) - 1] }}</span>
-                                                        <!--end::Team members-->
-                                                        <div class="fs-7 fw-bold text-muted">{{ $t->controller->full_name }}
+                                                        <span
+                                                            class="badge badge-primary">{{ explode(' ', $t->escort->full_name)[count(explode(' ', $t->escort->full_name)) - 1] }}</span>
+                                                        <div class="fs-7 fw-bold text-muted">
+                                                            {{ $t->controller->full_name }}
                                                         </div>
                                                     </td>
                                                     <td>
@@ -154,9 +152,7 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table
-                                        class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        >
+                                    <table class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3">
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -189,14 +185,8 @@
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
-                                                        <div class="symbol-group symbol-hover mb-1">
-                                                            >
-                                                            <div class="symbol symbol-circle symbol-25px">
-                                                                <div class="symbol-label bg-danger">
-                                                                    <span class="fs-7 text-inverse-danger">E</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <span
+                                                            class="badge badge-primary">{{ explode(' ', $t->escort->full_name)[count(explode(' ', $t->escort->full_name)) - 1] }}</span>
                                                         <!--end::Team members-->
                                                         <div class="fs-7 fw-bold text-muted">
                                                             {{ $t->controller->full_name }}
@@ -237,9 +227,7 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table
-                                        class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        >
+                                    <table class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3">
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -266,24 +254,13 @@
                                                         </div>
                                                     </td>
                                                     <td class="min-w-125px">
-                                                        <input class="form-control form-control-solid"
-                                                            value="
-                                                            @foreach ($t->trucks as $truck)
-                                                            {{ $truck->horse }}, @endforeach
-                                                        "
-                                                            readonly/>
+                                                        @foreach ($t->trucks as $truck)
+                                                            {{ $truck->horse }},
+                                                        @endforeach
                                                     </td>
                                                     <td class="min-w-125px">
-                                                        <!--begin::Team members-->
-                                                        <div class="symbol-group symbol-hover mb-1">
-                                                            >
-                                                            <div class="symbol symbol-circle symbol-25px">
-                                                                <div class="symbol-label bg-danger">
-                                                                    <span class="fs-7 text-inverse-danger">E</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--end::Team members-->
+                                                        <span
+                                                            class="badge badge-primary">{{ explode(' ', $t->escort->full_name)[count(explode(' ', $t->escort->full_name)) - 1] }}</span>
                                                         <div class="fs-7 fw-bold text-muted">
                                                             {{ $t->controller->full_name }}
                                                         </div>
@@ -310,7 +287,7 @@
                             <!--end::List Widget 1-->
                         </div>
                         <div class="col-xl-6">
-                            <div class="card card-xl-stretch mb-xl-8">
+                            <div class="card scrollable card-xl-stretch mb-xl-8">
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
@@ -323,9 +300,7 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table
-                                        class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        >
+                                    <table class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3">
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -358,14 +333,8 @@
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
-                                                        <div class="symbol-group symbol-hover mb-1">
-                                                            >
-                                                            <div class="symbol symbol-circle symbol-25px">
-                                                                <div class="symbol-label bg-danger">
-                                                                    <span class="fs-7 text-inverse-danger">E</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <span
+                                                            class="badge badge-primary">{{ explode(' ', $t->escort->full_name)[count(explode(' ', $t->escort->full_name)) - 1] }}</span>
                                                         <!--end::Team members-->
                                                         <div class="fs-7 fw-bold text-muted">
                                                             {{ $t->controller->full_name }}
@@ -406,9 +375,7 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table
-                                        class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                        >
+                                    <table class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3">
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -435,23 +402,14 @@
                                                         </div>
                                                     </td>
                                                     <td class="min-w-125px">
-                                                        <input class="form-control form-control-solid"
-                                                            value="
-                                                            @foreach ($t->trucks as $truck)
-                                                            {{ $truck->horse }}, @endforeach
-                                                        "
-                                                            readonly />
+                                                        @foreach ($t->trucks as $truck)
+                                                            {{ $truck->horse }},
+                                                        @endforeach
                                                     </td>
                                                     <td class="min-w-125px">
                                                         <!--begin::Team members-->
-                                                        <div class="symbol-group symbol-hover mb-1">
-                                                            >
-                                                            <div class="symbol symbol-circle symbol-25px">
-                                                                <div class="symbol-label bg-danger">
-                                                                    <span class="fs-7 text-inverse-danger">E</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <span
+                                                            class="badge badge-primary">{{ explode(' ', $t->escort->full_name)[count(explode(' ', $t->escort->full_name)) - 1] }}</span>
                                                         <!--end::Team members-->
                                                         <div class="fs-7 fw-bold text-muted">
                                                             {{ $t->controller->full_name }}
@@ -492,9 +450,7 @@
 
                                 <!--begin::Body-->
                                 <div class="card-body pt-5">
-                                    <table
-                                        class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3"
-                                >
+                                    <table class="table table-row-dashed align-middle fs-6 gy-4 my-0 pb-3">
                                         <thead class="d-none">
                                             <tr>
                                                 <th>#</th>
@@ -526,16 +482,8 @@
                                                         @endforeach
                                                     </td>
                                                     <td class="min-w-125px">
-                                                        <!--begin::Team members-->
-                                                        <div class="symbol-group symbol-hover mb-1">
-                                                            >
-                                                            <div class="symbol symbol-circle symbol-25px">
-                                                                <div class="symbol-label bg-danger">
-                                                                    <span class="fs-7 text-inverse-danger">E</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--end::Team members-->
+                                                        <span
+                                                            class="badge badge-primary">{{ explode(' ', $t->escort->full_name)[count(explode(' ', $t->escort->full_name)) - 1] }}</span>
                                                         <div class="fs-7 fw-bold text-muted">
                                                             {{ $t->controller->full_name }}
                                                         </div>
@@ -1260,10 +1208,12 @@
                                             @foreach ($trucks as $truck)
                                                 @foreach ($convoy->trucks as $t)
                                                     @if ($t->id == $truck->id)
-                                                        <option value="{{ $truck->id }}" selected>{{ $truck->horse }}
+                                                        <option value="{{ $truck->id }}" selected>
+                                                            {{ $truck->horse }}
                                                         </option>
                                                     @else
-                                                        <option value="{{ $truck->id }}">{{ $truck->horse }}</option>
+                                                        <option value="{{ $truck->id }}">{{ $truck->horse }}
+                                                        </option>
                                                     @endif
                                                 @endforeach
                                             @endforeach
@@ -2100,15 +2050,15 @@
                             <!--begin::Modal footer-->
                             <div class="modal-footer flex-center">
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="delete" id="kt_modal_create_api_key_cancel"
-                                    class="btn btn-danger me-3">
+                                <button type="submit" name="action" value="delete"
+                                    id="kt_modal_create_api_key_cancel" class="btn btn-danger me-3">
                                     Delete
                                 </button>
                                 <!--end::Button-->
 
                                 <!--begin::Button-->
-                                <button type="submit" name="action" value="update" id="kt_modal_create_api_key_submit"
-                                    class="btn btn-primary">
+                                <button type="submit" name="action" value="update"
+                                    id="kt_modal_create_api_key_submit" class="btn btn-primary">
                                     <span class="indicator-label">
                                         Submit
                                     </span>

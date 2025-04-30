@@ -132,6 +132,7 @@ class TruckController extends Controller
             ]);
             $truck = Truck::find($validatedData['id']);
             $truck->update($validatedData);
+            $truck->updated_at = now();
             $truck->save();
             return redirect()->back()->with('success', 'Truck updated successfully');
         }
@@ -195,5 +196,24 @@ class TruckController extends Controller
 
         }
         return redirect()->back()->with('success', 'Trucks imported successfully');
+    }
+
+    function bulk_update(Request $request) {
+        $validatedData = $request->validate([
+            'trucks' => 'required|array',
+            'trucks.*' => 'required|exists:trucks,id',
+            'status' => 'required|string',
+            'location_id' => 'required|exists:locations,id',
+        ]);
+
+        $trucks = Truck::whereIn('id', $validatedData['trucks'])->get();
+
+        foreach ($trucks as $truck) {
+            $truck->status = $validatedData['status'];
+            $truck->location_id = $validatedData['location_id'];
+            $truck->updated_at = now();
+            $truck->save();
+        }
+        return redirect()->back()->with('success', 'Trucks updated successfully');
     }
 }

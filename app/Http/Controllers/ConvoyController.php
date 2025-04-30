@@ -122,6 +122,7 @@ class ConvoyController extends Controller
                     $truck->status = $validatedData['status'];
                 }
                 $truck->convoy_id = $validatedData['convoy_id'];
+                $truck->updated_at = now();
                 $truck->save();
             }
 

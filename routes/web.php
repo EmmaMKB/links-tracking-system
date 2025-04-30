@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/add_truck', [TruckController::class, 'add_truck'])->name('add_truck');
     Route::post('/edit_truck', [TruckController::class, 'edit_truck'])->name('truck:edit');
     Route::post('/import_trucks', [TruckController::class, 'import'])->name('truck:import');
+    Route::post('/bulk_update', [TruckController::class, 'bulk_update'])->name('truck:bulk_update');
     Route::get('/trucks', [TruckController::class, 'index'])->name('trucks');
     Route::get('/trucks/drc-routes', [TruckController::class, 'trucks_drc'])->name('trucks:drc_routes');
     Route::get('/trucks/breakdowns', [TruckController::class, 'breakdowns'])->name('trucks:breakdowns');

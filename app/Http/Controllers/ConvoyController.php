@@ -116,7 +116,7 @@ class ConvoyController extends Controller
 
                 $truck = Truck::find($t);
                 $truck->location_id = $validatedData['location_id'];
-                if ($validatedData['status'] = 'Handover') {
+                if ($validatedData['status'] == 'Handover') {
                     $truck->status = 'Parked';
                 } else {
                     $truck->status = $validatedData['status'];

@@ -35,6 +35,7 @@
     <link type="text/css" href="{{ asset('assets/css/fontawesome.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <script>
         // Frame-busting to prevent site from being loaded within a frame without permission (click-jacking)

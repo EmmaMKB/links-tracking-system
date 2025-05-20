@@ -1,3 +1,4 @@
+@php use Carbon\Carbon; @endphp
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -122,7 +123,8 @@
                                             <th class="min-w-120px">Transporter</th>
                                             <th class="min-w-120px">Location</th>
                                             <th class="min-w-120px">Dispatch Date</th>
-                                            <th class="min-w-120px">Staus</th>
+                                            <th class="min-w-120px">Transit Days</th>
+                                            <th class="min-w-120px">Status</th>
                                             <th class="min-w-120px">Situation</th>
                                             <th class="min-w-100px text-end">Actions</th>
                                         </tr>
@@ -160,7 +162,17 @@
                                                 <td>
                                                     <p>{{ $truck->dispatch_date }}</p>
                                                 </td>
-
+                                                <td>
+                                                    @php
+                                                        $dispatchDate = $truck->dispatch_date
+                                                            ? Carbon::parse($truck->dispatch_date)
+                                                            : null;
+                                                        $transitDays = $dispatchDate
+                                                            ? $dispatchDate->diffInDays(Carbon::now())
+                                                            : '-';
+                                                    @endphp
+                                                    <p style="text-align: center">{{ $transitDays }}</p>
+                                                </td>
                                                 <td>
                                                     <p>
                                                         @if ($truck->status_colour() == 'danger')
@@ -691,6 +703,11 @@
     @section('scripts')
         <script>
             let table = new DataTable('#trucksTable');
+        </script>
+        <script>
+            window.setTimeout(function() {
+                window.location.reload();
+            }, 300000);
         </script>
     @endsection
 </x-app-layout>

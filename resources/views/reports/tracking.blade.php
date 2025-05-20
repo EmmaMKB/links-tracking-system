@@ -1,3 +1,4 @@
+@php use Carbon\Carbon; @endphp
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -109,7 +110,8 @@
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-3">
                                         <div class="menu-content px-3 py-3">
-                                            <a href="{{ route('download', ['client_id' => $client->client->id]) }}" class="btn btn-primary  btn-sm px-4">
+                                            <a href="{{ route('download', ['client_id' => $client->client->id]) }}"
+                                                class="btn btn-primary  btn-sm px-4">
                                                 Download Report
                                             </a>
                                         </div>
@@ -128,8 +130,11 @@
                             <div class="table-responsive">
                                 <!--begin::Table-->
                                 @foreach ($trucks as $section => $sectionTrucks)
+                                    @php
+                                        $sectionName = $sectionTrucks->first()->location->section->section ?? 'Unknown Section';
+                                    @endphp
                                     <h3 class="card-title">
-                                        {{ $section }}
+                                        {{ $sectionName }}
                                     </h3>
                                     <p>{{ $sectionTrucks->count() }} truck(s)</p>
                                     <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
@@ -142,6 +147,7 @@
                                                 <th class="min-w-120px">Transporter</th>
                                                 <th class="min-w-120px">Location</th>
                                                 <th class="min-w-120px">Dispatch Date</th>
+                                                <th class="min-w-120px">Transit Days</th>
                                                 <th class="min-w-120px">Status</th>
                                             </tr>
                                         </thead>
@@ -178,7 +184,17 @@
                                                     <td>
                                                         <p>{{ $truck->dispatch_date }}</p>
                                                     </td>
-
+                                                    <td>
+                                                        @php
+                                                            $dispatchDate = $truck->dispatch_date
+                                                                ? Carbon::parse($truck->dispatch_date)
+                                                                : null;
+                                                            $transitDays = $dispatchDate
+                                                                ? $dispatchDate->diffInDays(Carbon::now())
+                                                                : '-';
+                                                        @endphp
+                                                        <p style="text-align: center">{{ $transitDays }}</p>
+                                                    </td>
                                                     <td>
                                                         <span
                                                             class="badge badge-light-{{ $truck->status_colour() }}">{{ $truck->status }}</span>

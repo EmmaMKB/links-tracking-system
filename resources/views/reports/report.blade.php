@@ -1,3 +1,4 @@
+@php use Carbon\Carbon; @endphp
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
@@ -17,6 +18,7 @@
 
     table {
         margin: 0 auto;
+        padding: 5px;
         width: 100%;
         border-collapse: collapse;
         border: 1px solid #bebebe;
@@ -113,8 +115,11 @@
             <div class="table-responsive">
                 <!--begin::Table-->
                 @foreach ($trucks as $section => $sectionTrucks)
+                    @php
+                        $sectionName = $sectionTrucks->first()->location->section->section ?? 'Unknown Section';
+                    @endphp
                     <h3 class="card-title">
-                        {{ $section }}
+                        {{ $sectionName }}
                     </h3>
                     <p class="sub-header">{{ $sectionTrucks->count() }} truck(s)</p>
                     <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
@@ -127,6 +132,7 @@
                                 <th class="min-w-120px">Transporter</th>
                                 <th class="min-w-120px">Location</th>
                                 <th class="min-w-120px">Dispatch Date</th>
+                                <th class="min-w-120px">Transit Days</th>
                                 <th class="min-w-120px">Status</th>
                                 <th class="min-w-120px">Comment</th>
                             </tr>
@@ -164,7 +170,17 @@
                                     <td>
                                         <p>{{ $truck->dispatch_date }}</p>
                                     </td>
-
+                                    <td>
+                                        @php
+                                            $dispatchDate = $truck->dispatch_date
+                                                ? Carbon::parse($truck->dispatch_date)
+                                                : null;
+                                            $transitDays = $dispatchDate
+                                                ? $dispatchDate->diffInDays(Carbon::now())
+                                                : '-';
+                                        @endphp
+                                        <p style="text-align: center">{{ $transitDays }}</p>
+                                    </td>
                                     <td>
                                         <span
                                             class="badge badge-light-{{ $truck->status_colour() }}">{{ $truck->status }}</span>

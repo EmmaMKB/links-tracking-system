@@ -566,8 +566,9 @@
                                     <!--end::Label-->
 
                                     <!--begin::Select-->
-                                    <select name="escort_id" data-control="select2" data-hide-search="false"
-                                        data-placeholder="Escort" class="form-select form-select-solid">
+                                    <select name="escort_id" data-control="select2"
+                                    data-hide-search="false" data-placeholder="Escort"
+                                    class="form-select form-select-solid select2-multiple">
                                         <option value="">Select the Escort</option>
                                         @foreach ($escorts as $e)
                                             <option value="{{ $e->id }}">{{ $e->full_name }}</option>

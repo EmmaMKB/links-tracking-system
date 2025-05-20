@@ -26,10 +26,9 @@ class ReportsController extends Controller
         $totalTrucks = $trucks->count();
 
         $groupedTrucks = $trucks->groupBy(function ($truck) {
-            return $truck->location->section->section ?? 'Unknown Section';
+            return $truck->location->section->id ?? 'Unknown Section';
         });
 
-            // dd($trucks);
         return view('reports.tracking', [
             'trucks' => $groupedTrucks,
             'transit' => $totalTrucks,
@@ -44,7 +43,8 @@ class ReportsController extends Controller
         $trucks = Truck::with('location.section')
             ->where('status', '!=', 'Handover')
             ->where('client_id', $client_id)
-            ->get();
+            ->get()
+            ->sortBy('location.index');
 
         $imagePath = public_path('assets/media/logos/links-blue.png'); // Path to your image
         $imageData = base64_encode(file_get_contents($imagePath)); // Convert image to Base64
@@ -53,7 +53,7 @@ class ReportsController extends Controller
         $totalTrucks = $trucks->count();
 
         $groupedTrucks = $trucks->groupBy(function ($truck) {
-            return $truck->location->section->section ?? 'Unknown Section';
+            return $truck->location->section->id ?? 'Unknown Section';
         });
 
         $pdf = Pdf::loadView('reports.report', [

@@ -171,7 +171,7 @@
                                                             ? $dispatchDate->diffInDays(Carbon::now())
                                                             : '-';
                                                     @endphp
-                                                    <p style="text-align: center">{{ $transitDays }}</p>
+                                                    <p style="text-align: center">{{ $transitDays + 1 }}</p>
                                                 </td>
                                                 <td>
                                                     <p>
